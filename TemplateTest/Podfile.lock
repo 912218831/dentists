@@ -1,0 +1,159 @@
+PODS:
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - AMap3DMap (5.0.0):
+    - AMapFoundation (~> 1.3)
+  - AMapFoundation (1.4.1)
+  - AMapSearch (5.0.0):
+    - AMapFoundation (~> 1.2)
+  - AsyncDisplayKit (1.9.3):
+    - AsyncDisplayKit/ASDealloc2MainObject (= 1.9.3)
+  - AsyncDisplayKit/ASDealloc2MainObject (1.9.3)
+  - HMSegmentedControl (1.5.4)
+  - iCarousel (1.8.3)
+  - IQKeyboardManager (3.3.4)
+  - JCore (1.1.5)
+  - JPush (3.0.6):
+    - JCore (~> 1.1.1)
+  - libextobjc (0.4.1):
+    - libextobjc/EXTADT (= 0.4.1)
+    - libextobjc/EXTConcreteProtocol (= 0.4.1)
+    - libextobjc/EXTKeyPathCoding (= 0.4.1)
+    - libextobjc/EXTNil (= 0.4.1)
+    - libextobjc/EXTSafeCategory (= 0.4.1)
+    - libextobjc/EXTScope (= 0.4.1)
+    - libextobjc/EXTSelectorChecking (= 0.4.1)
+    - libextobjc/EXTSynthesize (= 0.4.1)
+    - libextobjc/NSInvocation+EXT (= 0.4.1)
+    - libextobjc/NSMethodSignature+EXT (= 0.4.1)
+    - libextobjc/RuntimeExtensions (= 0.4.1)
+    - libextobjc/UmbrellaHeader (= 0.4.1)
+  - libextobjc/EXTADT (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTConcreteProtocol (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTKeyPathCoding (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTNil (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSafeCategory (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTScope (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSelectorChecking (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSynthesize (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/NSInvocation+EXT (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/NSMethodSignature+EXT (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/RuntimeExtensions (0.4.1)
+  - libextobjc/UmbrellaHeader (0.4.1)
+  - MagicalRecord (2.3.2):
+    - MagicalRecord/Core (= 2.3.2)
+  - MagicalRecord/Core (2.3.2)
+  - MBProgressHUD (0.9.2)
+  - MJRefresh (3.1.12)
+  - pop (1.0.10)
+  - PureLayout (2.0.6)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - ReactiveViewModel (0.3):
+    - ReactiveCocoa (~> 2.4)
+  - SDWebImage (3.7.6):
+    - SDWebImage/Core (= 3.7.6)
+  - SDWebImage/Core (3.7.6)
+  - UMengAnalytics (4.2.4)
+  - UMengFeedback (2.3.4)
+  - UMengSocial (5.0)
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+  - YYModel (1.0.4)
+  - YYText (1.0.7)
+
+DEPENDENCIES:
+  - AFNetworking (~> 2.0)
+  - AMap3DMap (~> 5.0.0)
+  - AMapSearch (~> 5.0.0)
+  - AsyncDisplayKit (= 1.9.3)
+  - HMSegmentedControl (~> 1.5.2)
+  - iCarousel (~> 1.8.2)
+  - IQKeyboardManager (= 3.3.4)
+  - JPush (~> 3.0.6)
+  - libextobjc (~> 0.4.1)
+  - MagicalRecord (~> 2.3.2)
+  - MBProgressHUD (~> 0.9.1)
+  - MJRefresh (~> 3.1.12)
+  - pop (~> 1.0.8)
+  - PureLayout (~> 2.0.5)
+  - ReactiveCocoa (= 2.5)
+  - ReactiveViewModel (~> 0.3)
+  - SDWebImage (~> 3.7.2)
+  - UMengAnalytics (>= 3.4.6)
+  - UMengFeedback (>= 2.2)
+  - UMengSocial (>= 4.3)
+  - YYCategories (~> 1.0.4)
+  - YYImage (~> 1.0.2)
+  - YYModel (~> 1.0.4)
+  - YYText (~> 1.0.7)
+
+SPEC CHECKSUMS:
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  AMap3DMap: 4d0a53d0e57c7c758560225dfdaf593b306bd468
+  AMapFoundation: 9cc5198980873cca29bb70466a84b3bd922c0e65
+  AMapSearch: cf7fd100d533995822d92c22586abfaf7cdf6eef
+  AsyncDisplayKit: 87d340329280dba0363da3587a43f9d1bbe62aac
+  HMSegmentedControl: b25bc4ec44766e073d62c473188fb354ee244b76
+  iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
+  IQKeyboardManager: ac803e61e5b50efae6b3aeedd95a02c7c7d3b2b3
+  JCore: 9bd9c770c877c583d98b90a68792b8361974c231
+  JPush: c41be50eb1a574a66aeb68d237f00a4ec6ec3a82
+  libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
+  MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
+  PureLayout: f25f0bb904d5ccfe6e31da3cb869185259f02e0d
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  ReactiveViewModel: 58918dcbcec2d3151195ab1ed9163c57a8163999
+  SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
+  UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
+  UMengFeedback: 5283cc0e324dffca4dd54c4abb3cbded56487817
+  UMengSocial: 48b67179c492a8cf7803fbb0438b8f55432e2fc1
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+
+PODFILE CHECKSUM: 9ba37511a517011536971c3adef01e955fddf771
+
+COCOAPODS: 1.2.1.beta.1

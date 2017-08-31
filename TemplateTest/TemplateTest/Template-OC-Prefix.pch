@@ -1,0 +1,47 @@
+//
+//  TemplatePrefix.pch
+//  Template-OC
+//
+//  Created by niedi on 15/4/2.
+//  Copyright (c) 2015年 caijingpeng.haowu. All rights reserved.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+
+    #import "Define.h"
+    #import "HWRequestConfig.h"
+    #import "Utility.h"
+    #import "Category.h"
+    #import "HWRequestConfig.h"
+    #import "HWLog.h"
+    #import <UIButton+WebCache.h>
+    #import <UIImageView+WebCache.h>
+    #import "HWBaseNavigationController.h"
+    #import "HWGeneralControl.h"
+    #import "HWBaseViewController.h"
+    #import "HWUserLogin.h"
+    #import "HWBaseTableViewCell.h"
+    #import <libextobjc/EXTScope.h>
+    #import <metamacros.h>
+    #import <PureLayout.h>
+    #import <ReactiveCocoa.h>
+    #import <ReactiveViewModel.h>
+    #import <UMMobClick/MobClick.h>
+    #import <HMSegmentedControl/HMSegmentedControl.h>
+    #import "AppDelegate.h"
+    #import "HWTableView.h"
+    #import <iCarousel.h>
+    #import <IQKeyboardManager.h>
+    #import <pop/POP.h>
+    #import <AsyncDisplayKit/AsyncDisplayKit.h>
+    #import <MagicalRecord/MagicalRecord.h>
+    #import "DView.h"
+    #import "HWHTTPSessionManger.h"
+    #import "AppShare.h"
+#endif

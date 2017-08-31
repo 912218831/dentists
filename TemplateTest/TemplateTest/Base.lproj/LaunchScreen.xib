@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleAspectFit" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="启动页.png" translatesAutoresizingMaskIntoConstraints="NO" id="NhB-sf-EH4">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="NhB-sf-EH4" secondAttribute="trailing" id="5Xc-fD-eZa"/>
+                <constraint firstAttribute="bottom" secondItem="NhB-sf-EH4" secondAttribute="bottom" id="aRo-GM-dQ7"/>
+                <constraint firstItem="NhB-sf-EH4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="asI-lW-6Jz"/>
+                <constraint firstItem="NhB-sf-EH4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bqc-CX-4xj"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="322.5" y="436.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="启动页.png" width="375" height="667"/>
+    </resources>
+</document>
