@@ -8,12 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol HWBaseViewProtocol <NSObject>
-- (void)initSubViews;
-- (void)layoutSubViews;
-- (void)initDefaultConfigs;
-@end
-
 typedef void(^removeFromWindowAnimation)(void);
 
 @interface UIView (Utils)

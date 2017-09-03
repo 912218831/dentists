@@ -480,7 +480,7 @@
     lab.backgroundColor = [UIColor clearColor];
     lab.textAlignment = NSTextAlignmentCenter;
     lab.font = BOLDFONT(19);
-    lab.textColor = [UIColor blackColor];
+    lab.textColor = COLOR_FFFFFF;
     if(title.length > 10){
         NSMutableAttributedString *mutable = [[NSMutableAttributedString alloc]initWithString:title];
         [mutable replaceCharactersInRange:NSMakeRange(10,title.length - 10) withString:@"..."];
@@ -1621,4 +1621,12 @@ void delayOperation(CGFloat s,void(^block)(void))
     return arrowImage;
 }
 
+/**
+ * 调整 UIButton 的 image 和 tilte 的位置，实现图片在上，文字在下的效果
+ */
++ (void)layoutButtonWithImageTopTitleBottom:(UIButton*)btn {
+    btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;//使图片和文字水平居中显示
+    [btn setTitleEdgeInsets:UIEdgeInsetsMake(btn.imageView.frame.size.height ,-btn.imageView.frame.size.width, 0.0,0.0)];//文字距离上边框的距离增加imageView的高度，距离左边框减少imageView的宽度，距离下边框和右边框距离不变
+    [btn setImageEdgeInsets:UIEdgeInsetsMake(0.0, 0.0,0.0, -btn.titleLabel.bounds.size.width)];//图片距离右边框距离减少图片的宽度，其它不边
+}
 @end

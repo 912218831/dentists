@@ -16,5 +16,8 @@
 //限制输入的个数
 - (void)textLimitInputNumber:(NSInteger)limitNumber;
 
+- (void)setAttributedStr:(NSString *)attributedStr position:(NSTextAlignment)alignment;
+
+- (void)setAttributedStr:(NSString *)attributedStr font:(UIFont *)font color:(UIColor *)color position:(NSTextAlignment)alignment;
 
 @end

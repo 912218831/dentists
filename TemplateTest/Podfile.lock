@@ -22,7 +22,7 @@ PODS:
     - AFNetworking/NSURLSession
   - AMap3DMap (5.0.0):
     - AMapFoundation (~> 1.3)
-  - AMapFoundation (1.4.1)
+  - AMapFoundation (1.4.2)
   - AMapSearch (5.0.0):
     - AMapFoundation (~> 1.2)
   - AsyncDisplayKit (1.9.3):
@@ -72,6 +72,10 @@ PODS:
   - MagicalRecord (2.3.2):
     - MagicalRecord/Core (= 2.3.2)
   - MagicalRecord/Core (2.3.2)
+  - Mantle (2.0.7):
+    - Mantle/extobjc (= 2.0.7)
+  - Mantle/extobjc (2.0.7)
+  - Masonry (1.0.2)
   - MBProgressHUD (0.9.2)
   - MJRefresh (3.1.12)
   - pop (1.0.10)
@@ -111,6 +115,8 @@ DEPENDENCIES:
   - JPush (~> 3.0.6)
   - libextobjc (~> 0.4.1)
   - MagicalRecord (~> 2.3.2)
+  - Mantle (~> 2.0.7)
+  - Masonry (~> 1.0.2)
   - MBProgressHUD (~> 0.9.1)
   - MJRefresh (~> 3.1.12)
   - pop (~> 1.0.8)
@@ -129,7 +135,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   AMap3DMap: 4d0a53d0e57c7c758560225dfdaf593b306bd468
-  AMapFoundation: 9cc5198980873cca29bb70466a84b3bd922c0e65
+  AMapFoundation: 6c0471c9a6a0ad17dad46e3d800ad56ca170f82a
   AMapSearch: cf7fd100d533995822d92c22586abfaf7cdf6eef
   AsyncDisplayKit: 87d340329280dba0363da3587a43f9d1bbe62aac
   HMSegmentedControl: b25bc4ec44766e073d62c473188fb354ee244b76
@@ -139,6 +145,8 @@ SPEC CHECKSUMS:
   JPush: c41be50eb1a574a66aeb68d237f00a4ec6ec3a82
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
+  Mantle: bc40bb061d8c2c6fb48d5083e04d928c3b7f73d9
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
@@ -154,6 +162,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 9ba37511a517011536971c3adef01e955fddf771
+PODFILE CHECKSUM: dee3de814917aa983c7632afe2fca3726a48d8b4
 
-COCOAPODS: 1.2.1.beta.1
+COCOAPODS: 1.1.1

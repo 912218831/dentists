@@ -292,4 +292,6 @@ extern void delayOperation(CGFloat s,void(^block)(void));
  */
 + (UIImage *)drawArrowDownImgSize:(CGSize)imageSize color:(UIColor *)color;
 
+/**调整 UIButton 的 image 和 tilte 的位置，实现图片在上，文字在下的效果*/
++ (void)layoutButtonWithImageTopTitleBottom:(UIButton*)btn;
 @end
