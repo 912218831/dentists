@@ -1,0 +1,9 @@
+
+git rm -r --cached TemplateTest.xcworkspace/xcuserdata/hw.xcuserdatad/UserInterfaceState.xcuserstate
+git rm -r --cached .DS_Store
+忽略两个文件
+
+
+1.  git add -A   保存所有的修改
+2.  git add .     保存新的添加和修改，但是不包括删除
+3.  git add -u   保存修改和删除，但是不包括新建文件
