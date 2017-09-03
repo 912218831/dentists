@@ -7,7 +7,7 @@
 //
 
 #import "HWTabBarViewController.h"
-#import "HWHomePangeViewController.h"
+#import "HomePageViewModel.h"
 #import "HWPeopleCenterViewController.h"
 #import "HWOrderViewController.h"
 #import "HWCommissionViewController.h"
@@ -29,7 +29,8 @@
 
 - (void)setUpControllers
 {
-    UIViewController *homePageController = [[HWHomePangeViewController alloc] init];
+    HomePageViewModel *hpViewModel = [[HomePageViewModel alloc]init];
+    UIViewController *homePageController = [[ViewControllersRouter shareInstance]controllerMatchViewModel:hpViewModel];
     
     UIViewController *secondViewController = [[HWOrderViewController alloc] init];
     
@@ -53,7 +54,7 @@
     UIImage *unfinishedImage = [UIImage imageNamed:@"tabbar_normal_background"];
     
     NSArray *unSelectedImages = @[@"首页", @"订单", @"提成",@"我的"];
-    NSArray * titles = @[@"总览",@"订单",@"提成",@"我的"];
+    NSArray * titles = @[@"首页",@"我的病人",@"咨询解答",@"设置"];
     NSInteger index = 0;
     for (RDVTabBarItem *item in [[self tabBar] items]) {
         [item setBackgroundSelectedImage:finishedImage withUnselectedImage:unfinishedImage];
@@ -65,60 +66,11 @@
         item.titlePositionAdjustment = UIOffsetMake(0, 5);
         index++;
     }
-    [self customizeInterface];
-}
-
-- (void)customizeInterface {
-    UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
-    
-    UIImage *backgroundImage = nil;
-    NSDictionary *textAttributes = nil;
-    
-    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
-        backgroundImage = [UIImage imageNamed:@"navigationbar_background_tall"];
-        
-        textAttributes = @{
-                           NSFontAttributeName: [UIFont boldSystemFontOfSize:18],
-                           NSForegroundColorAttributeName: [UIColor blackColor],
-                           };
-    } else {
-#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
-        backgroundImage = [UIImage imageNamed:@"navigationbar_background"];
-        
-        textAttributes = @{
-                           UITextAttributeFont: [UIFont boldSystemFontOfSize:18],
-                           UITextAttributeTextColor: [UIColor blackColor],
-                           UITextAttributeTextShadowColor: [UIColor clearColor],
-                           UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
-                           };
-#endif
-    }
-    
-    [navigationBarAppearance setBackgroundImage:backgroundImage
-                                  forBarMetrics:UIBarMetricsDefault];
-    [navigationBarAppearance setTitleTextAttributes:textAttributes];
 }
 
 - (void)tabBar:(RDVTabBar *)tabBar didSelectItemAtIndex:(NSInteger)index
 {
     [super tabBar:tabBar didSelectItemAtIndex:index];
-//    if (index == 0) {
-//        //首页
-//        self.navigationItem.titleView = [Utility navTitleView:@"总览"];
-//    }
-//    else if(index == 1)
-//    {
-//        self.navigationItem.titleView = [Utility navTitleView:@"订单"];
-//    }
-//    else if (index == 2)
-//    {
-//        self.navigationItem.titleView = [Utility navTitleView:@"提成"];
-//    }
-//    else if(index == 3)
-//    {
-//        self.navigationItem.titleView = [Utility navTitleView:@"我的"];
-//    }
-    
 }
 
 - (BOOL)tabBar:(RDVTabBar *)tabBar shouldSelectItemAtIndex:(NSInteger)index
@@ -129,7 +81,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    self.navigationItem.titleView = [Utility navTitleView:@"总览"];
-    self.navigationController.navigationBarHidden = YES;
+    //self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {

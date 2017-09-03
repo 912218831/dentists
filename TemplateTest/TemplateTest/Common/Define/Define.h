@@ -69,9 +69,36 @@ typedef enum
     mostOfRecommend         //推荐最多
 }NewHouseListType;
 
+#define MYLog(...) \
+    rac_keywordify \
+    NSLog(@"%@,\n%s:%d\n",__VA_ARGS__,__FUNCTION__,__LINE__);
+/*
+ 　1) __VA_ARGS__   是一个可变参数的宏，这个可宏是新的C99规范中新增的，目前似乎gcc和VC6.0之后的都支持（VC6.0的编译器不支持）。宏前面加上##的作用在于，当可变参数的个数为0时，这里的##起到把前面多余的","去掉的作用。
+ 　　2) __FILE__    宏在预编译时会替换成当前的源文件名
+ 　　3) __LINE__   宏在预编译时会替换成当前的行号
+ 　　4) __FUNCTION__   宏在预编译时会替换成当前的函数名称
+ */
+#define mainThreadQueue(...) \
+    autoreleasepool {\
+        if ([NSThread isMainThread]) {__VA_ARGS__} else {\
+        dispatch_sync(dispatch_get_main_queue(), ^{__VA_ARGS__});\
+    }}
 
+#define isKindClass(A, B) \
+    ({ \
+        BOOL result = NO; \
+        if ([A isKindOfClass:objc_getClass(B)]) {\
+        result = YES;\
+        } else { result = NO; }\
+        result;      \
+    });
 
-/* 
+#define isSubClass(A, B) \
+        isKindClass(class_getSuperclass([A class]), B);
+
+#define weakUserLogin ({__weak HWUserLogin *userLogin  = [HWUserLogin currentUserLogin]; userLogin;})
+
+/*
  AppDelegate
  */
 #define SHARED_APP_DELEGATE             ((AppDelegate *)[UIApplication sharedApplication].delegate)
@@ -165,7 +192,7 @@ typedef enum
 #define CD_yellow                       UIColorFromRGB(0xFcE39D)//黄色
 
 //色调
-#define CD_MainColor                    UIColorFromRGB(0xff7e37)//主色调
+#define CD_MainColor                    UIColorFromRGB(0x28beff)//主色调
 #define CD_LineColor                    UIColorFromRGB(0xdedede)//线条颜色,画线
 #define CD_LIGHT_BACKGROUND             UIColorFromRGB(0xf9f9f9)//浅背景色
 
@@ -305,6 +332,15 @@ typedef enum
 #define kPhone6Length(length)           ([UIScreen mainScreen].bounds.size.height / 667.0f) * length
 #define kPhone6WidthLength(length)      ([UIScreen mainScreen].bounds.size.width / 375.0f) * length
 
+/*用到的静态文本*/
+/*首页*/
+#define kHomePage_TITLE1    @"今日概况"
+#define kHomePage_TITLE2    @"未来一周预约情况"
+
+
+/*ViewModel 所有的类名*/
+#define kHomePageVM    @"HomePageViewModel"
+#define kLoginVM       @"LoginViewModel"
 
 
 #endif

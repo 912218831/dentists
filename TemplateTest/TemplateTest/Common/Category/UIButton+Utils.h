@@ -12,6 +12,16 @@ typedef void (^ActionBlock)(void);
 
 @interface UIButton (Utils)
 
+@property (nonatomic, copy)   NSString *normaleImgName;
+@property (nonatomic, copy)   NSString *disableImgName;
+@property (nonatomic, copy)   NSString *selectImgName;
+@property (nonatomic, copy)   NSString *normalTitle;
+@property (nonatomic, strong) UIColor  *normalColor;
+@property (nonatomic, strong) UIColor  *disableColor;
+@property (nonatomic, copy)   UIFont   *normalFont;
+@property (nonatomic, copy)   NSString *normalIcon;
+@property (nonatomic, copy)   NSString *selectIcon;
+
 // 设置激活状态
 - (void)setActiveState;
 

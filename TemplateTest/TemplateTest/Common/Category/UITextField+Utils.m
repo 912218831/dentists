@@ -7,8 +7,8 @@
 //
 
 #import "UITextField+Utils.h"
-#import <objc/runtime.h>
 #import <objc/message.h>
+
 static char HWTextFieldLimitNumber;
 
 @implementation UITextField (Utils)
@@ -75,6 +75,22 @@ static char HWTextFieldLimitNumber;
         }
     }
 
+}
+
+- (void)setAttributedStr:(NSString *)attributedStr position:(NSTextAlignment)alignment{
+    // 占位符
+    [self setAttributedStr:attributedStr font:FONT(TF14) color:UIColorFromRGB(0x999999) position:alignment];
+}
+
+- (void)setAttributedStr:(NSString *)attributedStr font:(UIFont *)font color:(UIColor *)color position:(NSTextAlignment)alignment{
+    // 占位符
+    NSString *str = attributedStr ;
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc]init];
+    style.alignment = alignment;
+    
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:str];
+    [attributedString setAttributes:@{NSFontAttributeName:font,NSForegroundColorAttributeName:color, NSParagraphStyleAttributeName:style} range:NSMakeRange(0, str.length)];
+    self.attributedPlaceholder = attributedString;
 }
 
 @end
