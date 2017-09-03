@@ -42,6 +42,7 @@
 @dynamic viewModel;
 
 - (void)viewDidLoad {
+    // 呵呵哒
     [super viewDidLoad];
     self.listView = [[UITableView alloc]initWithFrame:(CGRect){CGPointZero,self.view.width,self.view.height-(64+49)} style:UITableViewStyleGrouped];
     self.listView.dataSource = self;
