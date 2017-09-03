@@ -12,7 +12,6 @@
 #import <AFNetworking/AFNetworking.h>
 #import "HWHTTPSessionManger.h"
 #import "HWLocationManager.h"
-#import "HWTabBarViewController.h"
 #import "HWLoginUser+CoreDataProperties.h"
 #import "HWGuideViewController.h"
 static NSString * kHaowuStoreName = @"TemplateTest1.sqlite";
@@ -27,28 +26,12 @@ static NSString * kHaowuStoreName = @"TemplateTest1.sqlite";
     [self registerAPNS];
     [JPUSHService setupWithOption:launchOptions appKey:@"74535d99ff5ace1330adce4d" channel:@"iOS" apsForProduction:NO];
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:kHaowuStoreName];
-    [[HWUserLogin currentUserLogin] loadData];
+    [HWCoreDataManager loadUserInfo];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window setBackgroundColor:[UIColor whiteColor]];
     [self.window makeKeyAndVisible];
-    self.viewController = [[AppShare shareInstance] checkUserType];
-    [self.window setRootViewController:self.viewController];
-    self.isAutoLogin = YES;
 
-//    if ([HWUserLogin currentUserLogin].userkey.length > 0) {
-//        self.viewController = [[AppShare shareInstance] checkUserType];
-//        [self.window setRootViewController:self.viewController];
-//        self.isAutoLogin = YES;        
-//    }
-//    else
-//    {
-//        HWGuideViewController * guideCtrl = [[HWGuideViewController alloc] init];
-//        guideCtrl.isGuide = NO;
-//        [self.window setRootViewController:guideCtrl];
-//        self.isAutoLogin = NO;
-//
-//    }
-    
+    [[ViewControllersRouter shareInstance]luanchRootViewController];
     
     return YES;
 }

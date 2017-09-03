@@ -8,7 +8,8 @@
 
 #import "HWGuideViewController.h"
 #import "AppDelegate.h"
-#import "HWLoginViewController.h"
+#import "LoginViewModel.h"
+
 @interface HWGuideViewController ()
 
 @end
@@ -35,15 +36,11 @@
 
 - (void)presentLoginViewController
 {
-    HWLoginViewController * loginCtrl = [[HWLoginViewController alloc] init];
-    loginCtrl.isPresent = YES;
-    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:loginCtrl];
-    nav.view.backgroundColor = [UIColor whiteColor];
-    [SHARED_APP_DELEGATE.window.rootViewController presentViewController:nav animated:_isGuide completion:^{
-        [SHARED_APP_DELEGATE.window setRootViewController:nav];
-
+    LoginViewModel *viewModel = [LoginViewModel new];
+    [[ViewControllersRouter shareInstance]presentViewModel:viewModel animated:_isGuide completion:^(id targetVC) {
+        [targetVC performSelector:@selector(setIsPresent:) withObject:@true];
+        [SHARED_APP_DELEGATE.window setRootViewController:targetVC];
     }];
-
 }
 
 

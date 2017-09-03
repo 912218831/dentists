@@ -74,5 +74,40 @@
     }
 }
 
+- (void)setNormaleImgName:(NSString *)normaleImgName {
+    [self setBackgroundImage:[UIImage imageNamed:normaleImgName] forState:UIControlStateNormal];
+}
+
+- (void)setDisableImgName:(NSString *)disableImgName {
+    [self setBackgroundImage:[UIImage imageNamed:disableImgName] forState:UIControlStateDisabled];
+}
+
+- (void)setSelectImgName:(NSString *)selectImgName {
+    [self setBackgroundImage:[UIImage imageNamed:selectImgName] forState:UIControlStateSelected];
+}
+
+- (void)setNormalTitle:(NSString *)normalTitle {
+    [self setTitle:normalTitle forState:UIControlStateNormal];
+}
+
+- (void)setNormalColor:(UIColor *)normalColor {
+    [self setTitleColor:normalColor forState:UIControlStateNormal];
+}
+
+- (void)setNormalFont:(UIFont *)normalFont {
+    self.titleLabel.font = normalFont;
+}
+
+- (void)setNormalIcon:(NSString *)normalIcon {
+    [self setImage:[UIImage imageNamed:normalIcon] forState:UIControlStateNormal];
+}
+
+- (void)setSelectIcon:(NSString *)selectIcon {
+    [self setImage:[UIImage imageNamed:selectIcon] forState:UIControlStateSelected];
+}
+
+- (void)setEnabled:(BOOL)enabled {
+    [super setEnabled:enabled];
+}
 
 @end

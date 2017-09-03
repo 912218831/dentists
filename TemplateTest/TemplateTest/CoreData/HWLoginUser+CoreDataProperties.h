@@ -1,9 +1,9 @@
 //
 //  HWLoginUser+CoreDataProperties.h
-//  
+//  TemplateTest
 //
-//  Created by 杨庆龙 on 2017/7/28.
-//
+//  Created by HW on 17/8/31.
+//  Copyright © 2017年 caijingpeng.haowu. All rights reserved.
 //
 
 #import "HWLoginUser+CoreDataClass.h"
@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *userName;
 @property (nullable, nonatomic, copy) NSString *userPhone;
 @property (nullable, nonatomic, copy) NSString *userType;
+@property (nullable, nonatomic, copy) NSString *userPassword;
 
 @end
 

@@ -1,6 +1,7 @@
 platform :ios, '7.0'
 #use_frameworks!
 target 'TemplateTest' do
+pod 'Mantle', '~> 2.0.7'
 pod 'AFNetworking', '~> 2.0'
 pod 'SDWebImage', '~> 3.7.2'
 pod 'UMengSocial', '>= 4.3'
@@ -25,4 +26,5 @@ pod 'YYModel', '~> 1.0.4'
 pod 'YYText', '~> 1.0.7'
 pod 'MJRefresh', '~> 3.1.12'
 pod 'JPush', '~> 3.0.6'
+pod 'Masonry', '~> 1.0.2'
 end

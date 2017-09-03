@@ -49,6 +49,10 @@
 #define kPeopleCenter               AppendHTML(@"/Member/Index")     //个人中心
 #define kProductCenter              AppendHTML(@"/Products/Index")    //产品中心
 
+#define kLoginGainVertifyCode       @"" //获取验证码
+#define kLoginApp                   @"" //登录
+#define kHomePageInformation        @"" //首页数据
+
 #endif
 
 
