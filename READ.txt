@@ -2,6 +2,11 @@
 git rm -r --cached TemplateTest.xcworkspace/xcuserdata/hw.xcuserdatad/UserInterfaceState.xcuserstate
 git rm -r --cached .DS_Store
 忽略两个文件
+解释如下：
+当我们需要删除暂存区或分支上的文件, 同时工作区也不需要这个文件了, 可以使用
+	git rm file_path
+当我们需要删除暂存区或分支上的文件, 但本地又需要使用, 只是不希望这个文件被版本控制, 可以使用
+	git rm --cached file_path
 
 
 1.  git add -A   保存所有的修改
