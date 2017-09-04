@@ -25,7 +25,8 @@
 
 + (NSDictionary *)map {
     return @{
-             kHomePageVM:self.homePage
+             kHomePageVM:self.homePage,
+             kReserverRecordVM:self.reserverRecord
              };
 }
 
@@ -43,4 +44,9 @@
              };
 }
 
++ (NSDictionary *)reserverRecord {
+    return @{
+             @"title":@"我的病人",
+             };
+}
 @end

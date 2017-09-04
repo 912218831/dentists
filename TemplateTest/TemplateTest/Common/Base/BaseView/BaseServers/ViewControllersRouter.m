@@ -48,15 +48,17 @@ static ViewControllersRouter *router;
 
 - (NSDictionary *)classWithViewMoldeMaps {
     return @{
-             kLoginVM:objc_getClass("LoginViewModel"),
-             kHomePageVM:objc_getClass("HomePageViewModel")
+             kLoginVM:objc_getClass(kLoginVM.UTF8String),
+             kHomePageVM:objc_getClass(kHomePageVM.UTF8String),
+             kReserverRecordVM:objc_getClass(kReserverRecordVM.UTF8String)
              };
 }
 
 - (NSDictionary *)viewContollerWithViewMoldeMaps {
     return @{
              kLoginVM:objc_getClass("HWLoginViewController"),
-             kHomePageVM:objc_getClass("HWHomePageViewController")
+             kHomePageVM:objc_getClass("HWHomePageViewController"),
+             kReserverRecordVM:objc_getClass("HWOrderViewController")
              };
 }
 
