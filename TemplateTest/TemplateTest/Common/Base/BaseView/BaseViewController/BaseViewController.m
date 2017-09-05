@@ -37,25 +37,33 @@
 
 
 - (void)bindViewModel {
+    
+}
+
+- (void)configContentView {
     NSDictionary *params = [ViewControllerSimpleConfig viewModelSimpleConfigMappings:self.viewModel];
     
     self.navigationItem.titleView = [Utility navTitleView:[params stringObjectForKey:@"title"]];
     
-    UIImageView *leftImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 55, 40)];
-    leftImageView.image = [UIImage imageNamed:[params stringObjectForKey:@"leftImageName"]];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:leftImageView];
+    UIButton * leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    leftButton.frame = CGRectMake(0, 0, 22, 40);
+    [leftButton setImage:[UIImage imageNamed:[params stringObjectForKey:@"leftImageName"]] forState:UIControlStateNormal];
+    leftButton.imageEdgeInsets = UIEdgeInsetsMake(0, -16, 0, 0);
+    [leftButton addTarget:self action:@selector(backMethod) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
     
-    UIImageView *rightImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 55, 40)];
-    rightImageView.image = [UIImage imageNamed:[params stringObjectForKey:@"rightImageName"]];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:rightImageView];
-}
-
-- (void)configContentView {
+    self.navigationItem.rightBarButtonItem = [Utility navRightBackBtn:self action:@selector(rightAction) imageStr:@"rightImageName"];
+    
     self.contentView = [[UIView alloc]initWithFrame:self.frame];
     [self.view addSubview:self.contentView];
 }
 
 - (void)reloadviewWhenDatasourceChange {
+    
+}
+
+- (void)rightAction {
+    
     
 }
 @end

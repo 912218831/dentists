@@ -9,9 +9,10 @@
 #import "HWOrderViewController.h"
 #import "HWBaseRefreshView.h"
 #import "JKRSearchController.h"
-#import "JKRSearchResultViewController.h"
 #import "ReserverRecordViewModel.h"
 #import "ReserverRecordCell.h"
+#import "RRSearchResultViewModel.h"
+#import "PatientDetailViewModel.h"
 
 @interface HWOrderViewController () <JKRSearchBarDelegate,
                                     JKRSearchControllerDelegate,
@@ -20,6 +21,7 @@
 @property (nonatomic, strong) HWBaseRefreshView *listView;
 @property (nonatomic, strong) JKRSearchController *searchController;
 @property (nonatomic, strong) ReserverRecordViewModel *viewModel;
+@property (nonatomic, strong) RRSearchResultViewModel *searchViewModel;
 @end
 
 @implementation HWOrderViewController
@@ -44,14 +46,24 @@
 - (void)configContentView {
     [super configContentView];
     
-    self.listView = [[HWBaseRefreshView alloc]initWithFrame:self.view.bounds];
+    self.listView = [[HWBaseRefreshView alloc]initWithFrame:(CGRect){CGPointZero, self.view.bounds.size.width, self.view.bounds.size.height-49-64}];
     [self.contentView addSubview:self.listView];
     self.listView.cellHeight = ^(NSIndexPath *indexPath){
         return (CGFloat)kRate(122);
     };
+    @weakify(self);
+    self.listView.didSelected = ^(NSIndexPath *indextPath) {
+        @strongify(self);
+        PatientModel *model = [self.viewModel.dataSource objectAtIndex:indextPath.row];
+        PatientDetailViewModel *vm = [PatientDetailViewModel new];
+        vm.patientName = model.patientname;
+        vm.appointmentid = model.appointmentid;
+        [[ViewControllersRouter shareInstance]pushViewModel:vm animated:true];
+    };
     self.listView.baseTable.dataSource = self;
     
-    JKRSearchResultViewController *resultSearchController = [[JKRSearchResultViewController alloc] init];
+    self.searchViewModel = [RRSearchResultViewModel new];
+    UIViewController *resultSearchController = [[ViewControllersRouter shareInstance] controllerMatchViewModel:self.searchViewModel];
     self.searchController = [[JKRSearchController alloc] initWithSearchResultsController:resultSearchController];
     self.searchController.searchBar.placeholder = kReserverRecordSearchPlaceholder;
     self.searchController.hidesNavigationBarDuringPresentation = YES;
@@ -61,9 +73,20 @@
     [self.listView.baseTable setTableHeaderView:self.searchController.searchBar];
 }
 
+- (void)bindViewModel {
+    [super bindViewModel];
+    [self.viewModel bindViewWithSignal];
+    
+    @weakify(self);
+    [[self.viewModel.requestCommand execute:nil]subscribeError:^(NSError *error) {
+        @strongify(self);
+        [self.listView.baseTable reloadData];
+    }];
+}
+
 #pragma mark -- UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;//self.viewModel.dataSource.count;
+    return self.viewModel.dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -72,12 +95,13 @@
     if (cell == nil) {
         cell = [[ReserverRecordCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
+    cell.signal = [RACSignal return:[self.viewModel.dataSource objectAtIndex:indexPath.row]];
     return cell;
 }
 
 #pragma mark - JKRSearchControllerhResultsUpdating
 - (void)updateSearchResultsForSearchController:(JKRSearchController *)searchController {
-    
+    [self.searchViewModel.command execute:searchController.searchBar.text];
 }
 
 #pragma mark - JKRSearchBarDelegate

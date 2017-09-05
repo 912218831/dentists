@@ -1,17 +1,18 @@
 //
-//  RRViewModel.m
+//  RRSearchResultViewModel.m
 //  TemplateTest
 //
-//  Created by HW on 17/9/4.
+//  Created by HW on 17/9/5.
 //  Copyright © 2017年 caijingpeng.haowu. All rights reserved.
 //
 
-#import "ReserverRecordViewModel.h"
+#import "RRSearchResultViewModel.h"
 
-@interface ReserverRecordViewModel ()
+@interface RRSearchResultViewModel ()
+@property (nonatomic, copy) NSString *searchKey;
 @property (nonatomic, strong, readwrite) NSMutableArray *dataSource;
 @end
-@implementation ReserverRecordViewModel
+@implementation RRSearchResultViewModel
 
 - (instancetype)init {
     if (self = [super init]) {
@@ -22,10 +23,11 @@
 
 - (void)bindViewWithSignal {
     @weakify(self);
-    self.requestCommand = [[RACCommand alloc]initWithSignalBlock:^RACSignal *(id input) {
+    self.command = [[RACCommand alloc]initWithSignalBlock:^RACSignal *(NSString *keyword) {
+        @strongify(self);
+        self.searchKey = keyword;
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-            @strongify(self);
-            [self post:kReserverRecordList type:0 params:@{} success:^(id response) {
+            [self post:kReserverRecordSearch type:0 params:@{} success:^(id reponse) {
                 [subscriber sendCompleted];
             } failure:^(NSString *error) {
                 for (int i=0; i<5; i++) {
@@ -44,6 +46,7 @@
                 }
                 [subscriber sendError:[NSError errorWithDomain:error code:404 userInfo:nil]];
             }];
+            
             return nil;
         }];
     }];

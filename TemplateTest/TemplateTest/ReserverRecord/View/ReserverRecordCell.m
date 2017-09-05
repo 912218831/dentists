@@ -79,7 +79,7 @@
 - (void)initDefaultConfigs {
     self.contentV.layer.cornerRadius = 3;
     self.contentV.layer.borderColor = UIColorFromRGB(0xcccccc).CGColor;
-    self.contentV.layer.borderWidth = 1;
+    self.contentV.layer.borderWidth = 0.6;
     self.contentV.layer.backgroundColor = COLOR_FFFFFF.CGColor;
     
     self.nameLabel.text = @"张先生";
@@ -105,6 +105,21 @@
     self.confirmButton.normalFont = FONT(TF13);
     self.confirmButton.normalTitle = @"待确认";
     self.confirmButton.normalColor = UIColorFromRGB(0xfb6b35);
+}
+
+- (void)setSignal:(RACSignal *)signal {
+    _signal = signal;
+    [self bindSignal];
+}
+
+- (void)bindSignal {
+    @weakify(self);
+    [self.signal subscribeNext:^(PatientModel *model) {
+        @strongify(self);
+        self.nameLabel.text = model.patientname;
+        self.patientDesLabel.text = model.suggestiong;
+        [self.photoImageView sd_setImageWithURL:[NSURL URLWithString:model.headimage]];
+    }];
 }
 
 @end

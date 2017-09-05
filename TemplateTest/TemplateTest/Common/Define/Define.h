@@ -333,9 +333,10 @@ typedef enum
 #define kPhone6WidthLength(length)      ([UIScreen mainScreen].bounds.size.width / 375.0f) * length
 
 /*ViewModel 所有的类名*/
-#define kHomePageVM       @"HomePageViewModel"
-#define kLoginVM          @"LoginViewModel"
-#define kReserverRecordVM @"ReserverRecordViewModel"
-
+#define kHomePageVM             @"HomePageViewModel"
+#define kLoginVM                @"LoginViewModel"
+#define kReserverRecordVM       @"ReserverRecordViewModel"
+#define kReserverRecordSearchVM @"RRSearchResultViewModel"
+#define kReserverRecordDetailVM @"PatientDetailViewModel"
 #endif
 

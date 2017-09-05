@@ -26,7 +26,8 @@
 + (NSDictionary *)map {
     return @{
              kHomePageVM:self.homePage,
-             kReserverRecordVM:self.reserverRecord
+             kReserverRecordVM:self.reserverRecord,
+             kReserverRecordDetailVM:self.reserverDetail
              };
 }
 
@@ -47,6 +48,12 @@
 + (NSDictionary *)reserverRecord {
     return @{
              @"title":@"我的病人",
+             };
+}
+
++ (NSDictionary *)reserverDetail {
+    return @{
+             @"leftImageName":@"TOP_ARROW",
              };
 }
 @end

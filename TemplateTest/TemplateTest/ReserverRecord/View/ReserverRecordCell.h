@@ -7,7 +7,7 @@
 //
 
 #import "BaseListViewCell.h"
-
+#import "PatientModel.h"
 @interface ReserverRecordCell : BaseListViewCell
-
+@property (nonatomic, strong) RACSignal *signal;
 @end

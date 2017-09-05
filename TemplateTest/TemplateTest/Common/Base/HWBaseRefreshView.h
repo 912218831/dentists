@@ -23,6 +23,7 @@
 @property (nonatomic, assign) BOOL           isLastPage;
 @property (nonatomic, assign) BOOL           isShowNoDataView;
 @property (nonatomic, copy  ) CGFloat        (^cellHeight)(NSIndexPath *indexPath);
+@property (nonatomic, copy  ) void           (^didSelected)(NSIndexPath *indexPath);
 @property (nonatomic, assign) id<HWBaseRefreshViewObserverProtocol>
                                            observer;
 - (void)queryListData;

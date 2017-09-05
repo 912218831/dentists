@@ -53,6 +53,9 @@
 #define kLoginApp                   @"" //登录
 #define kHomePageInformation        @"" //首页数据
 
+#define kReserverRecordList         @"" // 预约记录列表
+#define kReserverRecordSearch       @"" // 预约记录搜索
+#define kReserverRecordDetail       @"" // 预约病人详情
 #endif
 
 

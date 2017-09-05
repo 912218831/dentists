@@ -50,7 +50,9 @@ static ViewControllersRouter *router;
     return @{
              kLoginVM:objc_getClass(kLoginVM.UTF8String),
              kHomePageVM:objc_getClass(kHomePageVM.UTF8String),
-             kReserverRecordVM:objc_getClass(kReserverRecordVM.UTF8String)
+             kReserverRecordVM:objc_getClass(kReserverRecordVM.UTF8String),
+             kReserverRecordSearchVM:objc_getClass(kReserverRecordSearchVM.UTF8String),
+             kReserverRecordDetailVM:objc_getClass(kReserverRecordDetailVM.UTF8String)
              };
 }
 
@@ -58,7 +60,9 @@ static ViewControllersRouter *router;
     return @{
              kLoginVM:objc_getClass("HWLoginViewController"),
              kHomePageVM:objc_getClass("HWHomePageViewController"),
-             kReserverRecordVM:objc_getClass("HWOrderViewController")
+             kReserverRecordVM:objc_getClass("HWOrderViewController"),
+             kReserverRecordSearchVM:objc_getClass("RRSearchResultVC"),
+             kReserverRecordDetailVM:objc_getClass("PatientDetailViewController")
              };
 }
 
@@ -123,10 +127,18 @@ static ViewControllersRouter *router;
     UIViewController *vc = [BaseViewController currentViewController];
     Class vcClass = [self viewControllerClassNameForViewModel:NSStringFromClass(viewModel.class)];
     BaseViewController *baseVC = [[vcClass alloc]initWithViewModel:viewModel];
-    baseVC.hidesBottomBarWhenPushed = true;
+    [SHARED_APP_DELEGATE.tabBarVC setTabBarHidden:true];
     [vc.navigationController pushViewController:baseVC animated:YES];
     
     return baseVC;
+}
+
+- (void)popViewModelAnimated:(BOOL)animated {
+    UIViewController *vc = [BaseViewController currentViewController];
+    [vc.navigationController popViewControllerAnimated:animated];
+    if (vc.navigationController.viewControllers.count <= 1) {
+        [SHARED_APP_DELEGATE.tabBarVC setTabBarHidden:false];
+    }
 }
 
 - (void)presentViewModel:(BaseViewModel *)viewModel animated:(BOOL)animated completion:(VoidBlock)completion {

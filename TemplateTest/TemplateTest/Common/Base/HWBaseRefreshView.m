@@ -296,7 +296,11 @@
 }
 
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.didSelected) {
+        self.didSelected(indexPath);
+    }
+}
 
 #pragma mark - showEmptyView
 
