@@ -20,9 +20,9 @@
 
 @implementation BaseListViewDataSource
 
-+ (instancetype)initWithViewModel:(BaseListViewModel *)viewModel reuseIdentifier:(NSString *)identifier {
+- (instancetype)initWithViewModel:(BaseListViewModel *)viewModel reuseIdentifier:(NSString *)identifier {
     BaseListViewDataSource *dataSource = nil;
-    dataSource = [[self alloc]init];
+    dataSource = [self init];
     if (dataSource ) {
         dataSource.viewModel = viewModel;
         dataSource.identifier = identifier;

@@ -7,7 +7,6 @@
 //
 
 #import "PatientDetailViewModel.h"
-
 @interface PatientDetailViewModel ()
 @property (nonatomic, strong, readwrite) PatientDetailModel *model;
 @end
@@ -23,7 +22,9 @@
             PatientDetailModel *model = [PatientDetailModel new];
             for (int i=0; i<3; i++) {
                 
-                model.imagesArray = @[@{@"date":@"2017-07-23",@"images":@[@"http://img.taopic.com/uploads/allimg/140322/235058-1403220K93993.jpg",@"http://img.taopic.com/uploads/allimg/140322/235058-1403220K93993.jpg",@"http://img.taopic.com/uploads/allimg/140322/235058-1403220K93993.jpg",@"http://img.taopic.com/uploads/allimg/140322/235058-1403220K93993.jpg",@"http://img.taopic.com/uploads/allimg/140322/235058-1403220K93993.jpg"]}];
+                model.imagesArray = @[@{@"date":@"2017-07-23",@"images":@[@"http://img.taopic.com/uploads/allimg/140322/235058-1403220K93993.jpg",@"http://img.taopic.com/uploads/allimg/140322/235058-1403220K93993.jpg",@"http://img.taopic.com/uploads/allimg/140322/235058-1403220K93993.jpg",@"http://img.taopic.com/uploads/allimg/140322/235058-1403220K93993.jpg",@"http://img.taopic.com/uploads/allimg/140322/235058-1403220K93993.jpg"]},
+                                      @{@"date":@"2017-07-23",@"images":@[@"http://img.taopic.com/uploads/allimg/140322/235058-1403220K93993.jpg",@"http://img.taopic.com/uploads/allimg/140322/235058-1403220K93993.jpg",@"http://img.taopic.com/uploads/allimg/140322/235058-1403220K93993.jpg",@"http://img.taopic.com/uploads/allimg/140322/235058-1403220K93993.jpg",@"http://img.taopic.com/uploads/allimg/140322/235058-1403220K93993.jpg"]}
+                                      ,@{@"date":@"2017-07-23",@"images":@[@"http://img.taopic.com/uploads/allimg/140322/235058-1403220K93993.jpg",@"http://img.taopic.com/uploads/allimg/140322/235058-1403220K93993.jpg",@"http://img.taopic.com/uploads/allimg/140322/235058-1403220K93993.jpg",@"http://img.taopic.com/uploads/allimg/140322/235058-1403220K93993.jpg",@"http://img.taopic.com/uploads/allimg/140322/235058-1403220K93993.jpg"]}];
                 [self caculateCellHeight:model];
             }
             self.model = model;
@@ -32,6 +33,7 @@
         return nil;
     }];
 }
+
 
 - (void)caculateCellHeight:(PatientDetailModel *)model {
     model.imagesCellsHeight = [NSMutableArray arrayWithCapacity:model.imagesArray.count];

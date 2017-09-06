@@ -18,6 +18,7 @@
 @interface PatientDetailViewModel : BaseViewModel
 @property (nonatomic, copy) NSString *patientName;
 @property (nonatomic, copy) NSString *appointmentid;
+@property (nonatomic, strong) NSIndexPath *selectdIndexPath;
 @property (nonatomic, strong) RACSignal *requestSignal;
 @property (nonatomic, strong, readonly) PatientDetailModel *model;
 @end

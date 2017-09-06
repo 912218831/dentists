@@ -175,6 +175,14 @@
 		C59083501F5EDC810000B58D /* TOP_ARROW@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C590834F1F5EDC810000B58D /* TOP_ARROW@2x.png */; };
 		C59083531F5EE2510000B58D /* PatientDetailAbstractCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C59083521F5EE2510000B58D /* PatientDetailAbstractCell.m */; };
 		C59C42F31F5C0B0500A4A855 /* HPSiderbar.m in Sources */ = {isa = PBXBuildFile; fileRef = C59C42F21F5C0B0500A4A855 /* HPSiderbar.m */; };
+		C5EFE7701F6034BA005E4894 /* HZPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EFE7651F6034BA005E4894 /* HZPhotoBrowser.m */; };
+		C5EFE7711F6034BA005E4894 /* HZPhotoBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EFE7681F6034BA005E4894 /* HZPhotoBrowserView.m */; };
+		C5EFE7721F6034BA005E4894 /* HZPhotoGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EFE76A1F6034BA005E4894 /* HZPhotoGroup.m */; };
+		C5EFE7731F6034BA005E4894 /* HZPhotoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EFE76C1F6034BA005E4894 /* HZPhotoItem.m */; };
+		C5EFE7741F6034BA005E4894 /* HZWaitingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EFE76E1F6034BA005E4894 /* HZWaitingView.m */; };
+		C5EFE7771F603DEE005E4894 /* whiteplaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EFE7761F603DED005E4894 /* whiteplaceholder.png */; };
+		C5EFE77A1F604781005E4894 /* PatientDetailSuggestDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EFE7791F604781005E4894 /* PatientDetailSuggestDataSource.m */; };
+		C5EFE77D1F604EA0005E4894 /* PatientDetailDateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EFE77C1F604EA0005E4894 /* PatientDetailDateCell.m */; };
 		C5F2BE051F5EC7D20012DE67 /* PatientModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F2BE041F5EC7D20012DE67 /* PatientModel.m */; };
 		C5F2BE081F5ECEC70012DE67 /* RRSearchResultVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F2BE071F5ECEC70012DE67 /* RRSearchResultVC.m */; };
 		C5F2BE0B1F5ECF240012DE67 /* RRSearchResultViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F2BE0A1F5ECF240012DE67 /* RRSearchResultViewModel.m */; };
@@ -535,6 +543,22 @@
 		C59083521F5EE2510000B58D /* PatientDetailAbstractCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientDetailAbstractCell.m; sourceTree = "<group>"; };
 		C59C42F11F5C0B0500A4A855 /* HPSiderbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSiderbar.h; sourceTree = "<group>"; };
 		C59C42F21F5C0B0500A4A855 /* HPSiderbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSiderbar.m; sourceTree = "<group>"; };
+		C5EFE7641F6034BA005E4894 /* HZPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPhotoBrowser.h; sourceTree = "<group>"; };
+		C5EFE7651F6034BA005E4894 /* HZPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZPhotoBrowser.m; sourceTree = "<group>"; };
+		C5EFE7661F6034BA005E4894 /* HZPhotoBrowserConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPhotoBrowserConfig.h; sourceTree = "<group>"; };
+		C5EFE7671F6034BA005E4894 /* HZPhotoBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPhotoBrowserView.h; sourceTree = "<group>"; };
+		C5EFE7681F6034BA005E4894 /* HZPhotoBrowserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZPhotoBrowserView.m; sourceTree = "<group>"; };
+		C5EFE7691F6034BA005E4894 /* HZPhotoGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPhotoGroup.h; sourceTree = "<group>"; };
+		C5EFE76A1F6034BA005E4894 /* HZPhotoGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZPhotoGroup.m; sourceTree = "<group>"; };
+		C5EFE76B1F6034BA005E4894 /* HZPhotoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPhotoItem.h; sourceTree = "<group>"; };
+		C5EFE76C1F6034BA005E4894 /* HZPhotoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZPhotoItem.m; sourceTree = "<group>"; };
+		C5EFE76D1F6034BA005E4894 /* HZWaitingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZWaitingView.h; sourceTree = "<group>"; };
+		C5EFE76E1F6034BA005E4894 /* HZWaitingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZWaitingView.m; sourceTree = "<group>"; };
+		C5EFE7761F603DED005E4894 /* whiteplaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteplaceholder.png; sourceTree = "<group>"; };
+		C5EFE7781F604781005E4894 /* PatientDetailSuggestDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientDetailSuggestDataSource.h; sourceTree = "<group>"; };
+		C5EFE7791F604781005E4894 /* PatientDetailSuggestDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientDetailSuggestDataSource.m; sourceTree = "<group>"; };
+		C5EFE77B1F604EA0005E4894 /* PatientDetailDateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientDetailDateCell.h; sourceTree = "<group>"; };
+		C5EFE77C1F604EA0005E4894 /* PatientDetailDateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientDetailDateCell.m; sourceTree = "<group>"; };
 		C5F2BE031F5EC7D20012DE67 /* PatientModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientModel.h; sourceTree = "<group>"; };
 		C5F2BE041F5EC7D20012DE67 /* PatientModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientModel.m; sourceTree = "<group>"; };
 		C5F2BE061F5ECEC70012DE67 /* RRSearchResultVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSearchResultVC.h; sourceTree = "<group>"; };
@@ -1136,6 +1160,7 @@
 		C24E7DDC1ADE5E9700BA8ECC /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				C5EFE7631F6034BA005E4894 /* ptotoBrowser */,
 				C5F4F8271F5D75E2003330CC /* SearchController */,
 				B0B0B5311F2766E6002FE127 /* RDVTabBarController */,
 				7552CE1C1D1240CB00A557EA /* DView */,
@@ -1364,6 +1389,8 @@
 				C59083521F5EE2510000B58D /* PatientDetailAbstractCell.m */,
 				C53629061F5EEAE700F14E38 /* PatientDetailPhotosCell.h */,
 				C53629071F5EEAE700F14E38 /* PatientDetailPhotosCell.m */,
+				C5EFE77B1F604EA0005E4894 /* PatientDetailDateCell.h */,
+				C5EFE77C1F604EA0005E4894 /* PatientDetailDateCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1373,8 +1400,29 @@
 			children = (
 				C59083471F5ED7410000B58D /* PatientDetailViewModel.h */,
 				C59083481F5ED7410000B58D /* PatientDetailViewModel.m */,
+				C5EFE7781F604781005E4894 /* PatientDetailSuggestDataSource.h */,
+				C5EFE7791F604781005E4894 /* PatientDetailSuggestDataSource.m */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C5EFE7631F6034BA005E4894 /* ptotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				C5EFE7761F603DED005E4894 /* whiteplaceholder.png */,
+				C5EFE7641F6034BA005E4894 /* HZPhotoBrowser.h */,
+				C5EFE7651F6034BA005E4894 /* HZPhotoBrowser.m */,
+				C5EFE7661F6034BA005E4894 /* HZPhotoBrowserConfig.h */,
+				C5EFE7671F6034BA005E4894 /* HZPhotoBrowserView.h */,
+				C5EFE7681F6034BA005E4894 /* HZPhotoBrowserView.m */,
+				C5EFE7691F6034BA005E4894 /* HZPhotoGroup.h */,
+				C5EFE76A1F6034BA005E4894 /* HZPhotoGroup.m */,
+				C5EFE76B1F6034BA005E4894 /* HZPhotoItem.h */,
+				C5EFE76C1F6034BA005E4894 /* HZPhotoItem.m */,
+				C5EFE76D1F6034BA005E4894 /* HZWaitingView.h */,
+				C5EFE76E1F6034BA005E4894 /* HZWaitingView.m */,
+			);
+			path = ptotoBrowser;
 			sourceTree = "<group>";
 		};
 		C5F4F8001F5D6AD4003330CC /* ReserverRecord */ = {
@@ -1789,6 +1837,7 @@
 				B0B0B59A1F287302002FE127 /* Thumbs.db in Resources */,
 				B0B0B5941F287302002FE127 /* 订单@2x.png in Resources */,
 				B0B0B59F1F287302002FE127 /* 订单@3x.png in Resources */,
+				C5EFE7771F603DEE005E4894 /* whiteplaceholder.png in Resources */,
 				B0B0B5991F287302002FE127 /* click首页@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1910,6 +1959,7 @@
 				B0F8EF8E1EF3C39F00F38770 /* Drawing-Gradient.m in Sources */,
 				B034BEC91CAA2052008E8006 /* UIImage+Utils.m in Sources */,
 				B0D26B021BDF7B920012A093 /* HWTableViewTextCell.m in Sources */,
+				C5EFE7741F6034BA005E4894 /* HZWaitingView.m in Sources */,
 				B0F8EF8C1EF3C39F00F38770 /* UIBezierPath+Elements.m in Sources */,
 				B0F6750B1F2A1A230019086E /* HWRegisterIdentifyCell.m in Sources */,
 				B0F674F91F291F660019086E /* HWRegisterPhoneCell.m in Sources */,
@@ -1947,6 +1997,7 @@
 				B0F674F61F291D950019086E /* HWRegisterViewController.m in Sources */,
 				C53BE1471F5A42BF00E466B7 /* LoginViewModel.m in Sources */,
 				B00A28851CF294C9002480FE /* HWHTTPSessionManger.m in Sources */,
+				C5EFE77A1F604781005E4894 /* PatientDetailSuggestDataSource.m in Sources */,
 				DA3DFF151ADE78ED00C4E99A /* HWBaseRefreshView.m in Sources */,
 				B0D26B0A1BDF7B920012A093 /* HWTableViewManger.m in Sources */,
 				7552CE2A1D1240CB00A557EA /* DLable.m in Sources */,
@@ -1998,11 +2049,15 @@
 				DA3DFF1C1ADE78ED00C4E99A /* UILabel+Utils.m in Sources */,
 				B0D26B091BDF7B920012A093 /* HWTitleAndLabelItem.m in Sources */,
 				C59083531F5EE2510000B58D /* PatientDetailAbstractCell.m in Sources */,
+				C5EFE7721F6034BA005E4894 /* HZPhotoGroup.m in Sources */,
+				C5EFE7731F6034BA005E4894 /* HZPhotoItem.m in Sources */,
 				B042FA1F1DF6912B0017F689 /* HWEmptyView.m in Sources */,
+				C5EFE7711F6034BA005E4894 /* HZPhotoBrowserView.m in Sources */,
 				DA3DFF221ADE78ED00C4E99A /* Utility.m in Sources */,
 				B0D26B011BDF7B920012A093 /* HWTableViewCell.m in Sources */,
 				C5F4F8091F5D6B6A003330CC /* ReserverRecordViewModel.m in Sources */,
 				DA3DFF161ADE78ED00C4E99A /* NSArray+Utils.m in Sources */,
+				C5EFE7701F6034BA005E4894 /* HZPhotoBrowser.m in Sources */,
 				DA3DFF191ADE78ED00C4E99A /* UIAlertView+Utils.m in Sources */,
 				7552CE291D1240CB00A557EA /* DImageV.m in Sources */,
 				C53BE14D1F5A73E000E466B7 /* HWRegisterInfoModel.m in Sources */,
@@ -2014,6 +2069,7 @@
 				C53BE13B1F5A32BF00E466B7 /* BaseListView.m in Sources */,
 				C5F4F8301F5D75E2003330CC /* JKRSearchBar.m in Sources */,
 				C24E7E051ADF887900BA8ECC /* HWBaseNavigationController.m in Sources */,
+				C5EFE77D1F604EA0005E4894 /* PatientDetailDateCell.m in Sources */,
 				DA3DFF451ADE7A8900C4E99A /* Reachability.m in Sources */,
 				B0B0B5401F276B65002FE127 /* HWPeopleCenterViewController.m in Sources */,
 				C53BE10E1F5A319B00E466B7 /* HWLoginTranstionAnimation.m in Sources */,

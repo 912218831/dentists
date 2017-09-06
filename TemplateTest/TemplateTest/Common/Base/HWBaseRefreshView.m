@@ -269,6 +269,12 @@
 }
 
 #pragma mark - tableViewDataSource
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (self.headerHeight == nil) {
+        return 0.000001;
+    }
+    return self.headerHeight(section);
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (self.cellHeight==nil) {
@@ -295,6 +301,12 @@
     return nil;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if (self.headerView) {
+        return self.headerView(section);
+    }
+    return nil;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (self.didSelected) {

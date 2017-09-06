@@ -54,6 +54,7 @@
 
 - (void)bindSignal {
     @weakify(self);
+    
     [self.imagesSignal subscribeNext:^(RACTuple *tuple) {
         @strongify(self);
         NSArray *images = [tuple allObjects];
@@ -65,9 +66,9 @@
             x =  kRate(15)+ col*(kPhotoWith+kPhotoSpaceX);
             y = kPhotoTitleY + row*(kPhotoHeight+kPhotoSpaceY);
             
-            UIImageView *imageView = [self.imageViewsArray pObjectAtIndex:i];
+            UIButton *imageView = [self.imageViewsArray pObjectAtIndex:i];
             if (!imageView) {
-                imageView = [UIImageView new];
+                imageView = [UIButton buttonWithType:UIButtonTypeCustom];
                 imageView.layer.cornerRadius = 3;
                 imageView.layer.masksToBounds = true;
                 imageView.layer.borderColor = UIColorFromRGB(0xcccccc).CGColor;
@@ -76,7 +77,10 @@
             }
             [self addSubview:imageView];
             imageView.frame = CGRectMake(x, y, kPhotoWith, kPhotoHeight);
-            [imageView sd_setImageWithURL:[NSURL URLWithString:images[i]]];
+            [imageView sd_setImageWithURL:[NSURL URLWithString:images[i]] forState:UIControlStateNormal];
+            [[imageView rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(id x) {
+                [self.imageTapCommand execute:@{@"index":@(i), @"images":images}];
+            }];
         }
         if (self.imageViewsArray.count > images.count) {
             [self.imageViewsArray removeObjectsInRange:NSMakeRange(images.count, self.imageViewsArray.count-images.count)];

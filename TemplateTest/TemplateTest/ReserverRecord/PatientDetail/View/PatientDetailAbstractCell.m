@@ -104,7 +104,30 @@
     
     self.confirmDateBtn.normalTitle = @"确认预约到2017-08-01";
     self.suggestDateBtn.normalTitle = @"建议其他时间";
+}
+
+- (void)setState:(int)state {
+    _state = state;
     
+    self.suggestDateBtn.hidden = state != 0;
+    [self.confirmDateBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        if (state == 0) {
+            make.left.right.height.equalTo(self.suggestDateBtn);
+            make.bottom.equalTo(self.suggestDateBtn.mas_top).with.offset(-kRate(10));
+        } else {
+            make.left.equalTo(self.contentV).with.offset(kRate(15));
+            make.right.equalTo(self.contentV).with.offset(-kRate(15));
+            make.height.mas_equalTo(kRate(41));
+            make.bottom.equalTo(self.contentV).with.offset(-kRate(20));
+        }
+    }];
+}
+
+- (void)bindSignal {
+    __block NSInteger count = 0;
+    self.suggestTapSignal = [[self.suggestDateBtn rac_signalForControlEvents:UIControlEventTouchUpInside]filter:^BOOL(id value) {
+        return (count++%2);
+    }];
 }
 
 @end

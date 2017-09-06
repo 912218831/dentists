@@ -83,7 +83,7 @@
     [self.loginBtn.rac_command.executionSignals subscribeNext:^(RACSignal *signal) {
         @strongify(self);
         [Utility showMBProgress:self.view message:nil];
-        [signal subscribeNext:^(id x) {
+        [signal subscribeError:^(id x) {
             NSLog(@"响应的数据=%@",x);
         }];
     }];

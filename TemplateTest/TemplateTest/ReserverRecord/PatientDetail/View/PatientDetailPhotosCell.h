@@ -16,4 +16,5 @@
 
 @interface PatientDetailPhotosCell : BaseListViewCell
 @property (nonatomic, strong) RACSignal *imagesSignal;
+@property (nonatomic, strong) RACCommand *imageTapCommand;
 @end

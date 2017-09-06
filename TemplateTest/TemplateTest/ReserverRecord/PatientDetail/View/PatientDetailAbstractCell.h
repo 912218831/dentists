@@ -9,5 +9,6 @@
 #import "BaseListViewCell.h"
 
 @interface PatientDetailAbstractCell : BaseListViewCell
-
+@property (nonatomic, strong) RACSignal *suggestTapSignal;
+@property (nonatomic, assign) int state;
 @end

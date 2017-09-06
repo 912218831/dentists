@@ -12,7 +12,7 @@
 @interface BaseListViewDataSource : NSObject <UITableViewDataSource,
                                             UITableViewDelegate>
 @property (nonatomic, strong, readonly) BaseListViewModel *viewModel;
-+ (instancetype)initWithViewModel:(BaseListViewModel *)viewModel
+- (instancetype)initWithViewModel:(BaseListViewModel *)viewModel
                   reuseIdentifier:(NSString *)identifier;
 
 - (void)handleTableViewDataSourceAndDelegate:(id)table;
