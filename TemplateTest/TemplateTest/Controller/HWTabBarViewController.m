@@ -9,7 +9,7 @@
 #import "HWTabBarViewController.h"
 #import "HomePageViewModel.h"
 #import "HWPeopleCenterViewController.h"
-#import "HWOrderViewController.h"
+#import "ReserverRecordViewModel.h"
 #import "HWCommissionViewController.h"
 #import "RDVTabBarItem.h"
 @interface HWTabBarViewController ()
@@ -32,7 +32,8 @@
     HomePageViewModel *hpViewModel = [[HomePageViewModel alloc]init];
     UIViewController *homePageController = [[ViewControllersRouter shareInstance]controllerMatchViewModel:hpViewModel];
     
-    UIViewController *secondViewController = [[HWOrderViewController alloc] init];
+    ReserverRecordViewModel *rrViewModel = [[ReserverRecordViewModel alloc]init];
+    UIViewController *secondViewController = [[ViewControllersRouter shareInstance]controllerMatchViewModel:rrViewModel];
     
     UIViewController *thirdViewController = [[HWCommissionViewController alloc] init];
     UIViewController *fourViewController = [[HWPeopleCenterViewController alloc] init];

@@ -28,7 +28,7 @@
             return [BaseViewController findBestViewController:svc.topViewController];
         else
             return vc;
-    } else if ([vc isKindOfClass:[UITabBarController class]]) {
+    } else if ([vc isKindOfClass:[UITabBarController class]]||[vc isKindOfClass:[HWTabBarViewController class]]) {
         // Return visible view
         UITabBarController *svc = (UITabBarController *) vc;
         if (svc.viewControllers.count > 0)

@@ -52,7 +52,7 @@
 
 - (void)backMethod
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [[ViewControllersRouter shareInstance]popViewModelAnimated:YES];
     
 }
 

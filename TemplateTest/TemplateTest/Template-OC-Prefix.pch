@@ -15,6 +15,7 @@
 #ifdef __OBJC__
 
     #import "Define.h"
+    #import "Constant.h"
     #import "HWRequestConfig.h"
     #import "Utility.h"
     #import "Category.h"

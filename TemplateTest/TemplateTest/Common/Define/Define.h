@@ -332,16 +332,11 @@ typedef enum
 #define kPhone6Length(length)           ([UIScreen mainScreen].bounds.size.height / 667.0f) * length
 #define kPhone6WidthLength(length)      ([UIScreen mainScreen].bounds.size.width / 375.0f) * length
 
-/*用到的静态文本*/
-/*首页*/
-#define kHomePage_TITLE1    @"今日概况"
-#define kHomePage_TITLE2    @"未来一周预约情况"
-
-
 /*ViewModel 所有的类名*/
-#define kHomePageVM    @"HomePageViewModel"
-#define kLoginVM       @"LoginViewModel"
-
-
+#define kHomePageVM             @"HomePageViewModel"
+#define kLoginVM                @"LoginViewModel"
+#define kReserverRecordVM       @"ReserverRecordViewModel"
+#define kReserverRecordSearchVM @"RRSearchResultViewModel"
+#define kReserverRecordDetailVM @"PatientDetailViewModel"
 #endif
 

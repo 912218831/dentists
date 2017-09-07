@@ -14,3 +14,4 @@ git rm -r --cached .DS_Store
 3.  git add -u   保存修改和删除，但是不包括新建文件
 
 git rebase 命令
+	可以实现合并的功能

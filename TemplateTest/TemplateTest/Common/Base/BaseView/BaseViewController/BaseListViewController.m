@@ -26,7 +26,7 @@
         self.viewModel = [[BaseListViewModel alloc]init];
     }
     
-    self.dataSource = [BaseListViewDataSource initWithViewModel:(BaseListViewModel *)self.viewModel reuseIdentifier:@"BaseListViewCell"];
+    self.dataSource = [[BaseListViewDataSource alloc ]initWithViewModel:(BaseListViewModel *)self.viewModel reuseIdentifier:@"BaseListViewCell"];
     [self.dataSource handleTableViewDataSourceAndDelegate:self.listView];
     
     

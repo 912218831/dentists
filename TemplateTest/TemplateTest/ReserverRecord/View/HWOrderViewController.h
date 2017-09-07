@@ -6,9 +6,9 @@
 //  Copyright © 2017年 caijingpeng.haowu. All rights reserved.
 //
 
-#import "HWBaseViewController.h"
+#import "BaseViewController.h"
 
-@interface HWOrderViewController : HWBaseViewController
+@interface HWOrderViewController : BaseViewController
 @property(assign,nonatomic)BOOL canBack;
 
 @end

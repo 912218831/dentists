@@ -533,7 +533,7 @@
 {
     UIButton * leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
     leftButton.frame = CGRectMake(0, 0, 22, 40);
-    [leftButton setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+    [leftButton setImage:[UIImage imageNamed:@"TOP_ARROW"] forState:UIControlStateNormal];
     leftButton.imageEdgeInsets = UIEdgeInsetsMake(0, -16, 0, 0);
     [leftButton addTarget:_target action:selector forControlEvents:UIControlEventTouchUpInside];
     
