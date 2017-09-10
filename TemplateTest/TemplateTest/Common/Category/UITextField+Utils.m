@@ -40,8 +40,13 @@ static char HWTextFieldLimitNumber;
 - (void)setAttributedStr:(NSString *)attributedStr {
     // 占位符
     NSString *str = attributedStr ;
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc]init];
+    style.alignment = NSTextAlignmentLeft;
+    style.minimumLineHeight = self.font.lineHeight;
+    
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:str];
-    [attributedString setAttributes:@{NSFontAttributeName:FONT(28/2.0),NSForegroundColorAttributeName:COLOR_999999} range:NSMakeRange(0, str.length)];
+    [attributedString setAttributes:@{NSFontAttributeName:FONT(28/2.0),NSForegroundColorAttributeName:COLOR_999999,
+        NSParagraphStyleAttributeName:style} range:NSMakeRange(0, str.length)];
     self.attributedPlaceholder = attributedString;
 }
 

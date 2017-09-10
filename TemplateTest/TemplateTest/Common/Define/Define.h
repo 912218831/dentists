@@ -338,5 +338,7 @@ typedef enum
 #define kReserverRecordVM       @"ReserverRecordViewModel"
 #define kReserverRecordSearchVM @"RRSearchResultViewModel"
 #define kReserverRecordDetailVM @"PatientDetailViewModel"
+#define kPeopleCenterVM         @"HWPeopleCenterViewModel"
+#define kSetPwdVM               @"SetPasswordViewModel"
 #endif
 

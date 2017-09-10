@@ -8,15 +8,16 @@
 
 #import "PatientDetailSuggestDataSource.h"
 #import "PatientDetailDateCell.h"
+#import "GFCalendar.h"
 
 @implementation PatientDetailSuggestDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return section==0?1:2;
+    return section==0?1:(section==1?2:1);
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -61,13 +62,34 @@
         }
             break;
             
-        default:
+        case 1:
         {
             NSString *cellId = @"PatientDetailDateCell";
             PatientDetailDateCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
             if (cell == nil) {
                 cell = [[PatientDetailDateCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                [cell bindSignal];
             }
+            return cell;
+        }
+            break;
+        default:
+        {
+            NSString *cellId = @"PatientDetailCalendarCell";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+            if (cell == nil) {
+                cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+            }
+            cell.backgroundColor = [UIColor clearColor];
+            CGFloat width = kScreenWidth - kRate(30.0);
+            CGPoint origin = CGPointMake(kRate(15), kRate(10));
+            GFCalendarView *calendar = [[GFCalendarView alloc] initWithFrameOrigin:origin width:width];
+            calendar.calendarBasicColor = CD_MainColor;
+            calendar.didSelectDayHandler = ^(NSInteger year, NSInteger month, NSInteger day) {
+                
+            };
+            calendar.backgroundColor = COLOR_FFFFFF;
+            [cell addSubview:calendar];
             return cell;
         }
             break;

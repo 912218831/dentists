@@ -30,7 +30,7 @@ PODS:
   - AsyncDisplayKit/ASDealloc2MainObject (1.9.3)
   - HMSegmentedControl (1.5.4)
   - iCarousel (1.8.3)
-  - IQKeyboardManager (3.3.4)
+  - IQKeyboardManager (4.0.13)
   - JCore (1.1.5)
   - JPush (3.0.6):
     - JCore (~> 1.1.1)
@@ -111,7 +111,7 @@ DEPENDENCIES:
   - AsyncDisplayKit (= 1.9.3)
   - HMSegmentedControl (~> 1.5.2)
   - iCarousel (~> 1.8.2)
-  - IQKeyboardManager (= 3.3.4)
+  - IQKeyboardManager (~> 4.0.13)
   - JPush (~> 3.0.6)
   - libextobjc (~> 0.4.1)
   - MagicalRecord (~> 2.3.2)
@@ -140,7 +140,7 @@ SPEC CHECKSUMS:
   AsyncDisplayKit: 87d340329280dba0363da3587a43f9d1bbe62aac
   HMSegmentedControl: b25bc4ec44766e073d62c473188fb354ee244b76
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
-  IQKeyboardManager: ac803e61e5b50efae6b3aeedd95a02c7c7d3b2b3
+  IQKeyboardManager: 8eab4d8111418414619d1df8e4779ce5d0f8d7e2
   JCore: 9bd9c770c877c583d98b90a68792b8361974c231
   JPush: c41be50eb1a574a66aeb68d237f00a4ec6ec3a82
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
@@ -162,6 +162,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: dee3de814917aa983c7632afe2fca3726a48d8b4
+PODFILE CHECKSUM: 0dee935085d02ec36c89522a3e5bc7c1e96d3399
 
 COCOAPODS: 1.1.1

@@ -586,11 +586,11 @@
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = CGRectMake(-100, 0, [Utility calculateStringSize:title font:FONT(15) constrainedSize:CGSizeMake(1000, 44)].width, 44);
     [btn setTitle:title forState:UIControlStateNormal];
-    btn.titleLabel.font = FONT(15);
+    btn.titleLabel.font = FONT(TF17);
     btn.titleLabel.textAlignment = NSTextAlignmentLeft;
     btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     [btn sizeToFit];
-    [btn setTitleColor:CD_MainColor forState:UIControlStateNormal];
+    [btn setTitleColor:COLOR_FFFFFF forState:UIControlStateNormal];
     [btn addTarget:_target action:selector forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:btn];
     return item;

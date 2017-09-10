@@ -34,6 +34,9 @@
     CGContextBeginPath(context);
     CGContextSetLineWidth(context, (self.direction==Vertical)?rect.size.width:rect.size.height);
     CGContextSetStrokeColorWithColor(context, self.strokeColor.CGColor);
+    if (self.lineHeight==0&&self.space==0) {
+        self.lineHeight = (self.direction==Vertical)?rect.size.height:rect.size.width;
+    }
     CGFloat lengths[] = {self.lineHeight, self.space};
     CGContextSetLineDash(context, 0, lengths, 2);
     CGContextMoveToPoint(context, 0, 0);

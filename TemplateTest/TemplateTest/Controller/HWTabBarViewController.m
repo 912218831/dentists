@@ -8,7 +8,7 @@
 
 #import "HWTabBarViewController.h"
 #import "HomePageViewModel.h"
-#import "HWPeopleCenterViewController.h"
+#import "HWPeopleCenterViewModel.h"
 #import "ReserverRecordViewModel.h"
 #import "HWCommissionViewController.h"
 #import "RDVTabBarItem.h"
@@ -36,7 +36,9 @@
     UIViewController *secondViewController = [[ViewControllersRouter shareInstance]controllerMatchViewModel:rrViewModel];
     
     UIViewController *thirdViewController = [[HWCommissionViewController alloc] init];
-    UIViewController *fourViewController = [[HWPeopleCenterViewController alloc] init];
+    
+    HWPeopleCenterViewModel *pcViewModel = [[HWPeopleCenterViewModel alloc]init];
+    UIViewController *fourViewController = [[ViewControllersRouter shareInstance]controllerMatchViewModel:pcViewModel];
     
     
     HWBaseNavigationController * firstNav = [[HWBaseNavigationController alloc] initWithRootViewController:homePageController];
@@ -47,12 +49,11 @@
     [self setViewControllers:@[firstNav, secondNav,
                                thirdNav,fourNav]];
     [self customizeTabBarForController];
-
 }
 
 - (void)customizeTabBarForController{
     UIImage *finishedImage = [UIImage imageNamed:@"tabbar_selected_background"];
-    UIImage *unfinishedImage = [UIImage imageNamed:@"tabbar_normal_background"];
+    UIImage *unfinishedImage = [Utility imageWithColor:COLOR_FFFFFF andSize:CGSizeMake(1, 1)];//[UIImage imageNamed:@"tabbar_normal_background"];
     
     NSArray *unSelectedImages = @[@"首页", @"订单", @"提成",@"我的"];
     NSArray * titles = @[@"首页",@"我的病人",@"咨询解答",@"设置"];

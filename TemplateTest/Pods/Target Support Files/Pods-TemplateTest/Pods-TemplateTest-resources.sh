@@ -75,7 +75,7 @@ EOM
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "AMap3DMap/MAMapKit.framework/AMap.bundle"
-  install_resource "IQKeyboardManager/IQKeyBoardManager/Resources/IQKeyboardManager.bundle"
+  install_resource "IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "UMengFeedback/UMFeedback_iOS_2.3.4/UMengFeedback_SDK/zh-Hans.lproj/UMFeedbackLocalizable.strings"
   install_resource "UMengFeedback/UMFeedback_iOS_2.3.4/UMengFeedback_SDK/Resources/bubble_min@2x.png"
@@ -109,7 +109,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "AMap3DMap/MAMapKit.framework/AMap.bundle"
-  install_resource "IQKeyboardManager/IQKeyBoardManager/Resources/IQKeyboardManager.bundle"
+  install_resource "IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "UMengFeedback/UMFeedback_iOS_2.3.4/UMengFeedback_SDK/zh-Hans.lproj/UMFeedbackLocalizable.strings"
   install_resource "UMengFeedback/UMFeedback_iOS_2.3.4/UMengFeedback_SDK/Resources/bubble_min@2x.png"

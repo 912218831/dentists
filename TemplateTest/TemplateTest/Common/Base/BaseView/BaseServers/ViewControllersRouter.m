@@ -52,7 +52,9 @@ static ViewControllersRouter *router;
              kHomePageVM:objc_getClass(kHomePageVM.UTF8String),
              kReserverRecordVM:objc_getClass(kReserverRecordVM.UTF8String),
              kReserverRecordSearchVM:objc_getClass(kReserverRecordSearchVM.UTF8String),
-             kReserverRecordDetailVM:objc_getClass(kReserverRecordDetailVM.UTF8String)
+             kReserverRecordDetailVM:objc_getClass(kReserverRecordDetailVM.UTF8String),
+             kPeopleCenterVM:objc_getClass(kPeopleCenterVM.UTF8String),
+             kSetPwdVM:objc_getClass(kSetPwdVM.UTF8String)
              };
 }
 
@@ -62,7 +64,9 @@ static ViewControllersRouter *router;
              kHomePageVM:objc_getClass("HWHomePageViewController"),
              kReserverRecordVM:objc_getClass("HWOrderViewController"),
              kReserverRecordSearchVM:objc_getClass("RRSearchResultVC"),
-             kReserverRecordDetailVM:objc_getClass("PatientDetailViewController")
+             kReserverRecordDetailVM:objc_getClass("PatientDetailViewController"),
+             kPeopleCenterVM:objc_getClass("HWPeopleCenterViewController"),
+             kSetPwdVM:objc_getClass("SetPasswordViewController")
              };
 }
 

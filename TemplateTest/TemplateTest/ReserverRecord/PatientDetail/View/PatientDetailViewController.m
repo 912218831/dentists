@@ -35,14 +35,14 @@
     
     self.navigationItem.titleView = [Utility navTitleView:self.viewModel.patientName];
     
-    self.listView = [[HWBaseRefreshView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height-64)];
+    self.listView = [[HWBaseRefreshView alloc]initWithGroupFrame:CGRectMake(0, 0, self.view.width, self.view.height-64)];
     [self addSubview:self.listView];
     @weakify(self);
     self.listView.cellHeight = ^(NSIndexPath *indexPath) {
         @strongify(self);
         switch (indexPath.row) {
             case 0:
-                return self.state==0?(CGFloat)kRate(223):(indexPath.section==0?(CGFloat)kRate(344/2.0):kRate(238/2.0+10));
+                return self.state==0?(CGFloat)kRate(223):(indexPath.section==0?(CGFloat)kRate(344/2.0):(indexPath.section==1?kRate(238/2.0+10):kRate(305)));
                 break;
                 
             default:{

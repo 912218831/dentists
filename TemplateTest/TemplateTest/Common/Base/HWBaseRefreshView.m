@@ -269,6 +269,13 @@
 }
 
 #pragma mark - tableViewDataSource
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    if (self.footerHeight == nil) {
+        return 0.000001;
+    }
+    return self.footerHeight(section);
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (self.headerHeight == nil) {
         return 0.000001;

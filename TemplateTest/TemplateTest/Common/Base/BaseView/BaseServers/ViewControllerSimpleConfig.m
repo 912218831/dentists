@@ -27,7 +27,9 @@
     return @{
              kHomePageVM:self.homePage,
              kReserverRecordVM:self.reserverRecord,
-             kReserverRecordDetailVM:self.reserverDetail
+             kReserverRecordDetailVM:self.reserverDetail,
+             kPeopleCenterVM:self.peopleCenter,
+             kSetPwdVM:self.setPassword
              };
 }
 
@@ -53,6 +55,19 @@
 
 + (NSDictionary *)reserverDetail {
     return @{
+             @"leftImageName":@"TOP_ARROW",
+             };
+}
+
++ (NSDictionary *)peopleCenter {
+    return @{
+             @"title":@"设置",
+             };
+}
+
++ (NSDictionary *)setPassword {
+    return @{
+             @"title":@"设置密码",
              @"leftImageName":@"TOP_ARROW",
              };
 }

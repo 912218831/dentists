@@ -49,13 +49,17 @@
 #define kPeopleCenter               AppendHTML(@"/Member/Index")     //个人中心
 #define kProductCenter              AppendHTML(@"/Products/Index")    //产品中心
 
-#define kLoginGainVertifyCode       @"" //获取验证码
-#define kLoginApp                   @"" //登录
-#define kHomePageInformation        @"" //首页数据
+#define kLoginGainVertifyCode        @"" //获取验证码
+#define kLoginApp                    @"" //登录
+#define kHomePageInformation         @"" //首页数据
 
-#define kReserverRecordList         @"" // 预约记录列表
-#define kReserverRecordSearch       @"" // 预约记录搜索
-#define kReserverRecordDetail       @"" // 预约病人详情
+#define kReserverRecordList          @"" // 预约记录列表
+#define kReserverRecordSearch        @"" // 预约记录搜索
+#define kReserverRecordDetail        @"" // 预约病人详情
+
+#define kPersonCenterInfo            @"" // 设置--
+#define kPersonCenterChangePwd       @"" // 设置--设置密码
+#define kPersonCenterGainVertifyCode kLoginGainVertifyCode // 设置--设置密码--获取验证码
 #endif
 
 

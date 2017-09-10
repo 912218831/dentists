@@ -48,7 +48,6 @@
 		B0B0B5381F2766E6002FE127 /* RDVTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B0B5331F2766E6002FE127 /* RDVTabBar.m */; };
 		B0B0B5391F2766E6002FE127 /* RDVTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B0B5351F2766E6002FE127 /* RDVTabBarController.m */; };
 		B0B0B53A1F2766E6002FE127 /* RDVTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B0B5371F2766E6002FE127 /* RDVTabBarItem.m */; };
-		B0B0B5401F276B65002FE127 /* HWPeopleCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B0B53F1F276B65002FE127 /* HWPeopleCenterViewController.m */; };
 		B0B0B5461F276BB0002FE127 /* HWCommissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B0B5451F276BB0002FE127 /* HWCommissionViewController.m */; };
 		B0B0B5621F276EAA002FE127 /* navigationbar_background_tall.png in Resources */ = {isa = PBXBuildFile; fileRef = B0B0B54E1F276EAA002FE127 /* navigationbar_background_tall.png */; };
 		B0B0B5631F276EAA002FE127 /* navigationbar_background_tall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0B0B54F1F276EAA002FE127 /* navigationbar_background_tall@2x.png */; };
@@ -133,6 +132,11 @@
 		C28BACB31B16B8C90048DE0A /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = C28BAC3B1B16B8C80048DE0A /* mztools.c */; };
 		C28BACB41B16B8C90048DE0A /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = C28BAC3D1B16B8C80048DE0A /* unzip.c */; };
 		C28BACB51B16B8C90048DE0A /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = C28BAC3F1B16B8C80048DE0A /* zip.c */; };
+		C504F6C31F619D90001F6081 /* GFCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C504F6BA1F619D90001F6081 /* GFCalendarCell.m */; };
+		C504F6C41F619D90001F6081 /* GFCalendarMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = C504F6BC1F619D90001F6081 /* GFCalendarMonth.m */; };
+		C504F6C51F619D90001F6081 /* GFCalendarScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C504F6BE1F619D90001F6081 /* GFCalendarScrollView.m */; };
+		C504F6C61F619D90001F6081 /* GFCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = C504F6C01F619D90001F6081 /* GFCalendarView.m */; };
+		C504F6C71F619D90001F6081 /* NSDate+GFCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = C504F6C21F619D90001F6081 /* NSDate+GFCalendar.m */; };
 		C53629081F5EEAE700F14E38 /* PatientDetailPhotosCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C53629071F5EEAE700F14E38 /* PatientDetailPhotosCell.m */; };
 		C53BE10E1F5A319B00E466B7 /* HWLoginTranstionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = C53BE1031F5A319B00E466B7 /* HWLoginTranstionAnimation.m */; };
 		C53BE10F1F5A319B00E466B7 /* HWLoginTranstionAnimationRevert.m in Sources */ = {isa = PBXBuildFile; fileRef = C53BE1051F5A319B00E466B7 /* HWLoginTranstionAnimationRevert.m */; };
@@ -175,6 +179,12 @@
 		C59083501F5EDC810000B58D /* TOP_ARROW@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C590834F1F5EDC810000B58D /* TOP_ARROW@2x.png */; };
 		C59083531F5EE2510000B58D /* PatientDetailAbstractCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C59083521F5EE2510000B58D /* PatientDetailAbstractCell.m */; };
 		C59C42F31F5C0B0500A4A855 /* HPSiderbar.m in Sources */ = {isa = PBXBuildFile; fileRef = C59C42F21F5C0B0500A4A855 /* HPSiderbar.m */; };
+		C5A269351F651700002EC244 /* HWPeopleCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A269341F651700002EC244 /* HWPeopleCenterViewController.m */; };
+		C5A269381F651716002EC244 /* HWPeopleCenterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A269371F651716002EC244 /* HWPeopleCenterViewModel.m */; };
+		C5A2693B1F651D68002EC244 /* HWPeopleCenterHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A2693A1F651D68002EC244 /* HWPeopleCenterHeadView.m */; };
+		C5A2693E1F651E65002EC244 /* HWPeopleCenterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A2693D1F651E65002EC244 /* HWPeopleCenterCell.m */; };
+		C5A269451F653422002EC244 /* SetPasswordViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A269441F653422002EC244 /* SetPasswordViewModel.m */; };
+		C5A269481F653436002EC244 /* SetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A269471F653436002EC244 /* SetPasswordViewController.m */; };
 		C5EFE7701F6034BA005E4894 /* HZPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EFE7651F6034BA005E4894 /* HZPhotoBrowser.m */; };
 		C5EFE7711F6034BA005E4894 /* HZPhotoBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EFE7681F6034BA005E4894 /* HZPhotoBrowserView.m */; };
 		C5EFE7721F6034BA005E4894 /* HZPhotoGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EFE76A1F6034BA005E4894 /* HZPhotoGroup.m */; };
@@ -319,8 +329,6 @@
 		B0B0B5351F2766E6002FE127 /* RDVTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBarController.m; sourceTree = "<group>"; };
 		B0B0B5361F2766E6002FE127 /* RDVTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBarItem.h; sourceTree = "<group>"; };
 		B0B0B5371F2766E6002FE127 /* RDVTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBarItem.m; sourceTree = "<group>"; };
-		B0B0B53E1F276B65002FE127 /* HWPeopleCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWPeopleCenterViewController.h; sourceTree = "<group>"; };
-		B0B0B53F1F276B65002FE127 /* HWPeopleCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWPeopleCenterViewController.m; sourceTree = "<group>"; };
 		B0B0B5441F276BB0002FE127 /* HWCommissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWCommissionViewController.h; sourceTree = "<group>"; };
 		B0B0B5451F276BB0002FE127 /* HWCommissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWCommissionViewController.m; sourceTree = "<group>"; };
 		B0B0B54E1F276EAA002FE127 /* navigationbar_background_tall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationbar_background_tall.png; sourceTree = "<group>"; };
@@ -460,6 +468,17 @@
 		C28BAC3F1B16B8C80048DE0A /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
 		C28BAC401B16B8C80048DE0A /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
 		C28BACED1B16B9930048DE0A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		C504F6B81F619D90001F6081 /* GFCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCalendar.h; sourceTree = "<group>"; };
+		C504F6B91F619D90001F6081 /* GFCalendarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCalendarCell.h; sourceTree = "<group>"; };
+		C504F6BA1F619D90001F6081 /* GFCalendarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFCalendarCell.m; sourceTree = "<group>"; };
+		C504F6BB1F619D90001F6081 /* GFCalendarMonth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCalendarMonth.h; sourceTree = "<group>"; };
+		C504F6BC1F619D90001F6081 /* GFCalendarMonth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFCalendarMonth.m; sourceTree = "<group>"; };
+		C504F6BD1F619D90001F6081 /* GFCalendarScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCalendarScrollView.h; sourceTree = "<group>"; };
+		C504F6BE1F619D90001F6081 /* GFCalendarScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFCalendarScrollView.m; sourceTree = "<group>"; };
+		C504F6BF1F619D90001F6081 /* GFCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCalendarView.h; sourceTree = "<group>"; };
+		C504F6C01F619D90001F6081 /* GFCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFCalendarView.m; sourceTree = "<group>"; };
+		C504F6C11F619D90001F6081 /* NSDate+GFCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+GFCalendar.h"; sourceTree = "<group>"; };
+		C504F6C21F619D90001F6081 /* NSDate+GFCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+GFCalendar.m"; sourceTree = "<group>"; };
 		C53629061F5EEAE700F14E38 /* PatientDetailPhotosCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientDetailPhotosCell.h; sourceTree = "<group>"; };
 		C53629071F5EEAE700F14E38 /* PatientDetailPhotosCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientDetailPhotosCell.m; sourceTree = "<group>"; };
 		C53BE1021F5A319B00E466B7 /* HWLoginTranstionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWLoginTranstionAnimation.h; sourceTree = "<group>"; };
@@ -543,6 +562,18 @@
 		C59083521F5EE2510000B58D /* PatientDetailAbstractCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientDetailAbstractCell.m; sourceTree = "<group>"; };
 		C59C42F11F5C0B0500A4A855 /* HPSiderbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSiderbar.h; sourceTree = "<group>"; };
 		C59C42F21F5C0B0500A4A855 /* HPSiderbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSiderbar.m; sourceTree = "<group>"; };
+		C5A269331F651700002EC244 /* HWPeopleCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWPeopleCenterViewController.h; sourceTree = "<group>"; };
+		C5A269341F651700002EC244 /* HWPeopleCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWPeopleCenterViewController.m; sourceTree = "<group>"; };
+		C5A269361F651716002EC244 /* HWPeopleCenterViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWPeopleCenterViewModel.h; sourceTree = "<group>"; };
+		C5A269371F651716002EC244 /* HWPeopleCenterViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWPeopleCenterViewModel.m; sourceTree = "<group>"; };
+		C5A269391F651D68002EC244 /* HWPeopleCenterHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWPeopleCenterHeadView.h; sourceTree = "<group>"; };
+		C5A2693A1F651D68002EC244 /* HWPeopleCenterHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWPeopleCenterHeadView.m; sourceTree = "<group>"; };
+		C5A2693C1F651E65002EC244 /* HWPeopleCenterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWPeopleCenterCell.h; sourceTree = "<group>"; };
+		C5A2693D1F651E65002EC244 /* HWPeopleCenterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWPeopleCenterCell.m; sourceTree = "<group>"; };
+		C5A269431F653422002EC244 /* SetPasswordViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPasswordViewModel.h; sourceTree = "<group>"; };
+		C5A269441F653422002EC244 /* SetPasswordViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPasswordViewModel.m; sourceTree = "<group>"; };
+		C5A269461F653436002EC244 /* SetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPasswordViewController.h; sourceTree = "<group>"; };
+		C5A269471F653436002EC244 /* SetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPasswordViewController.m; sourceTree = "<group>"; };
 		C5EFE7641F6034BA005E4894 /* HZPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPhotoBrowser.h; sourceTree = "<group>"; };
 		C5EFE7651F6034BA005E4894 /* HZPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZPhotoBrowser.m; sourceTree = "<group>"; };
 		C5EFE7661F6034BA005E4894 /* HZPhotoBrowserConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPhotoBrowserConfig.h; sourceTree = "<group>"; };
@@ -734,8 +765,6 @@
 			children = (
 				C53BE16C1F5AFDD100E466B7 /* HWTabBarViewController.h */,
 				C53BE16D1F5AFDD100E466B7 /* HWTabBarViewController.m */,
-				B0B0B53E1F276B65002FE127 /* HWPeopleCenterViewController.h */,
-				B0B0B53F1F276B65002FE127 /* HWPeopleCenterViewController.m */,
 				B0B0B5441F276BB0002FE127 /* HWCommissionViewController.h */,
 				B0B0B5451F276BB0002FE127 /* HWCommissionViewController.m */,
 				B0F6752C1F2BCDCA0019086E /* HWGuideViewController.h */,
@@ -1066,6 +1095,7 @@
 			isa = PBXGroup;
 			children = (
 				D2401FDB1E238EC90098B49E /* TemplateTest.entitlements */,
+				C5A2692F1F6516CC002EC244 /* PeopleCenter */,
 				C5F4F8001F5D6AD4003330CC /* ReserverRecord */,
 				C53BE1621F5AFD5B00E466B7 /* HomePage */,
 				C55A89271F5850CF00935B5B /* Login */,
@@ -1160,6 +1190,7 @@
 		C24E7DDC1ADE5E9700BA8ECC /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				C504F6B71F619D90001F6081 /* GFCalendar */,
 				C5EFE7631F6034BA005E4894 /* ptotoBrowser */,
 				C5F4F8271F5D75E2003330CC /* SearchController */,
 				B0B0B5311F2766E6002FE127 /* RDVTabBarController */,
@@ -1185,6 +1216,24 @@
 				C28BAC401B16B8C80048DE0A /* zip.h */,
 			);
 			path = minizip;
+			sourceTree = "<group>";
+		};
+		C504F6B71F619D90001F6081 /* GFCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				C504F6B81F619D90001F6081 /* GFCalendar.h */,
+				C504F6B91F619D90001F6081 /* GFCalendarCell.h */,
+				C504F6BA1F619D90001F6081 /* GFCalendarCell.m */,
+				C504F6BB1F619D90001F6081 /* GFCalendarMonth.h */,
+				C504F6BC1F619D90001F6081 /* GFCalendarMonth.m */,
+				C504F6BD1F619D90001F6081 /* GFCalendarScrollView.h */,
+				C504F6BE1F619D90001F6081 /* GFCalendarScrollView.m */,
+				C504F6BF1F619D90001F6081 /* GFCalendarView.h */,
+				C504F6C01F619D90001F6081 /* GFCalendarView.m */,
+				C504F6C11F619D90001F6081 /* NSDate+GFCalendar.h */,
+				C504F6C21F619D90001F6081 /* NSDate+GFCalendar.m */,
+			);
+			path = GFCalendar;
 			sourceTree = "<group>";
 		};
 		C53BE1011F5A319B00E466B7 /* Controller */ = {
@@ -1402,6 +1451,81 @@
 				C59083481F5ED7410000B58D /* PatientDetailViewModel.m */,
 				C5EFE7781F604781005E4894 /* PatientDetailSuggestDataSource.h */,
 				C5EFE7791F604781005E4894 /* PatientDetailSuggestDataSource.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C5A2692F1F6516CC002EC244 /* PeopleCenter */ = {
+			isa = PBXGroup;
+			children = (
+				C5A2693F1F653407002EC244 /* SetPassword */,
+				C5A269301F6516CC002EC244 /* Model */,
+				C5A269311F6516CC002EC244 /* View */,
+				C5A269321F6516CC002EC244 /* ViewModel */,
+			);
+			path = PeopleCenter;
+			sourceTree = "<group>";
+		};
+		C5A269301F6516CC002EC244 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C5A269311F6516CC002EC244 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5A269331F651700002EC244 /* HWPeopleCenterViewController.h */,
+				C5A269341F651700002EC244 /* HWPeopleCenterViewController.m */,
+				C5A269391F651D68002EC244 /* HWPeopleCenterHeadView.h */,
+				C5A2693A1F651D68002EC244 /* HWPeopleCenterHeadView.m */,
+				C5A2693C1F651E65002EC244 /* HWPeopleCenterCell.h */,
+				C5A2693D1F651E65002EC244 /* HWPeopleCenterCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5A269321F6516CC002EC244 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C5A269361F651716002EC244 /* HWPeopleCenterViewModel.h */,
+				C5A269371F651716002EC244 /* HWPeopleCenterViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C5A2693F1F653407002EC244 /* SetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				C5A269401F653407002EC244 /* Model */,
+				C5A269411F653407002EC244 /* View */,
+				C5A269421F653407002EC244 /* ViewModel */,
+			);
+			path = SetPassword;
+			sourceTree = "<group>";
+		};
+		C5A269401F653407002EC244 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C5A269411F653407002EC244 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5A269461F653436002EC244 /* SetPasswordViewController.h */,
+				C5A269471F653436002EC244 /* SetPasswordViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5A269421F653407002EC244 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C5A269431F653422002EC244 /* SetPasswordViewModel.h */,
+				C5A269441F653422002EC244 /* SetPasswordViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1953,14 +2077,17 @@
 				C53BE17E1F5BBDDF00E466B7 /* DoubleLabelButton.m in Sources */,
 				C53BE1391F5A32BF00E466B7 /* BaseListViewController.m in Sources */,
 				C53BE1681F5AFD5B00E466B7 /* HWHomePageViewController.m in Sources */,
+				C5A2693E1F651E65002EC244 /* HWPeopleCenterCell.m in Sources */,
 				C53BE1871F5BC22C00E466B7 /* HPTReservationPeopleCell.m in Sources */,
 				B0D26B031BDF7B920012A093 /* HWTitleAndLabelCell.m in Sources */,
 				C53BE13D1F5A32BF00E466B7 /* BaseView.m in Sources */,
 				B0F8EF8E1EF3C39F00F38770 /* Drawing-Gradient.m in Sources */,
 				B034BEC91CAA2052008E8006 /* UIImage+Utils.m in Sources */,
 				B0D26B021BDF7B920012A093 /* HWTableViewTextCell.m in Sources */,
+				C5A269451F653422002EC244 /* SetPasswordViewModel.m in Sources */,
 				C5EFE7741F6034BA005E4894 /* HZWaitingView.m in Sources */,
 				B0F8EF8C1EF3C39F00F38770 /* UIBezierPath+Elements.m in Sources */,
+				C504F6C31F619D90001F6081 /* GFCalendarCell.m in Sources */,
 				B0F6750B1F2A1A230019086E /* HWRegisterIdentifyCell.m in Sources */,
 				B0F674F91F291F660019086E /* HWRegisterPhoneCell.m in Sources */,
 				B0B0B5461F276BB0002FE127 /* HWCommissionViewController.m in Sources */,
@@ -1971,6 +2098,7 @@
 				C5F2BE081F5ECEC70012DE67 /* RRSearchResultVC.m in Sources */,
 				C53BE1401F5A32BF00E466B7 /* BaseViewModel.m in Sources */,
 				C5F4F8061F5D6B28003330CC /* HWOrderViewController.m in Sources */,
+				C5A269351F651700002EC244 /* HWPeopleCenterViewController.m in Sources */,
 				C24E7DAD1ADE51AA00BA8ECC /* AppDelegate.m in Sources */,
 				C53BE1901F5BE7DB00E466B7 /* HPReserverPeopleModel.m in Sources */,
 				C53BE18D1F5BE6B800E466B7 /* HPFReserverPeopleCell.m in Sources */,
@@ -1981,6 +2109,7 @@
 				DA3DFF1B1ADE78ED00C4E99A /* UIDevice+Utils.m in Sources */,
 				C55A891F1F583BA100935B5B /* HWLoginUser+CoreDataProperties.m in Sources */,
 				C55A891E1F583BA100935B5B /* HWLoginUser+CoreDataClass.m in Sources */,
+				C504F6C61F619D90001F6081 /* GFCalendarView.m in Sources */,
 				C53BE1351F5A32BF00E466B7 /* BaseListItemModel.m in Sources */,
 				C53BE18A1F5BD12800E466B7 /* DashLineView.m in Sources */,
 				C53629081F5EEAE700F14E38 /* PatientDetailPhotosCell.m in Sources */,
@@ -2000,6 +2129,7 @@
 				C5EFE77A1F604781005E4894 /* PatientDetailSuggestDataSource.m in Sources */,
 				DA3DFF151ADE78ED00C4E99A /* HWBaseRefreshView.m in Sources */,
 				B0D26B0A1BDF7B920012A093 /* HWTableViewManger.m in Sources */,
+				C5A269481F653436002EC244 /* SetPasswordViewController.m in Sources */,
 				7552CE2A1D1240CB00A557EA /* DLable.m in Sources */,
 				C53BE10F1F5A319B00E466B7 /* HWLoginTranstionAnimationRevert.m in Sources */,
 				B0F8EF8A1EF3C39F00F38770 /* BezierFunctions.m in Sources */,
@@ -2013,6 +2143,7 @@
 				B0D26AFD1BDF7B920012A093 /* HWCountDownCell.m in Sources */,
 				B0DD00141BF42729003FBDA2 /* WXImageView.m in Sources */,
 				B0F8EF8D1EF3C39F00F38770 /* Drawing-Block.m in Sources */,
+				C504F6C41F619D90001F6081 /* GFCalendarMonth.m in Sources */,
 				C53BE1411F5A32BF00E466B7 /* ProtocolTerminal.m in Sources */,
 				B0F8EF891EF3C39F00F38770 /* BezierElement.m in Sources */,
 				C5F4F8431F5D9C7C003330CC /* ReserverRecordCell.m in Sources */,
@@ -2043,6 +2174,7 @@
 				C5F4F8391F5D768D003330CC /* UIView+JKRViewController.m in Sources */,
 				B0F6752E1F2BCDCA0019086E /* HWGuideViewController.m in Sources */,
 				C24E7DF91ADE826000BA8ECC /* HWGeneralControl.m in Sources */,
+				C504F6C51F619D90001F6081 /* GFCalendarScrollView.m in Sources */,
 				B0F8EF921EF3C39F00F38770 /* ImageUtils.m in Sources */,
 				C24E7E061ADF887900BA8ECC /* HWBaseViewController.m in Sources */,
 				C28BACB41B16B8C90048DE0A /* unzip.c in Sources */,
@@ -2050,8 +2182,10 @@
 				B0D26B091BDF7B920012A093 /* HWTitleAndLabelItem.m in Sources */,
 				C59083531F5EE2510000B58D /* PatientDetailAbstractCell.m in Sources */,
 				C5EFE7721F6034BA005E4894 /* HZPhotoGroup.m in Sources */,
+				C504F6C71F619D90001F6081 /* NSDate+GFCalendar.m in Sources */,
 				C5EFE7731F6034BA005E4894 /* HZPhotoItem.m in Sources */,
 				B042FA1F1DF6912B0017F689 /* HWEmptyView.m in Sources */,
+				C5A269381F651716002EC244 /* HWPeopleCenterViewModel.m in Sources */,
 				C5EFE7711F6034BA005E4894 /* HZPhotoBrowserView.m in Sources */,
 				DA3DFF221ADE78ED00C4E99A /* Utility.m in Sources */,
 				B0D26B011BDF7B920012A093 /* HWTableViewCell.m in Sources */,
@@ -2071,7 +2205,6 @@
 				C24E7E051ADF887900BA8ECC /* HWBaseNavigationController.m in Sources */,
 				C5EFE77D1F604EA0005E4894 /* PatientDetailDateCell.m in Sources */,
 				DA3DFF451ADE7A8900C4E99A /* Reachability.m in Sources */,
-				B0B0B5401F276B65002FE127 /* HWPeopleCenterViewController.m in Sources */,
 				C53BE10E1F5A319B00E466B7 /* HWLoginTranstionAnimation.m in Sources */,
 				DA3DFF1A1ADE78ED00C4E99A /* UIButton+Utils.m in Sources */,
 				B0F8EF8B1EF3C39F00F38770 /* BezierUtils.m in Sources */,
@@ -2089,6 +2222,7 @@
 				C59083491F5ED7410000B58D /* PatientDetailViewModel.m in Sources */,
 				C28BACB21B16B8C90048DE0A /* ioapi.c in Sources */,
 				C20BBDB41AFB3EA000997B46 /* HWImagePickerWidget.m in Sources */,
+				C5A2693B1F651D68002EC244 /* HWPeopleCenterHeadView.m in Sources */,
 				C5F4F8361F5D7664003330CC /* UIView+JKRTouch.m in Sources */,
 				B0D26B041BDF7B920012A093 /* HWCountDownBtnItem.m in Sources */,
 				C53BE1841F5BC21900E466B7 /* HPTReservationNumCell.m in Sources */,
