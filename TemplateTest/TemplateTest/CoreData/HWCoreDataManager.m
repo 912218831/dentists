@@ -25,9 +25,13 @@
     user.userPhone = userLogin.userPhone;
     user.userType = userLogin.usertype;
     user.userPassword = userLogin.userPassword;
-    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL contextDidSave, NSError * _Nullable error) {
-        NSLog(@"%@",error);
-    }];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL contextDidSave, NSError * _Nullable error) {
+            NSLog(@"%@",error);
+        }];
+    });
 }
 
 + (void)loadUserInfo

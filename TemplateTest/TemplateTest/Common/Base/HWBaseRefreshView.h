@@ -22,8 +22,8 @@
 @property (nonatomic, assign) NSInteger      currentPage;
 @property (nonatomic, assign) BOOL           isLastPage;
 @property (nonatomic, assign) BOOL           isShowNoDataView;
-@property (nonatomic, copy  ) CGFloat        (^cellHeight)(NSIndexPath *indexPath);
-@property (nonatomic, copy  ) CGFloat        (^headerHeight)(NSInteger section);
+@property (nonatomic, copy  ) double        (^cellHeight)(NSIndexPath *indexPath);
+@property (nonatomic, copy  ) double        (^headerHeight)(NSInteger section);
 @property (nonatomic, copy  ) UIView*        (^headerView)(NSInteger section);
 @property (nonatomic, copy  ) void           (^didSelected)(NSIndexPath *indexPath);
 @property (nonatomic, assign) id<HWBaseRefreshViewObserverProtocol>
