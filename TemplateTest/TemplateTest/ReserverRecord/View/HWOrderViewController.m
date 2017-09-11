@@ -49,7 +49,7 @@
     self.listView = [[HWBaseRefreshView alloc]initWithFrame:(CGRect){CGPointZero, self.view.bounds.size.width, self.view.bounds.size.height-49-64}];
     [self.contentView addSubview:self.listView];
     self.listView.cellHeight = ^(NSIndexPath *indexPath){
-        return (CGFloat)kRate(122);
+        return (double)kRate(122);
     };
     @weakify(self);
     self.listView.didSelected = ^(NSIndexPath *indextPath) {

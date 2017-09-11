@@ -30,7 +30,7 @@
     self.listView = [[HWBaseRefreshView alloc]initWithFrame:self.view.bounds];
     self.listView.baseTable.dataSource = self;
     self.listView.cellHeight = ^(NSIndexPath *indexPath){
-        return (CGFloat)kRate(122);
+        return (double)kRate(122);
     };
     [self.contentView addSubview:self.listView];
 }

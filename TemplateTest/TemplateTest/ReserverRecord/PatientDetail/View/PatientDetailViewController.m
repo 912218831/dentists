@@ -50,7 +50,7 @@
                     return kRate(238/2.0+10);
                 }
                 id value = self.viewModel.model.imagesCellsHeight[indexPath.row-1];
-                return (CGFloat)[value floatValue];
+                return (double)[value floatValue];
             }
                 break;
         }
