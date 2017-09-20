@@ -8,8 +8,14 @@
 
 #import "BaseViewModel.h"
 #import "HPReserverPeopleModel.h"
+#import "HPReserverListModel.h"
 
 @interface HomePageViewModel : BaseViewModel
+@property (nonatomic, copy) NSString *unconfirmed;
+@property (nonatomic, copy) NSString *confirmed;
+@property (nonatomic, copy) NSArray *allConfirmedList;
+@property (nonatomic, strong) NSArray *confirmedListAm;
+@property (nonatomic, strong) NSArray *confirmedListPm;
 @property (nonatomic, strong) NSArray *reserverPeoples;
 @property (nonatomic, strong) RACCommand *requestCommand;
 @end

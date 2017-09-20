@@ -117,7 +117,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return section==0?3:self.viewModel.reserverPeoples.count;
+    return section==0?1+(self.viewModel.allConfirmedList.count):self.viewModel.reserverPeoples.count;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -155,9 +155,15 @@
                     HPTReservationNumCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
                     if (cell == nil) {
                         cell = [[HPTReservationNumCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                        kAddDashLine(cell, 15, 15);
                     }
-                    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-                    kAddDashLine(cell, 15, 15);
+                    
+                    cell.reserveredSignal = [RACSignal return:self.viewModel.confirmed];
+                    cell.waitAffirmSignal = [RACSignal return:self.viewModel.unconfirmed];
+                    [cell bindSignal];
+                    
+                    
                     return cell;
                 }
                     break;
@@ -168,8 +174,9 @@
                     HPTReservationPeopleCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
                     if (cell == nil) {
                         cell = [[HPTReservationPeopleCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                        kAddDashLine(cell, 15, 15);
                     }
-                    kAddDashLine(cell, 15, 15);
+                    cell.valueSignal = [RACSignal return:self.viewModel.allConfirmedList[indexPath.row-1]];
                     return cell;
                 }
                     break;

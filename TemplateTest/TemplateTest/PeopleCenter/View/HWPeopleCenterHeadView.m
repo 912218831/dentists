@@ -60,9 +60,8 @@
     self.phoneLabel.font = FONT(TF16);
     self.phoneLabel.textColor = CD_Text;
     
-    self.nameLabel.text = @"吴先生";
-    self.phoneLabel.text = @"123456788";
-    self.headerImageView.backgroundColor = [UIColor redColor];
+    self.nameLabel.text = @"";
+    self.phoneLabel.text = @"";
     
     self.backImageView.backgroundColor = CD_MainColor;
     self.backImageView.alpha = 0.2;

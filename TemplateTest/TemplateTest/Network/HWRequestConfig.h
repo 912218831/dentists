@@ -20,9 +20,9 @@
 #define kStatusNetworkFailed            404
 
 
-#define kUrlBase                    @"http://116.62.202.152/api/mollin/h5/index.php/"
+#define kUrlBase                    @"http://116.62.202.152/api/mouth/den/index.php/"
 
-#define kHtmlBase                   @"http://116.62.202.152/api/mollin/h5/index.php"
+#define kHtmlBase                   @"http://116.62.202.152/api/mouth/h5/index.php"
 //Https
 //#define kUrlBase                    GET_USERDEFAULT(@"urlBase")
 //#define kImageBaseUrl               GET_USERDEFAULT(@"imageBaseUrl")
@@ -49,15 +49,16 @@
 #define kPeopleCenter               AppendHTML(@"/Member/Index")     //个人中心
 #define kProductCenter              AppendHTML(@"/Products/Index")    //产品中心
 
-#define kLoginGainVertifyCode        @"" //获取验证码
-#define kLoginApp                    @"" //登录
-#define kHomePageInformation         @"" //首页数据
+#define kLoginGainVertifyCode        @"acc/getVerifyCode" //获取验证码
+#define kLoginApp                    @"acc/loginByCode" //登录
+#define kHomePageInformation         @"main/loadMainPageInfo" //首页数据
 
 #define kReserverRecordList          @"" // 预约记录列表
 #define kReserverRecordSearch        @"" // 预约记录搜索
 #define kReserverRecordDetail        @"" // 预约病人详情
 
-#define kPersonCenterInfo            @"" // 设置--
+#define kPersonCenterInfo            @"acc/getUserInfo" // 设置--
+#define kPersonCenterLogout          @"acc/logout" // 设置--退出登录
 #define kPersonCenterChangePwd       @"" // 设置--设置密码
 #define kPersonCenterGainVertifyCode kLoginGainVertifyCode // 设置--设置密码--获取验证码
 #endif

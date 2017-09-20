@@ -23,5 +23,6 @@
 #import "UIImage+Utils.h"
 #import "BaseViewController+Frame.h"
 #import "UITextField+Utils.h"
+#import "RACSignal+Extend.h"
 
 #endif /* _CATEGORY_ */

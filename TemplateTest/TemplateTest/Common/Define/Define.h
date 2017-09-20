@@ -96,7 +96,7 @@ typedef enum
 #define isSubClass(A, B) \
         isKindClass(class_getSuperclass([A class]), B);
 
-#define weakUserLogin ({__weak HWUserLogin *userLogin  = [HWUserLogin currentUserLogin]; userLogin;})
+#define weakUserLogin [HWUserLogin currentUserLogin]
 
 /*
  AppDelegate

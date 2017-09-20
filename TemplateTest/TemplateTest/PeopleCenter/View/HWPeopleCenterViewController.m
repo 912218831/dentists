@@ -18,6 +18,7 @@
 @property (nonatomic, strong) UIScrollView *listView;
 @property (nonatomic, strong) HWPeopleCenterHeadView *headView;
 @property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) HWPeopleCenterCell *cell;
 @end
 
 @implementation HWPeopleCenterViewController
@@ -42,17 +43,49 @@
     [super bindViewModel];
     [self.viewModel bindViewWithSignal];
     
-    [self.viewModel.requestSignal subscribeError:^(id x) {
+    [self.viewModel.requestSignal  subscribeError:^(NSError *error) {
+        [Utility showToastWithMessage:error.domain];
+    } completed:^{
         [self.headView.headerImageView sd_setImageWithURL:self.viewModel.headImageUrl];
         self.headView.phoneLabel.text = self.viewModel.userPhone;
         self.headView.nameLabel.text = self.viewModel.userName;
     }];
+    @weakify(self);
+    [[RACScheduler mainThreadScheduler]schedule:^{
+        @strongify(self);
+        [[self.cell rac_signalForSelector:@selector(touchesBegan:withEvent:)]subscribeNext:^(RACTuple *x) {
+            
+            UIEvent *event = x.last;
+            UITouch *touch = event.allTouches.anyObject;
+            CGPoint eventPoint = [touch locationInView:self.cell];
+            BOOL eventContain = CGRectContainsPoint(kSetPasswordControlRect(self.cell), eventPoint);
+            if (eventContain) {
+                // 跳转到设置密码页面
+                SetPasswordViewModel *vm = [SetPasswordViewModel new];
+                vm.phoneNumberStr = self.viewModel.userPhone;
+                [[ViewControllersRouter shareInstance]pushViewModel:vm animated:true];
+            }
+        }];
+        self.cell.logoutBtn.rac_command = self.viewModel.loginOutCommand;
+        [[self.viewModel.loginOutCommand.executing skip:1] subscribeNext:^(NSNumber *x) {
+            if (x.boolValue) {
+                [Utility showMBProgress:self.contentView message:nil];
+            } else {
+                [Utility hideMBProgress:self.contentView];
+                [[ViewControllersRouter shareInstance]setRootViewController:@"LoginViewModel"];
+            }
+        }];
+        [self.viewModel.loginOutCommand.errors subscribeNext:^(NSError *x) {
+            [Utility showToastWithMessage:x.domain];
+        }];
+    }];
+    
 }
 
 - (void)configContentView {
     [super configContentView];
     
-    @weakify(self);
+    
     
     self.listView = [[UIScrollView alloc]initWithFrame:self.bounds];
     self.listView.delegate = self;
@@ -68,20 +101,7 @@
     HWPeopleCenterCell *cell = [[HWPeopleCenterCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cellId"];
     cell.frame = CGRectMake(0, kRate(249), self.listView.width, kRate(176));
     [self.listView addSubview:cell];
-    @weakify(cell);
-    [[cell rac_signalForSelector:@selector(touchesBegan:withEvent:)]subscribeNext:^(RACTuple *x) {
-        @strongify(cell,self);
-        UIEvent *event = x.last;
-        UITouch *touch = event.allTouches.anyObject;
-        CGPoint eventPoint = [touch locationInView:cell];
-        BOOL eventContain = CGRectContainsPoint(kSetPasswordControlRect(cell), eventPoint);
-        if (eventContain) {
-            // 跳转到设置密码页面
-            SetPasswordViewModel *vm = [SetPasswordViewModel new];
-            vm.phoneNumberStr = self.viewModel.userPhone;
-            [[ViewControllersRouter shareInstance]pushViewModel:vm animated:true];
-        }
-    }];
+    self.cell = cell;
     
     self.titleLabel = [UILabel new];
     self.titleLabel.backgroundColor = [UIColor clearColor];

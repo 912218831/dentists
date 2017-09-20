@@ -7,6 +7,7 @@
 //
 
 #import "HPTReservationPeopleCell.h"
+#import "HPReserverListModel.h"
 
 @interface HPTReservationPeopleCell ()
 @property (nonatomic, strong) UIView *dotView;
@@ -75,6 +76,17 @@
     self.patientDesLabel.text = @"可能：牙龈癍严重";
     self.patientDesLabel.font = FONT(TF14);
     self.patientDesLabel.textColor = CD_Text66;
+}
+
+- (void)setValueSignal:(RACSignal *)valueSignal {
+    @weakify(self);
+    [valueSignal subscribeNext:^(HPReserverListModel *x) {
+        @strongify(self);
+        self.nameLabel.text = x.patientName;
+        self.dateLabel.text = x.expectedTime;
+        self.picNumLabel.text = [NSString stringWithFormat:@"共%@张图片",x.imageCount];
+        self.patientDesLabel.text = x.machineReport;
+    }];
 }
 
 @end

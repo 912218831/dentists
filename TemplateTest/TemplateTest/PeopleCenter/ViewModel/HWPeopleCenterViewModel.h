@@ -12,6 +12,6 @@
 @property (nonatomic, copy) NSURL *headImageUrl;
 @property (nonatomic, copy) NSString *userName;
 @property (nonatomic, copy) NSString *userPhone;
-@property (nonatomic, strong) RACSignal *loginOutSignal;
+@property (nonatomic, strong) RACCommand *loginOutCommand;
 @property (nonatomic, strong) RACSignal *requestSignal;
 @end

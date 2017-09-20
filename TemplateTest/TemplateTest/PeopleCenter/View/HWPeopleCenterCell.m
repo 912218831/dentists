@@ -12,7 +12,6 @@
 @interface HWPeopleCenterCell ()
 @property (nonatomic, strong, readwrite) UIView *contentV;
 @property (nonatomic, strong, readwrite) UILabel *titleLabel;
-@property (nonatomic, strong) UIButton *logoutBtn;
 @property (nonatomic, strong) DashLineView *lineView;
 @property (nonatomic, strong) UIImageView *arrowImageView;
 @end

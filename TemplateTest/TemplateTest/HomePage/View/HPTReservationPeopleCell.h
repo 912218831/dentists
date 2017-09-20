@@ -9,5 +9,5 @@
 #import "BaseListViewCell.h"
 
 @interface HPTReservationPeopleCell : BaseListViewCell
-
+@property (nonatomic, strong) RACSignal *valueSignal;
 @end

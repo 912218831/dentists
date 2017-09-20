@@ -74,14 +74,22 @@
     self.titleLabel.font = FONT(TF14);
     self.titleLabel.textColor = CD_Text;
     
-    self.waitAffirmBtn.topLabel.text = @"4";
+    self.waitAffirmBtn.topLabel.text = @"";
     self.waitAffirmBtn.bottomLabel.text = @"待确认预约";
-    self.reserveredBtn.topLabel.text = @"3";
+    self.reserveredBtn.topLabel.text = @"";
     self.reserveredBtn.bottomLabel.text = @"已预约";
 }
 
 - (void)bindSignal {
-    
+    @weakify(self);
+    [self.waitAffirmSignal subscribeNext:^(id x) {
+        @strongify(self);
+        self.waitAffirmBtn.topLabel.text = x;
+    }];
+    [self.reserveredSignal subscribeNext:^(id x) {
+        @strongify(self);
+        self.reserveredBtn.topLabel.text = x;
+    }];
 }
 
 @end

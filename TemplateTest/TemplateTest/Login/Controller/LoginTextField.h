@@ -13,4 +13,5 @@
 @property (nonatomic, assign) BOOL needRightBtn;
 @property (nonatomic, strong) RACChannel *rightChannel;
 @property (nonatomic, strong, readonly) UITextField *textfield;
+@property (nonatomic, assign) NSInteger maxLen;
 @end

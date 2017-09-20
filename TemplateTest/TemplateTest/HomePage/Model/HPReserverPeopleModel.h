@@ -9,6 +9,9 @@
 #import "BaseModel.h"
 
 @interface HPReserverPeopleModel : BaseModel
-@property (nonatomic, copy) NSString *patientName;
-@property (nonatomic, copy) NSString *patientPhoto;
+@property (nonatomic, copy) NSString *Id;
+@property (nonatomic, copy) NSString *expectedTime;
+@property (nonatomic, copy) NSString *amPm;
+@property (nonatomic, copy) NSString *userName;
+@property (nonatomic, copy) NSString *headImgUrl;
 @end

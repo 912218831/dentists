@@ -72,6 +72,13 @@
     [self.rightBtn mas_updateConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(self.rightBtn.width).priority(MASLayoutPriorityRequired);
     }];
+    
+    [[self.textfield.rac_textSignal deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSString* x) {
+        @strongify(self);
+        if (self.maxLen && x.length > self.maxLen) {
+            self.textfield.text = [x substringToIndex:self.maxLen];
+        }
+    }];
 }
 
 - (void)setRightChannel:(RACChannel *)rightChannel {

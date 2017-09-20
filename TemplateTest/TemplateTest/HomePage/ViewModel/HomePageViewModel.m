@@ -23,17 +23,43 @@
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             @strongify(self);
             [self post:kHomePageInformation type:0 params:@{} success:^(id response) {
+                NSLog(@"%@",response);
+                NSDictionary *data = [response dictionaryObjectForKey:@"data"];
+                self.unconfirmed = [data stringObjectForKey:@"unconfirmed"];
+                self.confirmed = [data stringObjectForKey:@"confirmed"];
                 
-            } failure:^(NSString *error) {
-                NSMutableArray *list = [NSMutableArray array];
-                for (int i=0; i<6; i++) {
-                    HPReserverPeopleModel *item = [HPReserverPeopleModel new];
-                    item.patientName = @"张三";
-                    item.patientPhoto = @"http://img.taopic.com/uploads/allimg/140322/235058-1403220K93993.jpg";
-                    [list addObject:item];
+                NSMutableArray *all = [NSMutableArray array];
+                
+                NSArray *confirmedListAm = [data arrayObjectForKey:@"confirmedListAm"];
+                NSMutableArray *arr = [NSMutableArray arrayWithCapacity:confirmedListAm.count];
+                for (NSDictionary *item in confirmedListAm) {
+                    HPReserverListModel *model = [[HPReserverListModel alloc]initWithDictionary:item error:nil];
+                    [arr addObject:model];
+                    [all addObject:model];
+                }
+                self.confirmedListAm = arr.copy;
+                
+                NSArray *confirmedListPm = [data arrayObjectForKey:@"confirmedListPm"];
+                NSMutableArray *arr1 = [NSMutableArray arrayWithCapacity:confirmedListPm.count];
+                for (NSDictionary *item in confirmedListPm) {
+                    HPReserverListModel *model = [[HPReserverListModel alloc]initWithDictionary:item error:nil];
+                    [arr1 addObject:model];
+                    [all addObject:model];
+                }
+                self.confirmedListPm = arr1.copy;
+                
+                self.allConfirmedList = all.copy;
+                
+                NSArray *next7days = [data arrayObjectForKey:@"next7days"];
+                NSMutableArray *list = [NSMutableArray arrayWithCapacity:next7days.count];
+                for (NSDictionary *item in next7days) {
+                    HPReserverPeopleModel *model = [[HPReserverPeopleModel alloc]initWithDictionary:item error:nil];
+                    [list addObject:model];
                 }
                 self.reserverPeoples = list.copy;
-                [subscriber sendError:[NSError errorWithDomain:error code:404 userInfo:nil]];
+                [subscriber sendCompleted];
+            } failure:^(NSString *error) {
+                [subscriber sendError:Error];
             }];
             return nil;
         }];

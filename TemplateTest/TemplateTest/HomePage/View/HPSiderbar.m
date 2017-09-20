@@ -8,6 +8,7 @@
 
 #import "HPSiderbar.h"
 #import "DashLineView.h"
+#import "HPReserverPeopleModel.h"
 
 @interface HPSiderbar ()
 
@@ -27,6 +28,7 @@
             
             UIView *lastLineView = self;
             for (int i=0; i<count; i++) {
+                HPReserverPeopleModel *model = [dataSource objectAtIndex:i];
                 // 实线
                 DashLineView *solidLine = [[DashLineView alloc]initWithLineHeight:solid space:0 direction:Vertical strokeColor:CD_MainColor];
                 [self addSubview:solidLine];
@@ -69,7 +71,7 @@
                         make.right.equalTo(solidLine.mas_left);
                         make.centerY.equalTo(solidLine);
                     }];
-                    label.text = @"08/90";
+                    label.text = model.expectedTime;//@"08/90";
                     label.textColor = CD_MainColor;
                     label.font = FONT(TF13);
                     label.textAlignment = NSTextAlignmentCenter;

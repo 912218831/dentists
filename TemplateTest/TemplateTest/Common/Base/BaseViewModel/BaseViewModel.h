@@ -17,6 +17,8 @@ typedef  NS_ENUM(int, APIType) {
     PersonalInfo ,
 };
 
+#define Error [NSError errorWithDomain:error code:404 userInfo:nil]
+
 @class BaseViewController;
 @interface BaseViewModel : NSObject
 @property (nonatomic, copy, readwrite)   NSString     *url;

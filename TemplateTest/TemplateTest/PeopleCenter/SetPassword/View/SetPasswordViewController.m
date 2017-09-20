@@ -54,8 +54,13 @@
         }];
     }];
     
-    [self.viewModel.fetchVCodeCommand.executionSignals.switchToLatest subscribeNext:^(id x) {
-        
+    [[self.viewModel.fetchVCodeCommand.executing skip:1]subscribeNext:^(NSNumber* x) {
+        x.boolValue?[Utility showMBProgress:self.contentView message:nil]:
+        [Utility hideMBProgress:self.contentView];
+    }];
+    [self.viewModel.fetchVCodeCommand.executionSignals.switchToLatest subscribeCompleted:^ {
+        @strongify(self);
+        [Utility showToastWithMessage:@"验证码发送成功"];
     }];
     [self.viewModel.fetchVCodeCommand.errors subscribeNext:^(NSError *error) {
         [Utility showToastWithMessage:error.domain];
@@ -117,6 +122,7 @@
             leftLabel.text = kLabel_PhoneNumber;
             middleTextfield.attributedStr = kTextfield_PhoneNumber;
             middleTextfield.text = self.viewModel.phoneNumberStr;
+            RAC(self.viewModel,phoneNumberStr) = middleTextfield.rac_textSignal;
         }
             break;
         case 1:
@@ -124,6 +130,7 @@
             leftLabel.text = kLabel_VertifyCode;
             middleTextfield.attributedStr = kTextfield_VertifyCode;
             middleTextfield.text = self.viewModel.vertifyCodeStr;
+            RAC(self.viewModel,vertifyCodeStr) = middleTextfield.rac_textSignal;
         }
             break;
         case 2:
@@ -131,6 +138,7 @@
             leftLabel.text = kLabel_Password;
             middleTextfield.attributedStr = kTextfield_Password;
             middleTextfield.text = self.viewModel.passwordStr;
+            RAC(self.viewModel,passwordStr) = middleTextfield.rac_textSignal;
         }
             break;
         default:
@@ -138,6 +146,7 @@
             leftLabel.text = kLabel_ConfirmPwd;
             middleTextfield.attributedStr = kTextfield_ConfirmPwd;
             middleTextfield.text = self.viewModel.confirmPwdStr;
+            RAC(self.viewModel,confirmPwdStr) = middleTextfield.rac_textSignal;
         }
             break;
     }

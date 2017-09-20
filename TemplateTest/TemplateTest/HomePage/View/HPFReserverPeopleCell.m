@@ -70,9 +70,9 @@
             
             UILabel *label = [item viewWithTag:100];
             UIImageView *imageView = [item viewWithTag:200];
-            label.text = model.patientName;
-            if(model.patientPhoto.length)
-                [imageView sd_setImageWithURL:[NSURL URLWithString:model.patientPhoto]];
+            label.text = model.userName;
+            if(model.headImgUrl.length)
+                [imageView sd_setImageWithURL:[NSURL URLWithString:model.headImgUrl]];
             offsetX += w + spaceX;
         }
     }];

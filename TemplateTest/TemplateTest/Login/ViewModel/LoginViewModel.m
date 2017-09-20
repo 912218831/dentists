@@ -16,37 +16,44 @@
 
 - (void)bindViewWithSignal {
     
-    [self.usernameSignal subscribeNext:^(id x) {
-        weakUserLogin.userPhone = x;
+    [self.usernameSignal subscribeNext:^(UITextField *x) {
+        weakUserLogin.userPhone = x.text;
     }];
-    [self.vertifyCodeSignal subscribeNext:^(id x) {
-        weakUserLogin.vertifyCode = x;
+    [self.vertifyCodeSignal subscribeNext:^(UITextField *x) {
+        weakUserLogin.vertifyCode = x.text;
     }];
     
     @weakify(self);
     self.gainCodeChannel = [RACChannel new];
     [gainCodeChannel.followingTerminal subscribeNext:^(UIButton *sender) {
         @strongify(self);
-        [self post:kLoginGainVertifyCode type:0 params:@{} success:^(id response) {
-            [self.gainCodeChannel.followingTerminal sendNext:response];
-        } failure:^(NSString *error) {
-            [self.gainCodeChannel.followingTerminal sendNext:error];
-        }];
+        if (weakUserLogin.userPhone.length >= 11) {
+            [self post:kLoginGainVertifyCode type:0 params:@{@"mobile": weakUserLogin.userPhone,@"type":@"1"} success:^(id response) {
+                [self.gainCodeChannel.followingTerminal sendNext:[RACSignal return:response]];
+            } failure:^(NSString *error) {
+                [self.gainCodeChannel.followingTerminal sendNext:[RACSignal error:Error]];
+            }];
+        } else {
+            [self.gainCodeChannel.followingTerminal sendNext:[RACSignal error:[NSError errorWithDomain:@"手机号不正确" code:404 userInfo:nil]]];
+        }
+        
     }];
     
     self.loginCommand = [[RACCommand alloc]initWithSignalBlock:^RACSignal *(id input) {
         
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             @strongify(self);
-            if (1) {//weakUserLogin.userPassword.length && weakUserLogin.username.length
-                [self post:kLoginApp type:0 params:@{}
+            if (weakUserLogin.vertifyCode.length==6 && weakUserLogin.userPhone.length==11) {
+                [self post:kLoginApp type:0 params:@{@"mobile":weakUserLogin.userPhone,
+                                                     @"randCode":weakUserLogin.vertifyCode}
                    success:^(id response) {
-                       [subscriber sendNext:response];
                        [subscriber sendCompleted];
                        [HWCoreDataManager saveUserInfo];
                    } failure:^(NSString *error) {
-                       [subscriber sendError:[NSError errorWithDomain:error code:404 userInfo:nil]];
+                       [subscriber sendError:Error];
                    }];
+            } else {
+                [subscriber sendError:[NSError errorWithDomain:@"用户名或密码不正确" code:404 userInfo:nil]];
             }
             return nil;
         }];

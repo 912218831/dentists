@@ -172,6 +172,7 @@
 		C55A891E1F583BA100935B5B /* HWLoginUser+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C55A891B1F583BA100935B5B /* HWLoginUser+CoreDataClass.m */; };
 		C55A891F1F583BA100935B5B /* HWLoginUser+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C55A891D1F583BA100935B5B /* HWLoginUser+CoreDataProperties.m */; };
 		C55A89251F583DE500935B5B /* NSUserDefaults+UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = C55A89241F583DE500935B5B /* NSUserDefaults+UserDefaults.m */; };
+		C587DB2C1F71E76F001C7132 /* HPReserverListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C587DB2B1F71E76F001C7132 /* HPReserverListModel.m */; };
 		C59083461F5ED72C0000B58D /* PatientDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C59083451F5ED72C0000B58D /* PatientDetailViewController.m */; };
 		C59083491F5ED7410000B58D /* PatientDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C59083481F5ED7410000B58D /* PatientDetailViewModel.m */; };
 		C590834C1F5ED7980000B58D /* PatientDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C590834B1F5ED7980000B58D /* PatientDetailModel.m */; };
@@ -185,6 +186,10 @@
 		C5A2693E1F651E65002EC244 /* HWPeopleCenterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A2693D1F651E65002EC244 /* HWPeopleCenterCell.m */; };
 		C5A269451F653422002EC244 /* SetPasswordViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A269441F653422002EC244 /* SetPasswordViewModel.m */; };
 		C5A269481F653436002EC244 /* SetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A269471F653436002EC244 /* SetPasswordViewController.m */; };
+		C5ED99EE1F7155BE00C9FFF5 /* loginIcon1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5ED99ED1F7155BE00C9FFF5 /* loginIcon1@2x.png */; };
+		C5ED99F01F7155CD00C9FFF5 /* loginIcon1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5ED99EF1F7155CD00C9FFF5 /* loginIcon1@3x.png */; };
+		C5ED99F31F71572700C9FFF5 /* RACSignal+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = C5ED99F21F71572700C9FFF5 /* RACSignal+Extend.m */; };
+		C5ED99FB1F71577500C9FFF5 /* VirtualSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = C5ED99FA1F71577500C9FFF5 /* VirtualSignal.m */; };
 		C5EFE7701F6034BA005E4894 /* HZPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EFE7651F6034BA005E4894 /* HZPhotoBrowser.m */; };
 		C5EFE7711F6034BA005E4894 /* HZPhotoBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EFE7681F6034BA005E4894 /* HZPhotoBrowserView.m */; };
 		C5EFE7721F6034BA005E4894 /* HZPhotoGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EFE76A1F6034BA005E4894 /* HZPhotoGroup.m */; };
@@ -550,6 +555,8 @@
 		C55A891D1F583BA100935B5B /* HWLoginUser+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HWLoginUser+CoreDataProperties.m"; sourceTree = "<group>"; };
 		C55A89231F583DE500935B5B /* NSUserDefaults+UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+UserDefaults.h"; sourceTree = "<group>"; };
 		C55A89241F583DE500935B5B /* NSUserDefaults+UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+UserDefaults.m"; sourceTree = "<group>"; };
+		C587DB2A1F71E76F001C7132 /* HPReserverListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPReserverListModel.h; sourceTree = "<group>"; };
+		C587DB2B1F71E76F001C7132 /* HPReserverListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPReserverListModel.m; sourceTree = "<group>"; };
 		C59083441F5ED72C0000B58D /* PatientDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientDetailViewController.h; sourceTree = "<group>"; };
 		C59083451F5ED72C0000B58D /* PatientDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientDetailViewController.m; sourceTree = "<group>"; };
 		C59083471F5ED7410000B58D /* PatientDetailViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientDetailViewModel.h; sourceTree = "<group>"; };
@@ -574,6 +581,12 @@
 		C5A269441F653422002EC244 /* SetPasswordViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPasswordViewModel.m; sourceTree = "<group>"; };
 		C5A269461F653436002EC244 /* SetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPasswordViewController.h; sourceTree = "<group>"; };
 		C5A269471F653436002EC244 /* SetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPasswordViewController.m; sourceTree = "<group>"; };
+		C5ED99ED1F7155BE00C9FFF5 /* loginIcon1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginIcon1@2x.png"; sourceTree = "<group>"; };
+		C5ED99EF1F7155CD00C9FFF5 /* loginIcon1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginIcon1@3x.png"; sourceTree = "<group>"; };
+		C5ED99F11F71572700C9FFF5 /* RACSignal+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RACSignal+Extend.h"; sourceTree = "<group>"; };
+		C5ED99F21F71572700C9FFF5 /* RACSignal+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RACSignal+Extend.m"; sourceTree = "<group>"; };
+		C5ED99F91F71577500C9FFF5 /* VirtualSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VirtualSignal.h; sourceTree = "<group>"; };
+		C5ED99FA1F71577500C9FFF5 /* VirtualSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VirtualSignal.m; sourceTree = "<group>"; };
 		C5EFE7641F6034BA005E4894 /* HZPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPhotoBrowser.h; sourceTree = "<group>"; };
 		C5EFE7651F6034BA005E4894 /* HZPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZPhotoBrowser.m; sourceTree = "<group>"; };
 		C5EFE7661F6034BA005E4894 /* HZPhotoBrowserConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPhotoBrowserConfig.h; sourceTree = "<group>"; };
@@ -871,6 +884,7 @@
 		B0B0B5751F287302002FE127 /* @2X */ = {
 			isa = PBXGroup;
 			children = (
+				C5ED99ED1F7155BE00C9FFF5 /* loginIcon1@2x.png */,
 				C590834F1F5EDC810000B58D /* TOP_ARROW@2x.png */,
 				B0F6750E1F2A1D1C0019086E /* arrow@2x.png */,
 				B0B0B5761F287302002FE127 /* click我的@2x.png */,
@@ -892,6 +906,7 @@
 		B0B0B5801F287302002FE127 /* @3X */ = {
 			isa = PBXGroup;
 			children = (
+				C5ED99EF1F7155CD00C9FFF5 /* loginIcon1@3x.png */,
 				C590834D1F5EDC7D0000B58D /* TOP_ARROW@3x.png */,
 				B02AED231F4ED536009C25A7 /* 产品@3x.png */,
 				B02AED241F4ED536009C25A7 /* click产品@3x.png */,
@@ -1366,6 +1381,8 @@
 			children = (
 				C53BE18E1F5BE7DB00E466B7 /* HPReserverPeopleModel.h */,
 				C53BE18F1F5BE7DB00E466B7 /* HPReserverPeopleModel.m */,
+				C587DB2A1F71E76F001C7132 /* HPReserverListModel.h */,
+				C587DB2B1F71E76F001C7132 /* HPReserverListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1530,6 +1547,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		C5ED99F81F71577500C9FFF5 /* Plice */ = {
+			isa = PBXGroup;
+			children = (
+				C5ED99F91F71577500C9FFF5 /* VirtualSignal.h */,
+				C5ED99FA1F71577500C9FFF5 /* VirtualSignal.m */,
+			);
+			path = Plice;
+			sourceTree = "<group>";
+		};
 		C5EFE7631F6034BA005E4894 /* ptotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
@@ -1643,6 +1669,8 @@
 		DA3DFEF21ADE78ED00C4E99A /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				C5ED99F11F71572700C9FFF5 /* RACSignal+Extend.h */,
+				C5ED99F21F71572700C9FFF5 /* RACSignal+Extend.m */,
 				C53BE1421F5A34FE00E466B7 /* BaseViewController+Frame.h */,
 				C53BE1431F5A34FE00E466B7 /* BaseViewController+Frame.m */,
 				FC51FE3C1CBC5ED700B18DE2 /* CABasicAnimation+Helper.h */,
@@ -1681,6 +1709,7 @@
 		DA3DFF061ADE78ED00C4E99A /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				C5ED99F81F71577500C9FFF5 /* Plice */,
 				FC24B4C71DF5E7300036B461 /* HWCustomTextField */,
 				FC200F571CF4B40200500482 /* HWVerticalAlignedLabel */,
 				B0D26AD91BDF7B920012A093 /* HWTableView */,
@@ -1933,6 +1962,7 @@
 				C59083501F5EDC810000B58D /* TOP_ARROW@2x.png in Resources */,
 				B0B0B59C1F287302002FE127 /* 我的@3x.png in Resources */,
 				B0B0B5631F276EAA002FE127 /* navigationbar_background_tall@2x.png in Resources */,
+				C5ED99EE1F7155BE00C9FFF5 /* loginIcon1@2x.png in Resources */,
 				B0B0B56D1F276EAA002FE127 /* tabbar_selected_background@2x.png in Resources */,
 				B0B0B5A01F287302002FE127 /* 首页@3x.png in Resources */,
 				DA3DFF3D1ADE7A4000C4E99A /* grayArrow@2x.png in Resources */,
@@ -1945,6 +1975,7 @@
 				B0B0B5981F287302002FE127 /* click订单@3x.png in Resources */,
 				DA3DFF3A1ADE7A4000C4E99A /* blueArrow.png in Resources */,
 				B0B0B56B1F276EAA002FE127 /* tabbar_normal_background@2x.png in Resources */,
+				C5ED99F01F7155CD00C9FFF5 /* loginIcon1@3x.png in Resources */,
 				B0F6750F1F2A1D1C0019086E /* arrow@2x.png in Resources */,
 				B0B0B5971F287302002FE127 /* click提成@3x.png in Resources */,
 				B0B0B59D1F287302002FE127 /* 提成@3x.png in Resources */,
@@ -2074,6 +2105,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC51FE3E1CBC5ED700B18DE2 /* CABasicAnimation+Helper.m in Sources */,
+				C5ED99FB1F71577500C9FFF5 /* VirtualSignal.m in Sources */,
 				C53BE17E1F5BBDDF00E466B7 /* DoubleLabelButton.m in Sources */,
 				C53BE1391F5A32BF00E466B7 /* BaseListViewController.m in Sources */,
 				C53BE1681F5AFD5B00E466B7 /* HWHomePageViewController.m in Sources */,
@@ -2116,6 +2148,7 @@
 				C5F4F83C1F5D76B8003330CC /* UIViewController+JKRStatusBarStyle.m in Sources */,
 				C28BACB31B16B8C90048DE0A /* mztools.c in Sources */,
 				C590834C1F5ED7980000B58D /* PatientDetailModel.m in Sources */,
+				C5ED99F31F71572700C9FFF5 /* RACSignal+Extend.m in Sources */,
 				B0D26B051BDF7B920012A093 /* HWCustomViewItem.m in Sources */,
 				72230B151C21670D0040F496 /* ASDisplayNode+Utils.m in Sources */,
 				B0B0B52D1F273803002FE127 /* EmptyControl.m in Sources */,
@@ -2164,6 +2197,7 @@
 				C53BE15A1F5AEB3500E466B7 /* HWCoreDataManager.m in Sources */,
 				C55A89251F583DE500935B5B /* NSUserDefaults+UserDefaults.m in Sources */,
 				FC24B4CA1DF5E7300036B461 /* HWCustomTextField.m in Sources */,
+				C587DB2C1F71E76F001C7132 /* HPReserverListModel.m in Sources */,
 				78DC42C51BE87E3300D42B7B /* HWBaseAlertView.m in Sources */,
 				7552CE2B1D1240CB00A557EA /* DTxtField.m in Sources */,
 				C53BE1371F5A32BF00E466B7 /* ViewControllerSimpleConfig.m in Sources */,

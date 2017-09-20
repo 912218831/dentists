@@ -33,7 +33,7 @@
 {
     [super viewDidLoad];
   
-   [self.navigationController.navigationBar setBackgroundImage:[Utility imageWithColor:UIColorFromRGB(0x28beff) andSize:CGSizeMake(kScreenWidth, (IOS7Later ? 64 : 44))] forBarMetrics:UIBarMetricsDefault];
+   [self.navigationController.navigationBar setBackgroundImage:[Utility imageWithColor:CD_MainColor andSize:CGSizeMake(kScreenWidth, (IOS7Later ? 64 : 44))] forBarMetrics:UIBarMetricsDefault];
 //    [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
     
     if (IOS7Later)
