@@ -51,12 +51,53 @@
                 self.allConfirmedList = all.copy;
                 
                 NSArray *next7days = [data arrayObjectForKey:@"next7days"];
-                NSMutableArray *list = [NSMutableArray arrayWithCapacity:next7days.count];
+                // 这个字典只是为了获取数据用的，利用 key 唯一，来填充 object
+                NSMutableDictionary *list = [NSMutableDictionary dictionaryWithCapacity:7];
                 for (NSDictionary *item in next7days) {
                     HPReserverPeopleModel *model = [[HPReserverPeopleModel alloc]initWithDictionary:item error:nil];
-                    [list addObject:model];
+                    NSString *key = [NSString stringWithFormat:@"%@",model.expectedTime];
+                    NSMutableDictionary *itemDict = [list objectForKey:key];
+                    if (!itemDict) {
+                        itemDict = [NSMutableDictionary dictionaryWithCapacity:2];
+                        [list setObject:itemDict forKey:key];
+                    }
+                    NSMutableArray *amPm = [itemDict objectForKey:model.amPm];
+                    if (!amPm) {
+                        amPm = [NSMutableArray array];
+                        [itemDict setObject:amPm forKey:model.amPm];
+                    }
+                    [amPm addObject:model];
                 }
-                self.reserverPeoples = list.copy;
+                // 这个数组，是为了利用其进行排序
+                NSMutableArray *resultArr = [NSMutableArray arrayWithCapacity:7];
+                for (NSString *key in list.allKeys) {
+                    NSDictionary *obj = [list objectForKey:key];
+                    [resultArr addObject:@{key:obj}];
+                }
+                [resultArr sortUsingComparator:^NSComparisonResult(NSDictionary *obj1, NSDictionary *obj2) {
+                    NSMutableString *key1 = [obj1.allKeys.lastObject mutableCopy];
+                    NSMutableString *key2 = [obj2.allKeys.lastObject mutableCopy];
+                    [key1 replaceOccurrencesOfString:@"-" withString:@"" options:NSLiteralSearch range:NSMakeRange(0, key1.length)];
+                    [key2 replaceOccurrencesOfString:@"-" withString:@"" options:NSLiteralSearch range:NSMakeRange(0, key1.length)];
+                    if (key1.integerValue > key2.integerValue) {
+                        return NSOrderedDescending;
+                    } else {
+                        return NSOrderedAscending;
+                    }
+                }];
+                // 最终取值
+                NSMutableArray *reserverPeoples = [NSMutableArray arrayWithCapacity:resultArr.count*2];
+                NSMutableArray *mutableTime = [NSMutableArray arrayWithCapacity:resultArr.count];
+                for (int i=0; i<resultArr.count; i++) {
+                    NSDictionary *item = [[[resultArr objectAtIndex:i]allObjects]lastObject];
+                    [mutableTime addObject:[[resultArr objectAtIndex:i] allKeys].lastObject];
+                    NSArray *am = [item arrayObjectForKey:@"0"];
+                    NSArray *pm = [item arrayObjectForKey:@"1"];
+                    [reserverPeoples addObject:am];
+                    [reserverPeoples addObject:pm];
+                }
+                self.expectedTimes = mutableTime.copy;
+                self.reserverPeoples = reserverPeoples.copy;
                 [subscriber sendCompleted];
             } failure:^(NSString *error) {
                 [subscriber sendError:Error];

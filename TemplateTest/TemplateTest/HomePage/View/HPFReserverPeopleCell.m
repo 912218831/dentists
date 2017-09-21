@@ -29,7 +29,7 @@
 
 - (void)bindSignal {
     @weakify(self);
-    [self.signal subscribeNext:^(RACTuple *tuple) {
+    [self.signal subscribeNext:^(NSArray *tuple) {
         @strongify(self);
         CGFloat offsetX = kRate(160/2.0);
         CGFloat spaceX = kRate(20/2.0);

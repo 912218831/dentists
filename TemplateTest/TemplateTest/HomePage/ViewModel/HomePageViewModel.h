@@ -16,6 +16,7 @@
 @property (nonatomic, copy) NSArray *allConfirmedList;
 @property (nonatomic, strong) NSArray *confirmedListAm;
 @property (nonatomic, strong) NSArray *confirmedListPm;
+@property (nonatomic, strong) NSArray *expectedTimes;
 @property (nonatomic, strong) NSArray *reserverPeoples;
 @property (nonatomic, strong) RACCommand *requestCommand;
 @end

@@ -58,8 +58,9 @@
 // 数据
 - (void)bindViewModel {
     [super bindViewModel];
-    
+    @weakify(self);
     [[self.listView rac_signalForSelector:@selector(reloadData)]subscribeNext:^(id x) {
+        @strongify(self);
         if (self.viewModel.reserverPeoples.count) {
             NSInteger sectionOneCount = [self tableView:self.listView numberOfRowsInSection:0];
             NSInteger sectionTwoCount = [self tableView:self.listView numberOfRowsInSection:1];
@@ -77,10 +78,10 @@
             }
             CGFloat offsetY = kRate(45);
             self.sidebarView.frame = CGRectMake(0, startHeight+offsetY, kRate(55), totalHeight-startHeight-2*offsetY);
-            [self.sidebarView.reloadCommand execute:self.viewModel.reserverPeoples];
+            [self.sidebarView.reloadCommand execute:self.viewModel.expectedTimes];
         }
     }];
-    @weakify(self);
+    
     if (self.viewModel.requestCommand) {
         [[self.viewModel.requestCommand execute:nil]subscribeCompleted:^ {
             @strongify(self);
@@ -189,9 +190,10 @@
             HPFReserverPeopleCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
             if (cell == nil) {
                 cell = [[HPFReserverPeopleCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                kAddDashLine(cell, 156/2.0, 15);
             }
-            kAddDashLine(cell, 156/2.0, 15);
-            cell.signal = [RACSignal return:@[[self.viewModel.reserverPeoples objectAtIndex:indexPath.row]]];
+            
+            cell.signal = [RACSignal return:[self.viewModel.reserverPeoples objectAtIndex:indexPath.row]];
             return cell;
         }
             break;

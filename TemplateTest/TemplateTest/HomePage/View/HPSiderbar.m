@@ -21,14 +21,15 @@
         @weakify(self);
         self.reloadCommand = [[RACCommand alloc]initWithSignalBlock:^RACSignal *(NSArray *dataSource) {
             @strongify(self);
-            NSInteger count = dataSource.count/2 + (dataSource.count%2==0?0:1);
+            NSInteger count = dataSource.count;
+            //dataSource.count/2 + (dataSource.count%2==0?0:1);
             CGFloat offY = 0;
             CGFloat offRight = kRate(4);
             CGFloat w = kRate(3);
             
             UIView *lastLineView = self;
             for (int i=0; i<count; i++) {
-                HPReserverPeopleModel *model = [dataSource objectAtIndex:i];
+                NSString *expectedTime = [dataSource objectAtIndex:i];
                 // 实线
                 DashLineView *solidLine = [[DashLineView alloc]initWithLineHeight:solid space:0 direction:Vertical strokeColor:CD_MainColor];
                 [self addSubview:solidLine];
@@ -71,7 +72,7 @@
                         make.right.equalTo(solidLine.mas_left);
                         make.centerY.equalTo(solidLine);
                     }];
-                    label.text = model.expectedTime;//@"08/90";
+                    label.text = expectedTime;//@"08/90";
                     label.textColor = CD_MainColor;
                     label.font = FONT(TF13);
                     label.textAlignment = NSTextAlignmentCenter;
