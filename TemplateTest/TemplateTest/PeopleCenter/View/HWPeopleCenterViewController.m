@@ -67,12 +67,15 @@
             }
         }];
         self.cell.logoutBtn.rac_command = self.viewModel.loginOutCommand;
+        [self.viewModel.loginOutCommand.executionSignals.newSwitchToLatest subscribeNext:^(id x) {
+            [[ViewControllersRouter shareInstance]setRootViewController:@"LoginViewModel"];
+        } error:nil completed:nil];
+        
         [[self.viewModel.loginOutCommand.executing skip:1] subscribeNext:^(NSNumber *x) {
             if (x.boolValue) {
                 [Utility showMBProgress:self.contentView message:nil];
             } else {
                 [Utility hideMBProgress:self.contentView];
-                [[ViewControllersRouter shareInstance]setRootViewController:@"LoginViewModel"];
             }
         }];
         [self.viewModel.loginOutCommand.errors subscribeNext:^(NSError *x) {

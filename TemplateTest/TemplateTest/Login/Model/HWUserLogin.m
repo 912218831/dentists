@@ -52,15 +52,18 @@ static HWUserLogin *userLogin = nil;
 
 - (void)userLogout
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [HWLoginUser MR_truncateAll];
-        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-    });
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        [HWLoginUser MR_truncateAll];
+//        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+//    });
 
     self.usertype = @"";
     self.username = @"";
     self.userkey = @"";
     self.userPassword = @"";
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    });
 }
 
 -(void)loadData

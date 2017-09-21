@@ -50,7 +50,7 @@
 
 - (void)initDefaultConfigs {
     self.headerImageView.layer.borderWidth = 4;
-    self.headerImageView.layer.borderColor = UIColorFromRGB(0xe6f0f5).CGColor;
+    self.headerImageView.layer.borderColor = UIColorFromRGB(0xf3f3f5).CGColor;
     self.headerImageView.layer.cornerRadius = kRate(45);
     self.headerImageView.layer.masksToBounds = true;
     
@@ -63,8 +63,7 @@
     self.nameLabel.text = @"";
     self.phoneLabel.text = @"";
     
-    self.backImageView.backgroundColor = CD_MainColor;
-    self.backImageView.alpha = 0.2;
+    self.backImageView.image = [UIImage imageNamed:@"personalCenter"];
 }
 
 @end

@@ -43,9 +43,10 @@
         
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             @strongify(self);
-            if (weakUserLogin.vertifyCode.length==6 && weakUserLogin.userPhone.length==11) {
-                [self post:kLoginApp type:0 params:@{@"mobile":weakUserLogin.userPhone,
-                                                     @"randCode":weakUserLogin.vertifyCode}
+            HWUserLogin *userLogin = weakUserLogin;
+            if (userLogin.vertifyCode.length==6 && userLogin.userPhone.length==11) {
+                [self post:kLoginApp type:0 params:@{@"mobile":userLogin.userPhone,
+                                                     @"randCode":userLogin.vertifyCode}
                    success:^(id response) {
                        [subscriber sendCompleted];
                        [HWCoreDataManager saveUserInfo];

@@ -82,7 +82,7 @@
     }];
     @weakify(self);
     if (self.viewModel.requestCommand) {
-        [[self.viewModel.requestCommand execute:nil]subscribeError:^(id x) {
+        [[self.viewModel.requestCommand execute:nil]subscribeCompleted:^ {
             @strongify(self);
             [self.listView reloadData];
         }];

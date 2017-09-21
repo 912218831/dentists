@@ -101,8 +101,7 @@ static ViewControllersRouter *router;
         BaseViewModel *viewModel = [[viewModelClass alloc]init];
         
         BaseViewController *login = [[vcClass alloc]initWithViewModel:viewModel];
-        HWBaseNavigationController *nav = [[HWBaseNavigationController alloc]initWithRootViewController:login];
-        SHARED_APP_DELEGATE.window.rootViewController = nav;
+        SHARED_APP_DELEGATE.window.rootViewController = login;
     }
     if ([viewModelName isEqualToString:@"GuideMainViewController"]) {
         HWGuideViewController *guide = [[HWGuideViewController alloc]init];

@@ -31,7 +31,8 @@
         @strongify(self);
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             [self post:kPersonCenterLogout type:0 params:@{} success:^(id response) {
-                [subscriber sendCompleted];
+                [weakUserLogin userLogout];
+                [subscriber sendNext:@1];
             } failure:^(NSString *error) {
                 [subscriber sendError:Error];
             }];

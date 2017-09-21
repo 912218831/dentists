@@ -32,17 +32,18 @@
         make.left.mas_equalTo(kRate(21));
         make.centerY.equalTo(self);
     }];
-    [self.rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self).with.offset(-kRate(21)).priority(MASLayoutPriorityRequired);
-        make.centerY.equalTo(self);
-        make.width.priority(MASLayoutPriorityRequired);
-        make.left.equalTo(self.textfield.mas_right).with.offset(kRate(30));
-    }];
+    
     [self.textfield mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self);
         make.top.equalTo(self).with.offset(kRate(6));
-        make.bottom.equalTo(self).with.offset(-kRate(6));
         make.left.equalTo(self.leftLabel.mas_right).with.offset(kRate(30));
+        make.width.mas_equalTo(kRate(120));
+    }];
+    
+    [self.rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self).with.offset(-kRate(21));
+        make.centerY.equalTo(self);
+        make.size.mas_equalTo(CGSizeMake(kRate(48), kRate(16)));
     }];
 }
 
@@ -66,11 +67,6 @@
         if (self.rightChannel) {
             [self.rightChannel.leadingTerminal sendNext:sender];
         }
-    }];
-    
-    [self.rightBtn sizeToFit];
-    [self.rightBtn mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(self.rightBtn.width).priority(MASLayoutPriorityRequired);
     }];
     
     [[self.textfield.rac_textSignal deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSString* x) {

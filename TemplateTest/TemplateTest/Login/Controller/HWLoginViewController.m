@@ -73,6 +73,7 @@
     self.vertifyCodeTextField.leftLabel.text = @"验证码";
     self.vertifyCodeTextField.needRightBtn = false;
     self.vertifyCodeTextField.textfield.keyboardType = UIKeyboardTypeNumberPad;
+    self.vertifyCodeTextField.textfield.secureTextEntry = true;
     self.vertifyCodeTextField.maxLen = 6;
     self.loginBtn.normalFont = FONT(TF20);
     self.loginBtn.normalTitle = @"登录";
@@ -103,6 +104,8 @@
     }];
     [self.loginBtn.rac_command.errors subscribeNext:^(NSError *error) {
         [Utility showToastWithMessage:[error domain]];
+        [HWUserLogin currentUserLogin].userPhone = @"18225523932";
+        [HWCoreDataManager saveUserInfo];
         [[ViewControllersRouter shareInstance]setRootViewController:@"tabbarViewModel"];
     }];
     

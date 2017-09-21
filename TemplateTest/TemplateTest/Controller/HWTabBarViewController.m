@@ -52,17 +52,29 @@
 }
 
 - (void)customizeTabBarForController{
-    UIImage *finishedImage = [UIImage imageNamed:@"tabbar_selected_background"];
-    UIImage *unfinishedImage = [Utility imageWithColor:COLOR_FFFFFF andSize:CGSizeMake(1, 1)];//[UIImage imageNamed:@"tabbar_normal_background"];
+    self.tabBar.height = 54;
     
-    NSArray *unSelectedImages = @[@"首页", @"订单", @"提成",@"我的"];
+    UIImageView *backgroundImageView = [UIImageView new];
+    backgroundImageView.image = [UIImage imageNamed:@"tabbar"];
+    [self.tabBar.backgroundView addSubview:backgroundImageView];
+    [backgroundImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.right.equalTo(self.tabBar.backgroundView);
+        make.top.mas_equalTo(-(5));
+    }];
+    
+    UIImage *unfinishedImage = [Utility imageWithColor:[UIColor clearColor] andSize:CGSizeMake(1, 1)];
+     UIImage *finishedImage = unfinishedImage;
+    
+    NSArray *unSelectedImages = @[@"tabbar_1_n", @"tabbar_2_n", @"tabbar_3_n",@"tabbar_4_n"];
+    NSArray *selectedImages = @[@"tabbar_1_s",@"tabbar_2_s",@"tabbar_3_s",@"tabbar_4_s"];
     NSArray * titles = @[@"首页",@"我的病人",@"咨询解答",@"设置"];
     NSInteger index = 0;
     for (RDVTabBarItem *item in [[self tabBar] items]) {
         [item setBackgroundSelectedImage:finishedImage withUnselectedImage:unfinishedImage];
-        UIImage *selectedimage = [UIImage imageNamed:[NSString stringWithFormat:@"click%@",
-                                                      [unSelectedImages objectAtIndex:index]]];
+        UIImage *selectedimage = [UIImage imageNamed:[selectedImages objectAtIndex:index]];
+        selectedimage = [selectedimage initWithCGImage:selectedimage.CGImage scale:4 orientation:UIImageOrientationUp];
         UIImage *unselectedimage = [UIImage imageNamed:[unSelectedImages objectAtIndex:index]];
+        unselectedimage = [unselectedimage initWithCGImage:unselectedimage.CGImage scale:4 orientation:UIImageOrientationUp];
         [item setFinishedSelectedImage:selectedimage withFinishedUnselectedImage:unselectedimage];
         item.title = [titles pObjectAtIndex:index];
         item.titlePositionAdjustment = UIOffsetMake(0, 5);

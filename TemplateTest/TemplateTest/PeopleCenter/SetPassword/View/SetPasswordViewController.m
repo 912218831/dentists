@@ -122,6 +122,14 @@
             leftLabel.text = kLabel_PhoneNumber;
             middleTextfield.attributedStr = kTextfield_PhoneNumber;
             middleTextfield.text = self.viewModel.phoneNumberStr;
+            middleTextfield.keyboardType = UIKeyboardTypeNumberPad;
+            @weakify(middleTextfield);
+            [middleTextfield.rac_textSignal subscribeNext:^(NSString* x) {
+                @strongify(middleTextfield)
+                if (x.length>11) {
+                    middleTextfield.text = [x substringToIndex:11];
+                }
+            }];
             RAC(self.viewModel,phoneNumberStr) = middleTextfield.rac_textSignal;
         }
             break;
@@ -129,6 +137,14 @@
         {
             leftLabel.text = kLabel_VertifyCode;
             middleTextfield.attributedStr = kTextfield_VertifyCode;
+            middleTextfield.keyboardType = UIKeyboardTypeNumberPad;
+            @weakify(middleTextfield);
+            [middleTextfield.rac_textSignal subscribeNext:^(NSString* x) {
+                @strongify(middleTextfield)
+                if (x.length>6) {
+                    middleTextfield.text = [x substringToIndex:6];
+                }
+            }];
             middleTextfield.text = self.viewModel.vertifyCodeStr;
             RAC(self.viewModel,vertifyCodeStr) = middleTextfield.rac_textSignal;
         }
@@ -138,6 +154,7 @@
             leftLabel.text = kLabel_Password;
             middleTextfield.attributedStr = kTextfield_Password;
             middleTextfield.text = self.viewModel.passwordStr;
+            middleTextfield.secureTextEntry = true;
             RAC(self.viewModel,passwordStr) = middleTextfield.rac_textSignal;
         }
             break;
@@ -146,6 +163,7 @@
             leftLabel.text = kLabel_ConfirmPwd;
             middleTextfield.attributedStr = kTextfield_ConfirmPwd;
             middleTextfield.text = self.viewModel.confirmPwdStr;
+            middleTextfield.secureTextEntry = true;
             RAC(self.viewModel,confirmPwdStr) = middleTextfield.rac_textSignal;
         }
             break;

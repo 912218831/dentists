@@ -49,7 +49,7 @@
     }];
     [self.picNumLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.dateLabel);
-        make.left.equalTo(self.picNumLabel.mas_right).with.offset(kRate(16));
+        make.left.equalTo(self.dateLabel.mas_right).with.offset(kRate(16));
     }];
     [self.patientDesLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.dateLabel.mas_bottom).with.offset(kRate(11));
@@ -61,19 +61,19 @@
     self.dotView.layer.cornerRadius = self.dotView.width/2.0;
     self.dotView.layer.backgroundColor = CD_MainColor.CGColor;
     
-    self.nameLabel.text = @"李先生";
+    self.nameLabel.text = @"";
     self.nameLabel.font = FONT(TF16);
     self.nameLabel.textColor = CD_Text;
     
-    self.dateLabel.text = @"今天下午";
+    self.dateLabel.text = @"";
     self.dateLabel.font = FONT(TF14);
     self.dateLabel.textColor = CD_Text66;
     
-    self.picNumLabel.text = @"共8张图片";
+    self.picNumLabel.text = @"";
     self.picNumLabel.font = FONT(TF14);
     self.picNumLabel.textColor = CD_Text66;
     
-    self.patientDesLabel.text = @"可能：牙龈癍严重";
+    self.patientDesLabel.text = @"";
     self.patientDesLabel.font = FONT(TF14);
     self.patientDesLabel.textColor = CD_Text66;
 }
