@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <script>
+        function displayDate()
+        {
+            var dic3 = { "zs": "张三1", "ls": "李四1", "ww": "王五1" };
+            var arr = ["1","2","3"];
+            window.webkit.messageHandlers.bridge.postMessage(dic3);
+            window.webkit.messageHandlers.bridge.postMessage(arr);
+        }
+    </script>
+<button type="button" onclick="displayDate()">
+Display Date</button>
+</body>
+</html>

@@ -68,6 +68,12 @@
                 [self.patientButton addObject:item];
             }
             
+            [[item rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(id x) {
+                if (self.tapCommand) {
+                    [self.tapCommand execute:RACTuplePack(@(self.indexPath.row),@(index))];
+                }
+            }];
+            
             UILabel *label = [item viewWithTag:100];
             UIImageView *imageView = [item viewWithTag:200];
             label.text = model.userName;

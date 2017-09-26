@@ -7,8 +7,11 @@
 //
 
 #import "BaseListViewCell.h"
+#import "DoubleLabelButton.h"
 
 @interface HPTReservationNumCell : BaseListViewCell
 @property (nonatomic, strong) RACSignal *waitAffirmSignal;// 待预约
 @property (nonatomic, strong) RACSignal *reserveredSignal;// 已预约
+@property (nonatomic, strong) DoubleLabelButton *waitAffirmBtn;
+@property (nonatomic, strong) DoubleLabelButton *reserveredBtn;
 @end

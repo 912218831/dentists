@@ -88,9 +88,10 @@
 - (void)configContentView {
     [super configContentView];
     
-    
-    
     self.listView = [[UIScrollView alloc]initWithFrame:self.bounds];
+    if (IOS11) {
+        self.listView.top = -20;
+    }
     self.listView.delegate = self;
     self.listView.contentSize = self.bounds.size;
     self.listView.alwaysBounceVertical = true;

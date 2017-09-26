@@ -29,7 +29,8 @@
              kReserverRecordVM:self.reserverRecord,
              kReserverRecordDetailVM:self.reserverDetail,
              kPeopleCenterVM:self.peopleCenter,
-             kSetPwdVM:self.setPassword
+             kSetPwdVM:self.setPassword,
+             kMyPatientsVM:self.myPatients
              };
 }
 
@@ -48,6 +49,12 @@
 }
 
 + (NSDictionary *)reserverRecord {
+    return @{
+             @"title":@"我的病人",
+             };
+}
+
++ (NSDictionary *)myPatients {
     return @{
              @"title":@"我的病人",
              };

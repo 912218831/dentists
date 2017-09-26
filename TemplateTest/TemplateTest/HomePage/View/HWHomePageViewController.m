@@ -41,8 +41,8 @@
 @implementation HWHomePageViewController
 @dynamic viewModel;
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)configContentView {
+    [super configContentView];
     self.listView = [[UITableView alloc]initWithFrame:(CGRect){CGPointZero,self.view.width,self.view.height-(64+49)} style:UITableViewStyleGrouped];
     self.listView.dataSource = self;
     self.listView.delegate = self;
@@ -52,7 +52,6 @@
     self.sidebarView = [[HPSiderbar alloc]initWithSolidLength:kRate(280/2.0) dashedLength:kRate(132/2.0) dashedLineLength:kRate(3) dashedSapce:kRate(2)];
     [self.listView addSubview:self.sidebarView];
     
-//    self.sidebarView.backgroundColor = [UIColor redColor];
 }
 
 // 数据
@@ -82,15 +81,18 @@
         }
     }];
     
-    if (self.viewModel.requestCommand) {
-        [[self.viewModel.requestCommand execute:nil]subscribeCompleted:^ {
-            @strongify(self);
-            [self.listView reloadData];
-        }];
-    }
-    
+    [[self.viewModel.requestCommand execute:nil]subscribeCompleted:^ {
+        @strongify(self);
+        [self.listView reloadData];
+    }];
     /*
     */
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0 && indexPath.row != 0) {
+        [self.viewModel.todayTapCommand execute:@(indexPath.row-1)];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -163,8 +165,8 @@
                     cell.reserveredSignal = [RACSignal return:self.viewModel.confirmed];
                     cell.waitAffirmSignal = [RACSignal return:self.viewModel.unconfirmed];
                     [cell bindSignal];
-                    
-                    
+                    self.viewModel.reserveredSignal = [cell.reserveredBtn rac_signalForControlEvents:UIControlEventTouchUpInside];
+                    self.viewModel.waitAffirmSignal = [cell.waitAffirmBtn rac_signalForControlEvents:UIControlEventTouchUpInside];
                     return cell;
                 }
                     break;
@@ -192,14 +194,14 @@
                 cell = [[HPFReserverPeopleCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
                 kAddDashLine(cell, 156/2.0, 15);
             }
-            
             cell.signal = [RACSignal return:[self.viewModel.reserverPeoples objectAtIndex:indexPath.row]];
+            cell.indexPath = indexPath;
+            cell.tapCommand = self.viewModel.tapCommand;
             return cell;
         }
             break;
     }
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -20,7 +20,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController setNavigationBarHidden:false animated:true];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:false animated:false];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -29,7 +33,6 @@
 
 - (void)configContentView {
     [super configContentView];
-    
     self.listView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
     self.listView.dataSource = self;
     self.listView.delegate = self;

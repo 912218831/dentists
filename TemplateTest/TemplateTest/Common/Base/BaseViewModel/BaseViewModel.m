@@ -29,7 +29,7 @@
 }
 
 - (void)post:(NSString *)url type:(int)type params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSString *))failure {
-    [HWUserLogin currentUserLogin].userkey = @"301671fa5166bd4686d4a3d77583f6b3";//@"00455ae9eff61c2eb0b59bb350b1c971";
+    [HWUserLogin currentUserLogin].userkey = @"3018797da6f7cc84831273de38bfe6eb";//@"00455ae9eff61c2eb0b59bb350b1c971";
     [[ProtocolTerminal sharedInstance]post:url params:params success:^(id json) {
         success(json);
     } failure:^(NSString *error) {

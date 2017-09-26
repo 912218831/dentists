@@ -7,9 +7,8 @@
 //
 
 #import "HWCommissionViewController.h"
-#import "HWWebView.h"
 
-@interface HWCommissionViewController ()<HWWebViewDelegate>
+@interface HWCommissionViewController ()
 
 @end
 
@@ -17,10 +16,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.titleView = [Utility navTitleView:@"提成"];
-
 }
 
+- (void)configContentView {
+    [super configContentView];
+    self.navigationItem.titleView = [Utility navTitleView:@"提成"];
+    
+    self.url = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"test" ofType:@"html"]];
+}
+
+
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
+    
+}
 
 
 @end

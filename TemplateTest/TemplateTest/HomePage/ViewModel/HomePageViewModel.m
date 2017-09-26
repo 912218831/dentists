@@ -105,6 +105,44 @@
             return nil;
         }];
     }];
+    //
+    RACSignal *observeWait = [[RACObserve(self, waitAffirmSignal)filter:^BOOL(id value) {
+        return value;
+    }] distinctUntilChanged];
+    [observeWait.switchToLatest subscribeNext:^(RACSignal *x) {
+        // 待确认
+        NSLog(@"signal=%@,---",x);
+        @strongify(self);
+        [[ViewControllersRouter shareInstance]popToRootViewModelAnimated:false];
+        [(HWTabBarViewController*)SHARED_APP_DELEGATE.tabBarVC setSelectedIndex:1];
+    }];
+    [[[RACObserve(self, reserveredSignal)filter:^BOOL(id value) {
+        return value;
+    }]distinctUntilChanged].switchToLatest subscribeNext:^(id x) {
+        // 待确认
+        @strongify(self);
+        [[ViewControllersRouter shareInstance]popToRootViewModelAnimated:false];
+        [(HWTabBarViewController*)SHARED_APP_DELEGATE.tabBarVC setSelectedIndex:1];
+    }];
+    //
+    self.tapCommand = [[RACCommand alloc]initWithSignalBlock:^RACSignal *(RACTuple *input) {
+        @strongify(self);
+        NSNumber *first = input.first;
+        NSNumber *second = input.second;
+        NSArray *arr = [self.reserverPeoples objectAtIndex:first.integerValue];
+        HPReserverPeopleModel *model = [arr objectAtIndex:second.integerValue];
+        [[ViewControllersRouter shareInstance]popToRootViewModelAnimated:false];
+        [(HWTabBarViewController*)SHARED_APP_DELEGATE.tabBarVC setSelectedIndex:1];
+        return nil;
+    }];
+    
+    self.todayTapCommand = [[RACCommand alloc]initWithSignalBlock:^RACSignal *(NSNumber *input) {
+        @strongify(self);
+        HPReserverListModel *model = [self.allConfirmedList objectAtIndex:input.integerValue];
+        [[ViewControllersRouter shareInstance]popToRootViewModelAnimated:false];
+        [(HWTabBarViewController*)SHARED_APP_DELEGATE.tabBarVC setSelectedIndex:1];
+        return nil;
+    }];
 }
 
 @end

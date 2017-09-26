@@ -54,7 +54,7 @@
                        [subscriber sendError:Error];
                    }];
             } else {
-                [subscriber sendError:[NSError errorWithDomain:@"用户名或密码不正确" code:404 userInfo:nil]];
+                [subscriber sendError:[NSError errorWithDomain:@"用户名或验证码不正确" code:404 userInfo:nil]];
             }
             return nil;
         }];

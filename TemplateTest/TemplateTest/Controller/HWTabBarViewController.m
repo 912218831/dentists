@@ -9,7 +9,7 @@
 #import "HWTabBarViewController.h"
 #import "HomePageViewModel.h"
 #import "HWPeopleCenterViewModel.h"
-#import "ReserverRecordViewModel.h"
+#import "MyPatientsViewModel.h"
 #import "HWCommissionViewController.h"
 #import "RDVTabBarItem.h"
 @interface HWTabBarViewController ()
@@ -32,7 +32,7 @@
     HomePageViewModel *hpViewModel = [[HomePageViewModel alloc]init];
     UIViewController *homePageController = [[ViewControllersRouter shareInstance]controllerMatchViewModel:hpViewModel];
     
-    ReserverRecordViewModel *rrViewModel = [[ReserverRecordViewModel alloc]init];
+    MyPatientsViewModel *rrViewModel = [[MyPatientsViewModel alloc]init];
     UIViewController *secondViewController = [[ViewControllersRouter shareInstance]controllerMatchViewModel:rrViewModel];
     
     UIViewController *thirdViewController = [[HWCommissionViewController alloc] init];

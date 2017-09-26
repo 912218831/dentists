@@ -6,9 +6,9 @@
 //  Copyright © 2017年 caijingpeng.haowu. All rights reserved.
 //
 
-#import "HWBaseViewController.h"
+#import "BaseWebViewController.h"
 
-@interface HWCommissionViewController : HWBaseViewController
+@interface HWCommissionViewController : BaseWebViewController
 @property(assign,nonatomic)BOOL canBack;
 
 @end

@@ -66,7 +66,8 @@ static ViewControllersRouter *router;
              kReserverRecordSearchVM:objc_getClass("RRSearchResultVC"),
              kReserverRecordDetailVM:objc_getClass("PatientDetailViewController"),
              kPeopleCenterVM:objc_getClass("HWPeopleCenterViewController"),
-             kSetPwdVM:objc_getClass("SetPasswordViewController")
+             kSetPwdVM:objc_getClass("SetPasswordViewController"),
+             kMyPatientsVM:objc_getClass("MyPatientsViewController")
              };
 }
 
@@ -142,6 +143,11 @@ static ViewControllersRouter *router;
     if (vc.navigationController.viewControllers.count <= 1) {
         [SHARED_APP_DELEGATE.tabBarVC setTabBarHidden:false];
     }
+}
+
+- (void)popToRootViewModelAnimated:(BOOL)animated {
+    UIViewController *vc = [BaseViewController currentViewController];
+    [vc.navigationController popToRootViewControllerAnimated:animated];
 }
 
 - (void)presentViewModel:(BaseViewModel *)viewModel animated:(BOOL)animated completion:(VoidBlock)completion {

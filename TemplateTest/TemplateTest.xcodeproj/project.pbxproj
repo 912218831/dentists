@@ -178,12 +178,16 @@
 		C59083501F5EDC810000B58D /* TOP_ARROW@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C590834F1F5EDC810000B58D /* TOP_ARROW@2x.png */; };
 		C59083531F5EE2510000B58D /* PatientDetailAbstractCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C59083521F5EE2510000B58D /* PatientDetailAbstractCell.m */; };
 		C59C42F31F5C0B0500A4A855 /* HPSiderbar.m in Sources */ = {isa = PBXBuildFile; fileRef = C59C42F21F5C0B0500A4A855 /* HPSiderbar.m */; };
+		C59F177F1F7A7D45002DBB78 /* MyPatientsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C59F177E1F7A7D45002DBB78 /* MyPatientsViewController.m */; };
+		C59F17821F7A7D66002DBB78 /* MyPatientsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C59F17811F7A7D66002DBB78 /* MyPatientsViewModel.m */; };
 		C5A269351F651700002EC244 /* HWPeopleCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A269341F651700002EC244 /* HWPeopleCenterViewController.m */; };
 		C5A269381F651716002EC244 /* HWPeopleCenterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A269371F651716002EC244 /* HWPeopleCenterViewModel.m */; };
 		C5A2693B1F651D68002EC244 /* HWPeopleCenterHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A2693A1F651D68002EC244 /* HWPeopleCenterHeadView.m */; };
 		C5A2693E1F651E65002EC244 /* HWPeopleCenterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A2693D1F651E65002EC244 /* HWPeopleCenterCell.m */; };
 		C5A269451F653422002EC244 /* SetPasswordViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A269441F653422002EC244 /* SetPasswordViewModel.m */; };
 		C5A269481F653436002EC244 /* SetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A269471F653436002EC244 /* SetPasswordViewController.m */; };
+		C5AE80F01F7A86CE00421D32 /* BaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AE80EE1F7A86CE00421D32 /* BaseWebViewController.m */; };
+		C5AE80F21F7A8A9400421D32 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = C5AE80F11F7A8A9400421D32 /* test.html */; };
 		C5D1A5E71F72999700A43C0A /* tabbar_1_n@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D1A5E61F72999700A43C0A /* tabbar_1_n@2x.png */; };
 		C5D1A5E91F72999B00A43C0A /* tabbar_1_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D1A5E81F72999B00A43C0A /* tabbar_1_s@2x.png */; };
 		C5D1A5F01F7299C300A43C0A /* tabbar_2_n@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D1A5EA1F7299C300A43C0A /* tabbar_2_n@2x.png */; };
@@ -585,6 +589,10 @@
 		C59083521F5EE2510000B58D /* PatientDetailAbstractCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientDetailAbstractCell.m; sourceTree = "<group>"; };
 		C59C42F11F5C0B0500A4A855 /* HPSiderbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSiderbar.h; sourceTree = "<group>"; };
 		C59C42F21F5C0B0500A4A855 /* HPSiderbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSiderbar.m; sourceTree = "<group>"; };
+		C59F177D1F7A7D45002DBB78 /* MyPatientsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyPatientsViewController.h; sourceTree = "<group>"; };
+		C59F177E1F7A7D45002DBB78 /* MyPatientsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyPatientsViewController.m; sourceTree = "<group>"; };
+		C59F17801F7A7D66002DBB78 /* MyPatientsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyPatientsViewModel.h; sourceTree = "<group>"; };
+		C59F17811F7A7D66002DBB78 /* MyPatientsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyPatientsViewModel.m; sourceTree = "<group>"; };
 		C5A269331F651700002EC244 /* HWPeopleCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWPeopleCenterViewController.h; sourceTree = "<group>"; };
 		C5A269341F651700002EC244 /* HWPeopleCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWPeopleCenterViewController.m; sourceTree = "<group>"; };
 		C5A269361F651716002EC244 /* HWPeopleCenterViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWPeopleCenterViewModel.h; sourceTree = "<group>"; };
@@ -597,6 +605,9 @@
 		C5A269441F653422002EC244 /* SetPasswordViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPasswordViewModel.m; sourceTree = "<group>"; };
 		C5A269461F653436002EC244 /* SetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPasswordViewController.h; sourceTree = "<group>"; };
 		C5A269471F653436002EC244 /* SetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPasswordViewController.m; sourceTree = "<group>"; };
+		C5AE80EE1F7A86CE00421D32 /* BaseWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseWebViewController.m; sourceTree = "<group>"; };
+		C5AE80EF1F7A86CE00421D32 /* BaseWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseWebViewController.h; sourceTree = "<group>"; };
+		C5AE80F11F7A8A9400421D32 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
 		C5D1A5E61F72999700A43C0A /* tabbar_1_n@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_1_n@2x.png"; sourceTree = "<group>"; };
 		C5D1A5E81F72999B00A43C0A /* tabbar_1_s@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_1_s@2x.png"; sourceTree = "<group>"; };
 		C5D1A5EA1F7299C300A43C0A /* tabbar_2_n@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_2_n@2x.png"; sourceTree = "<group>"; };
@@ -740,6 +751,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B066574A1D94F3AD00C51061 /* WebKit.framework in Frameworks */,
 				75FC76911D894EB700B24859 /* libresolv.tbd in Frameworks */,
 				75C741781DC71A0A0072D0ED /* libz.tbd in Frameworks */,
 				D2C8F8C61B67684400628D96 /* Security.framework in Frameworks */,
@@ -750,7 +762,6 @@
 				D2C8F8C81B67685B00628D96 /* CoreTelephony.framework in Frameworks */,
 				D2C28F0E1B7CC5BB00E2716D /* CoreFoundation.framework in Frameworks */,
 				75C741761DC7199D0072D0ED /* UserNotifications.framework in Frameworks */,
-				B066574A1D94F3AD00C51061 /* WebKit.framework in Frameworks */,
 				75FC76931D896BE600B24859 /* libxml2.tbd in Frameworks */,
 				B0290DCD1D8288B200F4B34F /* libresolv.9.tbd in Frameworks */,
 				B0290DEA1D8289A700F4B34F /* VideoToolbox.framework in Frameworks */,
@@ -1165,6 +1176,7 @@
 			children = (
 				D2401FDB1E238EC90098B49E /* TemplateTest.entitlements */,
 				C5A2692F1F6516CC002EC244 /* PeopleCenter */,
+				C59F17791F7A7D1A002DBB78 /* WebReserverRecord */,
 				C5F4F8001F5D6AD4003330CC /* ReserverRecord */,
 				C53BE1621F5AFD5B00E466B7 /* HomePage */,
 				C55A89271F5850CF00935B5B /* Login */,
@@ -1365,6 +1377,9 @@
 		C53BE11E1F5A32BF00E466B7 /* BaseViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C5AE80F11F7A8A9400421D32 /* test.html */,
+				C5AE80EF1F7A86CE00421D32 /* BaseWebViewController.h */,
+				C5AE80EE1F7A86CE00421D32 /* BaseWebViewController.m */,
 				C53BE11F1F5A32BF00E466B7 /* BaseListViewController.h */,
 				C53BE1201F5A32BF00E466B7 /* BaseListViewController.m */,
 				C53BE1211F5A32BF00E466B7 /* BaseViewController.h */,
@@ -1522,6 +1537,41 @@
 				C59083481F5ED7410000B58D /* PatientDetailViewModel.m */,
 				C5EFE7781F604781005E4894 /* PatientDetailSuggestDataSource.h */,
 				C5EFE7791F604781005E4894 /* PatientDetailSuggestDataSource.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C59F17791F7A7D1A002DBB78 /* WebReserverRecord */ = {
+			isa = PBXGroup;
+			children = (
+				C59F177A1F7A7D1A002DBB78 /* Model */,
+				C59F177B1F7A7D1A002DBB78 /* View */,
+				C59F177C1F7A7D1A002DBB78 /* ViewModel */,
+			);
+			path = WebReserverRecord;
+			sourceTree = "<group>";
+		};
+		C59F177A1F7A7D1A002DBB78 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C59F177B1F7A7D1A002DBB78 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C59F177D1F7A7D45002DBB78 /* MyPatientsViewController.h */,
+				C59F177E1F7A7D45002DBB78 /* MyPatientsViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C59F177C1F7A7D1A002DBB78 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C59F17801F7A7D66002DBB78 /* MyPatientsViewModel.h */,
+				C59F17811F7A7D66002DBB78 /* MyPatientsViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1999,6 +2049,7 @@
 				C5D1A60A1F7299E600A43C0A /* tabbar_4_s@3x.png in Resources */,
 				C5D1A5F51F7299C300A43C0A /* tabbar_4_s@2x.png in Resources */,
 				FCF9CFA91D94C3020051BD5C /* Info.plist in Resources */,
+				C5AE80F21F7A8A9400421D32 /* test.html in Resources */,
 				B0B0B58D1F287302002FE127 /* click提成@2x.png in Resources */,
 				B0B0B58F1F287302002FE127 /* click首页@2x.png in Resources */,
 				C5D1A60B1F7299E600A43C0A /* tabbar@3x.png in Resources */,
@@ -2081,7 +2132,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		0CE44A5774C05F9C445555D3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
@@ -2089,10 +2140,9 @@
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TemplateTest/Pods-TemplateTest-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		7AECD459A69D99FD0D8B99E5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2111,7 +2161,7 @@
 		};
 		9C21058431AA60E6EDA46FEB /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
@@ -2119,14 +2169,13 @@
 			name = "Copy Pods Resources";
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TemplateTest/Pods-TemplateTest-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		B118E88D45EFE601E85B2FAF /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -2192,6 +2241,7 @@
 				C5EFE7741F6034BA005E4894 /* HZWaitingView.m in Sources */,
 				B0F8EF8C1EF3C39F00F38770 /* UIBezierPath+Elements.m in Sources */,
 				C504F6C31F619D90001F6081 /* GFCalendarCell.m in Sources */,
+				C5AE80F01F7A86CE00421D32 /* BaseWebViewController.m in Sources */,
 				B0F6750B1F2A1A230019086E /* HWRegisterIdentifyCell.m in Sources */,
 				B0F674F91F291F660019086E /* HWRegisterPhoneCell.m in Sources */,
 				B0B0B5461F276BB0002FE127 /* HWCommissionViewController.m in Sources */,
@@ -2306,6 +2356,7 @@
 				B0B0B53A1F2766E6002FE127 /* RDVTabBarItem.m in Sources */,
 				C5F2BE051F5EC7D20012DE67 /* PatientModel.m in Sources */,
 				C53BE1101F5A319B00E466B7 /* HWLoginViewController.m in Sources */,
+				C59F177F1F7A7D45002DBB78 /* MyPatientsViewController.m in Sources */,
 				C53BE13B1F5A32BF00E466B7 /* BaseListView.m in Sources */,
 				C5F4F8301F5D75E2003330CC /* JKRSearchBar.m in Sources */,
 				C24E7E051ADF887900BA8ECC /* HWBaseNavigationController.m in Sources */,
@@ -2332,6 +2383,7 @@
 				C5F4F8361F5D7664003330CC /* UIView+JKRTouch.m in Sources */,
 				B0D26B041BDF7B920012A093 /* HWCountDownBtnItem.m in Sources */,
 				C53BE1841F5BC21900E466B7 /* HPTReservationNumCell.m in Sources */,
+				C59F17821F7A7D66002DBB78 /* MyPatientsViewModel.m in Sources */,
 				C53BE1441F5A34FE00E466B7 /* BaseViewController+Frame.m in Sources */,
 				C53BE14E1F5A73E000E466B7 /* HWUserLogin.m in Sources */,
 				C53BE1511F5A751000E466B7 /* LoginTextField.m in Sources */,

@@ -13,5 +13,69 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/ReactiveCocoa/ReactiveCocoa/RACSignal+Operations.m"
+            timestampString = "527951361.924739"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "790"
+            endingLineNumber = "790"
+            landmarkName = "-switchToLatest"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__39-[RACSignal(Operations) switchToLatest]_block_invoke_2"
+                  moduleName = "TemplateTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hw/Desktop/%E9%A1%B9%E7%9B%AE%E4%B8%B4%E6%97%B6/template/code/TemplateTest/Pods/ReactiveCocoa/ReactiveCocoa/RACSignal+Operations.m"
+                  timestampString = "527951361.931737"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "790"
+                  endingLineNumber = "790"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__39-[RACSignal(Operations) switchToLatest]_block_invoke_2"
+                  moduleName = "TemplateTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hw/Desktop/%E9%A1%B9%E7%9B%AE%E4%B8%B4%E6%97%B6/template/code/TemplateTest/Pods/ReactiveCocoa/ReactiveCocoa/RACSignal+Operations.m"
+                  timestampString = "527951361.936172"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "790"
+                  endingLineNumber = "790"
+                  offsetFromSymbolStart = "130">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/ReactiveCocoa/ReactiveCocoa/RACSignal+Operations.m"
+            timestampString = "527952210.858135"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "269"
+            endingLineNumber = "269"
+            landmarkName = "-catchTo:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -7,14 +7,11 @@
 //
 
 #import "HPTReservationNumCell.h"
-#import "DoubleLabelButton.h"
 #import "DashLineView.h"
 
 @interface HPTReservationNumCell ()
 @property (nonatomic, strong) UIView *signView;
 @property (nonatomic, strong) UILabel *titleLabel;
-@property (nonatomic, strong) DoubleLabelButton *waitAffirmBtn;
-@property (nonatomic, strong) DoubleLabelButton *reserveredBtn;
 @property (nonatomic, strong) DashLineView *dashLine;
 @end
 
@@ -78,6 +75,7 @@
     self.waitAffirmBtn.bottomLabel.text = @"待确认预约";
     self.reserveredBtn.topLabel.text = @"";
     self.reserveredBtn.bottomLabel.text = @"已预约";
+    
 }
 
 - (void)bindSignal {

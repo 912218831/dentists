@@ -18,5 +18,11 @@
 @property (nonatomic, strong) NSArray *confirmedListPm;
 @property (nonatomic, strong) NSArray *expectedTimes;
 @property (nonatomic, strong) NSArray *reserverPeoples;
+//
 @property (nonatomic, strong) RACCommand *requestCommand;
+@property (nonatomic, strong) RACSignal *reserveredSignal;
+@property (nonatomic, strong) RACSignal *waitAffirmSignal;
+@property (nonatomic, strong) RACCommand *tapCommand;
+@property (nonatomic, strong) RACCommand *todayTapCommand;
+//
 @end

@@ -133,6 +133,7 @@ typedef enum
 #define IOS8                            ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0 ? YES : NO)
 #define IOS83                           ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.3 ? YES : NO)
 #define IOS10                            ([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0 ? YES : NO)
+#define IOS11                            ([[[UIDevice currentDevice] systemVersion] floatValue] >= 11.0 ? YES : NO)
 
 
 /*  屏幕尺寸
@@ -336,6 +337,7 @@ typedef enum
 #define kHomePageVM             @"HomePageViewModel"
 #define kLoginVM                @"LoginViewModel"
 #define kReserverRecordVM       @"ReserverRecordViewModel"
+#define kMyPatientsVM           @"MyPatientsViewModel"
 #define kReserverRecordSearchVM @"RRSearchResultViewModel"
 #define kReserverRecordDetailVM @"PatientDetailViewModel"
 #define kPeopleCenterVM         @"HWPeopleCenterViewModel"

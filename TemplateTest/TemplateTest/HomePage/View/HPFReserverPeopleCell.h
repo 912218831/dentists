@@ -11,4 +11,5 @@
 
 @interface HPFReserverPeopleCell : BaseListViewCell
 @property (nonatomic, strong) RACSignal *signal;
+@property (nonatomic, strong) RACCommand *tapCommand;
 @end

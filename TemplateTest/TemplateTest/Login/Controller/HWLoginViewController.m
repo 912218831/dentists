@@ -94,6 +94,8 @@
     // 登录
     self.loginBtn.rac_command = self.viewModel.loginCommand;
     [self.loginBtn.rac_command.executionSignals.switchToLatest subscribeNext:^(id value) {
+        [HWCoreDataManager saveUserInfo];
+        [[ViewControllersRouter shareInstance]setRootViewController:@"tabbarViewModel"];
     }];
     [[self.loginBtn.rac_command.executing skip:1] subscribeNext:^(NSNumber *x) {
         if (x.boolValue) {
@@ -105,7 +107,7 @@
     [self.loginBtn.rac_command.errors subscribeNext:^(NSError *error) {
         [Utility showToastWithMessage:[error domain]];
         [HWUserLogin currentUserLogin].userPhone = @"18225523932";
-        [HWCoreDataManager saveUserInfo];
+        //[HWCoreDataManager saveUserInfo];
         [[ViewControllersRouter shareInstance]setRootViewController:@"tabbarViewModel"];
     }];
     

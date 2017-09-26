@@ -13,7 +13,7 @@
 #endif
 
 #ifdef __OBJC__
-
+    #import <WebKit/WebKit.h>
     #import "Define.h"
     #import "Constant.h"
     #import "HWRequestConfig.h"
