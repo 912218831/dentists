@@ -14,5 +14,5 @@
 @property (nonatomic, strong) NSURL *url;
 
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message;
-
+- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation;
 @end

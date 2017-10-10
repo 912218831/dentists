@@ -14,7 +14,9 @@
 static HWUserLogin *userLogin = nil;
 
 
-
+- (void)setUserkey:(NSString *)userkey {
+    _userkey = userkey;
+}
 
 + (HWUserLogin *)currentUserLogin
 {

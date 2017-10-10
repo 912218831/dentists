@@ -29,10 +29,13 @@
 
 - (void)setUpControllers
 {
+    [HWUserLogin currentUserLogin].userkey = @"3018797da6f7cc84831273de38bfe6eb";//@"00455ae9eff61c2eb0b59bb350b1c971";
+    
     HomePageViewModel *hpViewModel = [[HomePageViewModel alloc]init];
     UIViewController *homePageController = [[ViewControllersRouter shareInstance]controllerMatchViewModel:hpViewModel];
     
     MyPatientsViewModel *rrViewModel = [[MyPatientsViewModel alloc]init];
+    rrViewModel.urlStr = AppendHTML(kReserverListHTML);
     UIViewController *secondViewController = [[ViewControllersRouter shareInstance]controllerMatchViewModel:rrViewModel];
     
     UIViewController *thirdViewController = [[HWCommissionViewController alloc] init];

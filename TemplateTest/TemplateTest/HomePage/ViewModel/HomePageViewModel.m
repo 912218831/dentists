@@ -7,6 +7,7 @@
 //
 
 #import "HomePageViewModel.h"
+#import "MyPatientsViewModel.h"
 
 @implementation HomePageViewModel
 
@@ -110,19 +111,25 @@
         return value;
     }] distinctUntilChanged];
     [observeWait.switchToLatest subscribeNext:^(RACSignal *x) {
-        // 待确认
+        // 待确认预约
         NSLog(@"signal=%@,---",x);
         @strongify(self);
         [[ViewControllersRouter shareInstance]popToRootViewModelAnimated:false];
-        [(HWTabBarViewController*)SHARED_APP_DELEGATE.tabBarVC setSelectedIndex:1];
+        HWTabBarViewController *tabbarVC = SHARED_APP_DELEGATE.tabBarVC;
+        BaseViewController *vc = [tabbarVC.viewControllers objectAtIndex:1];
+        [vc.navigationController popViewControllerAnimated:false];
+        [tabbarVC setSelectedIndex:1];
     }];
     [[[RACObserve(self, reserveredSignal)filter:^BOOL(id value) {
         return value;
     }]distinctUntilChanged].switchToLatest subscribeNext:^(id x) {
-        // 待确认
+        // 已预约
         @strongify(self);
         [[ViewControllersRouter shareInstance]popToRootViewModelAnimated:false];
-        [(HWTabBarViewController*)SHARED_APP_DELEGATE.tabBarVC setSelectedIndex:1];
+        HWTabBarViewController *tabbarVC = SHARED_APP_DELEGATE.tabBarVC;
+        BaseViewController *vc = [tabbarVC.viewControllers objectAtIndex:1];
+        [vc.navigationController popViewControllerAnimated:false];
+        [tabbarVC setSelectedIndex:1];
     }];
     //
     self.tapCommand = [[RACCommand alloc]initWithSignalBlock:^RACSignal *(RACTuple *input) {
@@ -131,9 +138,21 @@
         NSNumber *second = input.second;
         NSArray *arr = [self.reserverPeoples objectAtIndex:first.integerValue];
         HPReserverPeopleModel *model = [arr objectAtIndex:second.integerValue];
+        
         [[ViewControllersRouter shareInstance]popToRootViewModelAnimated:false];
-        [(HWTabBarViewController*)SHARED_APP_DELEGATE.tabBarVC setSelectedIndex:1];
-        return nil;
+        HWTabBarViewController *tabbarVC = SHARED_APP_DELEGATE.tabBarVC;
+        UINavigationController *vc = [tabbarVC.viewControllers objectAtIndex:1];
+        
+        MyPatientsViewModel *rrViewModel = [[MyPatientsViewModel alloc]init];
+        rrViewModel.urlStr = [NSString stringWithFormat:@"%@&id=%@",AppendHTML(kReserverDetailHTML),model.Id];
+        rrViewModel.title = @"病人详情";
+        rrViewModel.leftImageName = @"TOP_ARROW";
+        [tabbarVC setTabBarHidden:true];
+        UIViewController *baseVC = [[ViewControllersRouter shareInstance]controllerMatchViewModel:rrViewModel];
+        [vc pushViewController:baseVC animated:false];
+        [tabbarVC setSelectedIndex:1];
+        
+        return [RACSignal empty];
     }];
     
     self.todayTapCommand = [[RACCommand alloc]initWithSignalBlock:^RACSignal *(NSNumber *input) {
@@ -141,7 +160,7 @@
         HPReserverListModel *model = [self.allConfirmedList objectAtIndex:input.integerValue];
         [[ViewControllersRouter shareInstance]popToRootViewModelAnimated:false];
         [(HWTabBarViewController*)SHARED_APP_DELEGATE.tabBarVC setSelectedIndex:1];
-        return nil;
+        return [RACSignal empty];
     }];
 }
 

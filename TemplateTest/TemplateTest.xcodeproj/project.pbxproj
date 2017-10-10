@@ -2001,14 +2001,14 @@
 				TargetAttributes = {
 					C24E7DA31ADE51AA00BA8ECC = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = CMYJ8LA292;
+						DevelopmentTeam = X6VE6Z688G;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -2513,11 +2513,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_ENTITLEMENTS = TemplateTest/TemplateTest.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: jingpeng cai (2UA44V4L3F)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: jingpeng cai (2UA44V4L3F)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: sheng gu (M78252NS8H)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: sheng gu (M78252NS8H)";
 				CODE_SIGN_RESOURCE_RULES_PATH = "";
-				DEVELOPMENT_TEAM = CMYJ8LA292;
+				DEVELOPMENT_TEAM = X6VE6Z688G;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2570,10 +2569,10 @@
 				MACH_O_TYPE = mh_execute;
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "${SRCROOT}/Pods";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bkd.molin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haowu.haowuagency;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9f6c8381-b7e6-46d9-9574-b897b9100525";
-				PROVISIONING_PROFILE_SPECIFIER = molin;
+				PROVISIONING_PROFILE = "b7e0485f-695b-4f40-860f-b3050b074380";
+				PROVISIONING_PROFILE_SPECIFIER = hehuoren;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -2585,11 +2584,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_ENTITLEMENTS = TemplateTest/TemplateTest.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: jingpeng cai (2UA44V4L3F)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: jingpeng cai (2UA44V4L3F)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: sheng gu (M78252NS8H)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: sheng gu (M78252NS8H)";
 				CODE_SIGN_RESOURCE_RULES_PATH = "";
-				DEVELOPMENT_TEAM = CMYJ8LA292;
+				DEVELOPMENT_TEAM = X6VE6Z688G;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2643,10 +2641,10 @@
 				MACH_O_TYPE = mh_execute;
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "${SRCROOT}/Pods";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bkd.molin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haowu.haowuagency;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9f6c8381-b7e6-46d9-9574-b897b9100525";
-				PROVISIONING_PROFILE_SPECIFIER = molin;
+				PROVISIONING_PROFILE = "b7e0485f-695b-4f40-860f-b3050b074380";
+				PROVISIONING_PROFILE_SPECIFIER = hehuoren;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

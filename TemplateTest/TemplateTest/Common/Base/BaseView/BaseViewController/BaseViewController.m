@@ -44,12 +44,19 @@
 
 - (void)configContentView {
     NSDictionary *params = [ViewControllerSimpleConfig viewModelSimpleConfigMappings:self.viewModel];
-    
-    self.navigationItem.titleView = [Utility navTitleView:[params stringObjectForKey:@"title"]];
+    if (self.viewModel.title.length) {
+        self.navigationItem.titleView = [Utility navTitleView:self.viewModel.title];
+    } else {
+        self.navigationItem.titleView = [Utility navTitleView:[params stringObjectForKey:@"title"]];
+    }
     
     UIButton * leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
     leftButton.frame = CGRectMake(0, 0, 22, 40);
-    [leftButton setImage:[UIImage imageNamed:[params stringObjectForKey:@"leftImageName"]] forState:UIControlStateNormal];
+    if (self.viewModel.leftImageName.length) {
+        [leftButton setImage:[UIImage imageNamed:self.viewModel.leftImageName] forState:UIControlStateNormal];
+    } else {
+        [leftButton setImage:[UIImage imageNamed:[params stringObjectForKey:@"leftImageName"]] forState:UIControlStateNormal];
+    }
     leftButton.imageEdgeInsets = UIEdgeInsetsMake(0, -16, 0, 0);
     [leftButton addTarget:self action:@selector(backMethod) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];

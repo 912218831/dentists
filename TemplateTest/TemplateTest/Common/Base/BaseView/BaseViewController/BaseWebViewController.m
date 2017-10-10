@@ -69,6 +69,10 @@
     self.progressView.hidden = false;
 }
 
+- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation {
+    
+}
+
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     [[self.view configuration].userContentController removeScriptMessageHandlerForName:@"bridge"];
     [[self.view configuration].userContentController addScriptMessageHandler:self name:@"bridge"];
@@ -108,6 +112,10 @@
                                change:change
                               context:context];
     }
+}
+
+- (void)dealloc {
+    [self.view removeObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress))];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -94,7 +94,6 @@
     // 登录
     self.loginBtn.rac_command = self.viewModel.loginCommand;
     [self.loginBtn.rac_command.executionSignals.switchToLatest subscribeNext:^(id value) {
-        [HWCoreDataManager saveUserInfo];
         [[ViewControllersRouter shareInstance]setRootViewController:@"tabbarViewModel"];
     }];
     [[self.loginBtn.rac_command.executing skip:1] subscribeNext:^(NSNumber *x) {

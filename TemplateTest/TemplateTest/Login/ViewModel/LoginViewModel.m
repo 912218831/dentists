@@ -48,7 +48,7 @@
                 [self post:kLoginApp type:0 params:@{@"mobile":userLogin.userPhone,
                                                      @"randCode":userLogin.vertifyCode}
                    success:^(id response) {
-                       [subscriber sendCompleted];
+                       [subscriber sendNext:@1];
                        [HWCoreDataManager saveUserInfo];
                    } failure:^(NSString *error) {
                        [subscriber sendError:Error];

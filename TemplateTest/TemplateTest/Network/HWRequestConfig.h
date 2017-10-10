@@ -22,14 +22,7 @@
 
 #define kUrlBase                    @"http://116.62.202.152/api/mouth/den/index.php/"
 
-#define kHtmlBase                   @"http://116.62.202.152/api/mouth/h5/index.php"
-//Https
-//#define kUrlBase                    GET_USERDEFAULT(@"urlBase")
-//#define kImageBaseUrl               GET_USERDEFAULT(@"imageBaseUrl")
-//#define kMoneyBaseUrl               GET_USERDEFAULT(@"moneyBaseUrl")
-//#define kPHPUrlBase                 GET_USERDEFAULT(@"PHPUrlBase")
-//#define kxmppServer                 GET_USERDEFAULT(@"xmppServer")
-
+#define kHtmlBase                   @"http://116.62.202.152/api/mouth/app-web/kq_pro_doc/app"
 
 //请求域名接口
 #define kGetDomain                  @"index/getCustomerDomain.do"
@@ -43,11 +36,9 @@
 
 #define AppendHTML(shortUrl)   [NSString stringWithFormat:@"%@%@?userKey=%@",kHtmlBase,shortUrl,[HWUserLogin currentUserLogin].userkey]
 
-#define kHomeH5                     AppendHTML(@"/Orders/Index")     //总览
-#define kOrder                      AppendHTML(@"/Orders/OrderList") //订单
-#define kCommission                 AppendHTML(@"/Orders/Brokerage") //提成
-#define kPeopleCenter               AppendHTML(@"/Member/Index")     //个人中心
-#define kProductCenter              AppendHTML(@"/Products/Index")    //产品中心
+#define kAskHTML                     @"/my/answer.html" // 问答
+#define kReserverListHTML            @"/my/patient-list.html" // 预约列表
+#define kReserverDetailHTML          @"/my/patient-detail.html" // 预约详情
 
 #define kLoginGainVertifyCode        @"acc/getVerifyCode" //获取验证码
 #define kLoginApp                    @"acc/loginByCode" //登录

@@ -81,9 +81,11 @@
         }
     }];
     
-    [[self.viewModel.requestCommand execute:nil]subscribeCompleted:^ {
+    [[self rac_signalForSelector:@selector(viewWillAppear:)]subscribeNext:^(id x) {
         @strongify(self);
-        [self.listView reloadData];
+        [[self.viewModel.requestCommand execute:nil]subscribeCompleted:^ {
+            [self.listView reloadData];
+        }];
     }];
     /*
     */
@@ -159,7 +161,7 @@
                     if (cell == nil) {
                         cell = [[HPTReservationNumCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
                         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-                        kAddDashLine(cell, 15, 15);
+                        kAddDashLine(cell, kRate(15), kRate(15));
                     }
                     
                     cell.reserveredSignal = [RACSignal return:self.viewModel.confirmed];
@@ -177,7 +179,7 @@
                     HPTReservationPeopleCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
                     if (cell == nil) {
                         cell = [[HPTReservationPeopleCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-                        kAddDashLine(cell, 15, 15);
+                        kAddDashLine(cell, kRate(15), kRate(15));
                     }
                     cell.valueSignal = [RACSignal return:self.viewModel.allConfirmedList[indexPath.row-1]];
                     return cell;
@@ -192,7 +194,7 @@
             HPFReserverPeopleCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
             if (cell == nil) {
                 cell = [[HPFReserverPeopleCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-                kAddDashLine(cell, 156/2.0, 15);
+                kAddDashLine(cell, kRate(156/2.0), kRate(15));
             }
             cell.signal = [RACSignal return:[self.viewModel.reserverPeoples objectAtIndex:indexPath.row]];
             cell.indexPath = indexPath;

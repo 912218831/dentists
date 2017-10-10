@@ -20,9 +20,9 @@
 
 - (void)configContentView {
     [super configContentView];
-    self.navigationItem.titleView = [Utility navTitleView:@"提成"];
+    self.navigationItem.titleView = [Utility navTitleView:@"咨询解答"];
     
-    self.url = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"test" ofType:@"html"]];
+    self.url = [NSURL URLWithString:AppendHTML(kAskHTML)];
 }
 
 

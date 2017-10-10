@@ -9,5 +9,6 @@
 #import "BaseViewModel.h"
 
 @interface MyPatientsViewModel : BaseViewModel
+@property (nonatomic, copy) NSString *urlStr;
 
 @end
