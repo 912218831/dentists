@@ -106,7 +106,7 @@
     [self.loginBtn.rac_command.errors subscribeNext:^(NSError *error) {
         [Utility showToastWithMessage:[error domain]];
         [HWUserLogin currentUserLogin].userPhone = @"18225523932";
-        //[HWCoreDataManager saveUserInfo];
+        [HWUserLogin currentUserLogin].userkey = @"00455ae9eff61c2eb0b59bb350b1c971";//@"3018797da6f7cc84831273de38bfe6eb";
         [[ViewControllersRouter shareInstance]setRootViewController:@"tabbarViewModel"];
     }];
     

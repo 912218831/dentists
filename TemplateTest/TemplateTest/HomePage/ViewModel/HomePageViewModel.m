@@ -159,7 +159,17 @@
         @strongify(self);
         HPReserverListModel *model = [self.allConfirmedList objectAtIndex:input.integerValue];
         [[ViewControllersRouter shareInstance]popToRootViewModelAnimated:false];
-        [(HWTabBarViewController*)SHARED_APP_DELEGATE.tabBarVC setSelectedIndex:1];
+        HWTabBarViewController *tabbarVC = SHARED_APP_DELEGATE.tabBarVC;
+        UINavigationController *vc = [tabbarVC.viewControllers objectAtIndex:1];
+        
+        MyPatientsViewModel *rrViewModel = [[MyPatientsViewModel alloc]init];
+        rrViewModel.urlStr = [NSString stringWithFormat:@"%@&id=%@",AppendHTML(kReserverDetailHTML),model.checkId];
+        rrViewModel.title = @"病人详情";
+        rrViewModel.leftImageName = @"TOP_ARROW";
+        [tabbarVC setTabBarHidden:true];
+        UIViewController *baseVC = [[ViewControllersRouter shareInstance]controllerMatchViewModel:rrViewModel];
+        [vc pushViewController:baseVC animated:false];
+        [tabbarVC setSelectedIndex:1];
         return [RACSignal empty];
     }];
 }

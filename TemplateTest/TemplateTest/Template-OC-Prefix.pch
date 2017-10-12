@@ -40,7 +40,6 @@
     #import <iCarousel.h>
     #import <IQKeyboardManager.h>
     #import <pop/POP.h>
-    #import <AsyncDisplayKit/AsyncDisplayKit.h>
     #import <MagicalRecord/MagicalRecord.h>
     #import "DView.h"
     #import "HWHTTPSessionManger.h"

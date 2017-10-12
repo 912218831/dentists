@@ -485,7 +485,6 @@ NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *sel
 #endif
     
     CGFloat factor = 0.0;
-    
     if (offset > fadeMax)
     {
         factor = offset - fadeMax;

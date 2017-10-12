@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		29BC1DFC1B57788B00C7B1AD /* MTCustomActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 29BC1DFB1B57788B00C7B1AD /* MTCustomActionSheet.m */; };
-		72230B151C21670D0040F496 /* ASDisplayNode+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 72230B141C21670D0040F496 /* ASDisplayNode+Utils.m */; };
 		7552CE281D1240CB00A557EA /* DButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7552CE1E1D1240CB00A557EA /* DButton.m */; };
 		7552CE291D1240CB00A557EA /* DImageV.m in Sources */ = {isa = PBXBuildFile; fileRef = 7552CE211D1240CB00A557EA /* DImageV.m */; };
 		7552CE2A1D1240CB00A557EA /* DLable.m in Sources */ = {isa = PBXBuildFile; fileRef = 7552CE231D1240CB00A557EA /* DLable.m */; };
@@ -289,8 +288,6 @@
 		29BC1DFA1B57788B00C7B1AD /* MTCustomActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCustomActionSheet.h; sourceTree = "<group>"; };
 		29BC1DFB1B57788B00C7B1AD /* MTCustomActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCustomActionSheet.m; sourceTree = "<group>"; };
 		3C0DE5CA4A764868D2E06837 /* Pods-TemplateTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-TemplateTest/Pods-TemplateTest.release.xcconfig"; sourceTree = "<group>"; };
-		72230B131C21670D0040F496 /* ASDisplayNode+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ASDisplayNode+Utils.h"; sourceTree = "<group>"; };
-		72230B141C21670D0040F496 /* ASDisplayNode+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ASDisplayNode+Utils.m"; sourceTree = "<group>"; };
 		7230904F1C4F54BA00EEC1E7 /* TemplateTest 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TemplateTest 4.xcdatamodel"; sourceTree = "<group>"; };
 		728014571C4C7D1C00D7EFB1 /* TemplateTest 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TemplateTest 3.xcdatamodel"; sourceTree = "<group>"; };
 		72F917FB1BB51A56003AE8D5 /* TemplateTest 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TemplateTest 2.xcdatamodel"; sourceTree = "<group>"; };
@@ -1802,8 +1799,6 @@
 				B0DD00131BF42729003FBDA2 /* WXImageView.m */,
 				B02AED1C1F4EB13D009C25A7 /* UITextField+Utils.h */,
 				B02AED1D1F4EB13D009C25A7 /* UITextField+Utils.m */,
-				72230B131C21670D0040F496 /* ASDisplayNode+Utils.h */,
-				72230B141C21670D0040F496 /* ASDisplayNode+Utils.m */,
 				C55A89231F583DE500935B5B /* NSUserDefaults+UserDefaults.h */,
 				C55A89241F583DE500935B5B /* NSUserDefaults+UserDefaults.m */,
 			);
@@ -1959,9 +1954,8 @@
 				C24E7DA11ADE51AA00BA8ECC /* Frameworks */,
 				C24E7DA21ADE51AA00BA8ECC /* Resources */,
 				E72FAD6D4DEAFE9E94B5D1ED /* [CP] Embed Pods Frameworks */,
-				0CE44A5774C05F9C445555D3 /* [CP] Copy Pods Resources */,
 				B118E88D45EFE601E85B2FAF /* Embed Pods Frameworks */,
-				9C21058431AA60E6EDA46FEB /* Copy Pods Resources */,
+				50539246ABC7576E00AF9562 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2130,9 +2124,9 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0CE44A5774C05F9C445555D3 /* [CP] Copy Pods Resources */ = {
+		50539246ABC7576E00AF9562 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
@@ -2140,9 +2134,10 @@
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TemplateTest/Pods-TemplateTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		7AECD459A69D99FD0D8B99E5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2156,22 +2151,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
-		};
-		9C21058431AA60E6EDA46FEB /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TemplateTest/Pods-TemplateTest-resources.sh\"\n";
 		};
 		B118E88D45EFE601E85B2FAF /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2200,7 +2181,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		E72FAD6D4DEAFE9E94B5D1ED /* [CP] Embed Pods Frameworks */ = {
@@ -2272,7 +2253,6 @@
 				C590834C1F5ED7980000B58D /* PatientDetailModel.m in Sources */,
 				C5ED99F31F71572700C9FFF5 /* RACSignal+Extend.m in Sources */,
 				B0D26B051BDF7B920012A093 /* HWCustomViewItem.m in Sources */,
-				72230B151C21670D0040F496 /* ASDisplayNode+Utils.m in Sources */,
 				B0B0B52D1F273803002FE127 /* EmptyControl.m in Sources */,
 				7552CE2C1D1240CB00A557EA /* DView.m in Sources */,
 				DA3DFF491ADE8DAE00C4E99A /* HWLocationManager.m in Sources */,
@@ -2571,8 +2551,8 @@
 				PODS_ROOT = "${SRCROOT}/Pods";
 				PRODUCT_BUNDLE_IDENTIFIER = com.haowu.haowuagency;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b7e0485f-695b-4f40-860f-b3050b074380";
-				PROVISIONING_PROFILE_SPECIFIER = hehuoren;
+				PROVISIONING_PROFILE = "74bd5de6-f60a-4915-a08c-4a037ed93da3";
+				PROVISIONING_PROFILE_SPECIFIER = TemplateTest;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -2643,8 +2623,8 @@
 				PODS_ROOT = "${SRCROOT}/Pods";
 				PRODUCT_BUNDLE_IDENTIFIER = com.haowu.haowuagency;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b7e0485f-695b-4f40-860f-b3050b074380";
-				PROVISIONING_PROFILE_SPECIFIER = hehuoren;
+				PROVISIONING_PROFILE = "74bd5de6-f60a-4915-a08c-4a037ed93da3";
+				PROVISIONING_PROFILE_SPECIFIER = TemplateTest;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

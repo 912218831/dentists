@@ -115,6 +115,7 @@ static ViewControllersRouter *router;
     if(HWUserLogin.currentUserLogin.userkey.length){//
         // 主页
         SHARED_APP_DELEGATE.viewController = [[AppShare shareInstance] checkUserType];
+        SHARED_APP_DELEGATE.tabBarVC = SHARED_APP_DELEGATE.viewController;
         [SHARED_APP_DELEGATE.window setRootViewController:SHARED_APP_DELEGATE.viewController];
         SHARED_APP_DELEGATE.isAutoLogin = YES;
     } else {

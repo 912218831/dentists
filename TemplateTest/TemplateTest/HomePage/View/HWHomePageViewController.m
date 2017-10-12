@@ -13,7 +13,7 @@
 #import "HPFReserverPeopleCell.h"
 #import "HomePageViewModel.h"
 #import "HPSiderbar.h"
-
+#import  <MJRefresh.h>
 #define kRemoveDashLine(super) \
         DashLineView *dashLine = [super viewWithTag:100];\
         if(dashLine) [dashLine removeFromSuperview];
@@ -76,17 +76,27 @@
                 totalHeight += currentHeight;
             }
             CGFloat offsetY = kRate(45);
-            self.sidebarView.frame = CGRectMake(0, startHeight+offsetY, kRate(55), totalHeight-startHeight-2*offsetY);
-            [self.sidebarView.reloadCommand execute:self.viewModel.expectedTimes];
+            
+            [[RACQueueScheduler mainThreadScheduler]schedule:^{
+                self.sidebarView.frame = CGRectMake(0, startHeight+offsetY, kRate(55), totalHeight-startHeight-2*offsetY);
+                [self.sidebarView.reloadCommand execute:self.viewModel.expectedTimes];
+            }];
+            
         }
     }];
     
-    [[self rac_signalForSelector:@selector(viewWillAppear:)]subscribeNext:^(id x) {
-        @strongify(self);
-        [[self.viewModel.requestCommand execute:nil]subscribeCompleted:^ {
+    
+    
+    self.listView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [[self.viewModel.requestCommand execute:nil]subscribeError:^(NSError *error) {
+            [Utility showToastWithMessage:error.domain];
+            [self.listView.mj_header endRefreshing];
+        } completed:^{
             [self.listView reloadData];
+            [self.listView.mj_header endRefreshing];
         }];
     }];
+    [self.listView.mj_header beginRefreshing];
     /*
     */
 }
@@ -125,6 +135,12 @@
     return section==0?1+(self.viewModel.allConfirmedList.count):self.viewModel.reserverPeoples.count;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    UIView *footer = [UIView new];
+    footer.alpha = 0;
+    return footer;
+}
+
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if(section == 0) return nil;
     UIView *headView = [[UIView alloc]init];
@@ -146,7 +162,6 @@
     titleLabel.font = FONT(TF14);
     headView.backgroundColor = COLOR_FFFFFF;
     [headView drawTopLine];
-    
     return headView;
 }
 
