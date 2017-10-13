@@ -7,7 +7,7 @@
 //
 
 #import "BaseWebViewController.h"
-
+#import <MJRefresh/MJRefresh.h>
 @interface BaseWebViewController () <WKNavigationDelegate, WKScriptMessageHandler,
     WKUIDelegate>
 @property (nonatomic, strong, readwrite) UIProgressView *progressView;
@@ -25,6 +25,11 @@
 
 - (void)loadView {
     self.view = [[WKWebView alloc]init];
+    @weakify(self);
+    self.view.scrollView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        @strongify(self);
+        [self.view reload];
+    }];
 }
 
 - (void)viewDidLoad {
@@ -74,6 +79,7 @@
 }
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
+    [self.view.scrollView.mj_header endRefreshing];
     [[self.view configuration].userContentController removeScriptMessageHandlerForName:@"bridge"];
     [[self.view configuration].userContentController addScriptMessageHandler:self name:@"bridge"];
 }

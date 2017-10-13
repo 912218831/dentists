@@ -119,6 +119,7 @@
         make.centerY.equalTo(cell);
         make.width.mas_equalTo(kRate(179));
     }];
+    @weakify(self);
     switch (indexPath.row) {
         case 0:
         {
@@ -133,7 +134,10 @@
                     middleTextfield.text = [x substringToIndex:11];
                 }
             }];
-            RAC(self.viewModel,phoneNumberStr) = middleTextfield.rac_textSignal;
+            [middleTextfield.rac_textSignal subscribeNext:^(id x) {
+                @strongify(self);
+                self.viewModel.phoneNumberStr = x;
+            }];
         }
             break;
         case 1:
@@ -149,7 +153,10 @@
                 }
             }];
             middleTextfield.text = self.viewModel.vertifyCodeStr;
-            RAC(self.viewModel,vertifyCodeStr) = middleTextfield.rac_textSignal;
+            [middleTextfield.rac_textSignal subscribeNext:^(id x) {
+                @strongify(self);
+                self.viewModel.vertifyCodeStr = x;
+            }];
         }
             break;
         case 2:
@@ -158,7 +165,10 @@
             middleTextfield.attributedStr = kTextfield_Password;
             middleTextfield.text = self.viewModel.passwordStr;
             middleTextfield.secureTextEntry = true;
-            RAC(self.viewModel,passwordStr) = middleTextfield.rac_textSignal;
+            [middleTextfield.rac_textSignal subscribeNext:^(id x) {
+                @strongify(self);
+                self.viewModel.passwordStr = x;
+            }];
         }
             break;
         default:
@@ -167,7 +177,10 @@
             middleTextfield.attributedStr = kTextfield_ConfirmPwd;
             middleTextfield.text = self.viewModel.confirmPwdStr;
             middleTextfield.secureTextEntry = true;
-            RAC(self.viewModel,confirmPwdStr) = middleTextfield.rac_textSignal;
+            [middleTextfield.rac_textSignal subscribeNext:^(id x) {
+                @strongify(self);
+                self.viewModel.confirmPwdStr = x;
+            }];
         }
             break;
     }
